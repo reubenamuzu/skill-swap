@@ -1,11 +1,441 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SkillExchange – Learn a Skill, Teach a Skill</title>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="stylesheet/style.css" />
 </head>
+
 <body>
-    
+  <div class="page-wrapper">
+
+    <!-- ══════════════════════════════════════════
+       HEADER
+  ══════════════════════════════════════════ -->
+    <header>
+      <div class="header-inner">
+        <div class="header-left">
+          <!-- Logo -->
+          <a href="index.html" class="logo">
+            <img src="assets/icon-w.png" alt="SkillSwap" class="nav-logo-icon">
+          </a>
+          <!-- Desktop Nav -->
+          <nav class="main-nav" id="main-nav">
+            <a href="#how-it-works">Home</a>
+            <a href="explore.html">Explore</a>
+            <a href="dashboard.html">Dashboard</a>
+            <!-- <a href="#testimonials">Testimonials</a> -->
+          </nav>
+        </div>
+
+        <div class="header-right">
+          <!-- Search (desktop only) -->
+          <div class="search-box">
+            <span class="material-symbols-outlined">search</span>
+            <input type="text" placeholder="Search skills..." />
+          </div>
+          <button class="btn-nav" onclick="window.location.href='signup.html'">Join Now</button>
+          <button class="burger-menu" id="burger-menu">
+            <img src="assets/menu-burger.png" alt="Menu" style="width: 24px; height: 24px; object-fit: contain;">
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <!-- ══════════════════════════════════════════
+       MAIN
+  ══════════════════════════════════════════ -->
+    <main>
+
+      <!-- ── HERO ── -->
+      <section class="hero">
+        <div class="hero-inner">
+
+          <!-- Left: copy -->
+          <div class="hero-content">
+            <div class="badge">
+              <span class="material-symbols-outlined">stars</span>
+              <span class="badge-text">The World's Largest Skill Network</span>
+            </div>
+
+            <h1 class="hero-title">
+              Learn a Skill, <br>
+              <span class="accent">Teach a Skill</span>
+            </h1>
+
+            <p class="hero-desc">
+              A modern skill-swapping platform where you can trade your expertise
+              with others around the world. No money, just knowledge.
+            </p>
+
+            <div class="hero-actions">
+              <button class="btn-hero-primary" onclick="window.location.href='signup.html'">
+                Get Started for Free
+                <span class="material-symbols-outlined">arrow_forward</span>
+              </button>
+              <button class="btn-hero-secondary">Browse Skills</button>
+            </div>
+          </div>
+
+          <!-- Right: image + floating card -->
+          <div class="hero-visual">
+            <div class="hero-image-wrap">
+              <div class="hero-image-overlay"></div>
+              <img src="assets/Overlay+Shadow.png" alt="Diverse group of people collaborating on laptops" />
+            </div>
+
+            <!-- Floating Stats Card -->
+            <div class="stats-card">
+              <div class="stats-card-inner">
+                <div class="stats-icon">
+                  <span class="material-symbols-outlined">groups</span>
+                </div>
+                <div>
+                  <p class="stats-number">120k+</p>
+                  <p class="stats-label">Active Learners</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- ── HOW IT WORKS ── -->
+      <section class="how-it-works" id="how-it-works">
+        <div class="section-header">
+          <h2 class="section-title">How SkillExchange Works</h2>
+          <p class="section-subtitle">
+            Trading your expertise is simple. Follow these three steps to start your growth journey.
+          </p>
+        </div>
+
+        <div class="steps-grid">
+          <div class="step-card">
+            <div class="step-icon">
+              <span class="material-symbols-outlined">person_add</span>
+            </div>
+            <h3 class="step-title">Create a Profile</h3>
+            <p class="step-desc">Sign up and list the skills you have to offer and the ones you want to master.</p>
+          </div>
+
+          <div class="step-card">
+            <div class="step-icon">
+              <span class="material-symbols-outlined">diversity_2</span>
+            </div>
+            <h3 class="step-title">Find a Match</h3>
+            <p class="step-desc">Our smart algorithm connects you with mentors and students who match your needs.</p>
+          </div>
+
+          <div class="step-card">
+            <div class="step-icon">
+              <span class="material-symbols-outlined">school</span>
+            </div>
+            <h3 class="step-title">Exchange Skills</h3>
+            <p class="step-desc">Schedule a video session and start your collaborative learning journey.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ── POPULAR SKILLS ── -->
+      <section class="popular-skills" id="popular-skills">
+        <div class="section-flex-header">
+          <div>
+            <h2 class="section-title">Explore Popular Skills</h2>
+            <p class="section-subtitle">Discover what the community is learning right now.</p>
+          </div>
+          <a href="#" class="view-all">
+            View all categories
+            <span class="material-symbols-outlined">chevron_right</span>
+          </a>
+        </div>
+
+        <div class="skills-grid">
+
+          <!-- Card 1 -->
+          <div class="skill-card">
+            <div class="skill-card-image">
+              <div class="bg-img"
+                style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDZ0aU8I7OK5QjhvNfe_GmoWOH3JyDPozz-OMBC2HjY8fge_NVvuq9Wxa8bmwsnyvv0-iCmZCWG0hu0StAq_KW3S4GDO6RIB_o4Nic-wPfkd21UAojLN8hB3wJdo1BvkDy58iCmaBRUhshf380x_VxvKOEVYtgOKE1_g-UUk_ftZhZHSGLqW412STGaFgn2MjUwXQxq4gcXGXLHgmAU1Uj7YHHwITd__3KDGH3ePurBkRH8GnmAo85H667K1SmTfNCeTOJ8KPWBzFo');">
+              </div>
+            </div>
+            <div class="skill-card-body">
+              <div class="skill-card-meta">
+                <h3 class="skill-card-title">UI/UX Design</h3>
+              </div>
+              <p class="skill-card-desc">Master Figma, user research, and prototyping with professional designers.</p>
+              <button class="btn-find-mentor">Request Skill</button>
+            </div>
+          </div>
+
+          <!-- Card 2 -->
+          <div class="skill-card">
+            <div class="skill-card-image">
+              <div class="bg-img"
+                style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBs4pL_83xJfClG_MkjLMpykveSWs5IGHWQZK4B6MM--skUVLD4U0o--F_F2n4Dye4jaNK7UdMjv2ueFYIoncG7PqW-nl87AIVlckDeLWM1-gT3T0dvXsYtLt-OP3fXs10l-_YmSbsTAovhIOj6gqrRPOivO3NvQq3dU5rE1lcCDxxk6Rm4H_R0SpJJNSeNn-R5r_QX5L2EZhe9eKNPP3LYO6v8xm5_38IMjJpmoOBpftM8D8b7iqm6iOOMdNDsw8aTz9jcbsa5xcg');">
+              </div>
+            </div>
+            <div class="skill-card-body">
+              <div class="skill-card-meta">
+                <h3 class="skill-card-title">Full-Stack Dev</h3>
+              </div>
+              <p class="skill-card-desc">Learn React, Node.js, and database architecture from industry experts.</p>
+              <button class="btn-find-mentor">Request Skill</button>
+            </div>
+          </div>
+
+          <!-- Card 3 -->
+          <div class="skill-card">
+            <div class="skill-card-image">
+              <div class="bg-img"
+                style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDDfauStl7PjtLljx1vMMUuaiQmIJyHny0oyKfUA4kvr-z8XkYi7ymooOQylIvo2l3tKxipzUM9x_WrFhj3X-Qt7uxOrQuBBBc55IY_YMBXaVlBxv12TGSlgO3r5XESKXAirZus5gQeny2t5MazOSDFGnylS8C3ENi-RDLWayAXRd1o4ildxvzwI3SE2xFmbXlNkZ7Sc2ga4z_hV6Fg1HS3Um-7i2Tn-MKUwGD7t-y4eQbggwFdz3P0Xufwso2dEOAyJxa68b7g5_k');">
+              </div>
+            </div>
+            <div class="skill-card-body">
+              <div class="skill-card-meta">
+                <h3 class="skill-card-title">Gourmet Cooking</h3>
+              </div>
+              <p class="skill-card-desc">Trade your tech skills for world-class culinary techniques and recipes.</p>
+              <button class="btn-find-mentor">Request Skill</button>
+            </div>
+          </div>
+
+          <!-- Card 4 -->
+          <div class="skill-card">
+            <div class="skill-card-image">
+              <div class="bg-img"
+                style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAKQSg4NyPs3rwl3XM9BWYWVv1vD8Nza4ri709M6s9dMiMqE3dPt9xnZcev-z0WQinZkwZJ5GqqRktKHrWVDTGyWvddb3Kw9BCU4C1QG_pBzbPwPhNLR597IMaiubIdWbpJNzDJzqqlYTykAzdys81wLTLrFdDKCCspjzT8j1patZQJsGc4KPSbO1_geh1hQUaO9VWG-hb1Hwhv0pI6JJgCv4bUt9Hy5_nXeKox1z6UDkNqAi1ZZprKzYJR2_XVa3q1KAEBBxF9Goc');">
+              </div>
+            </div>
+            <div class="skill-card-body">
+              <div class="skill-card-meta">
+                <h3 class="skill-card-title">Photography</h3>
+              </div>
+              <p class="skill-card-desc">Learn lighting, composition, and post-processing from visual artists.</p>
+              <button class="btn-find-mentor">Request Skill</button>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- ── WHY US ── -->
+      <section class="why-us" id="why-us">
+        <div class="why-us-inner">
+
+          <div>
+            <h2 class="why-us-title">Why Trade Skills on<br>SkillExchange?</h2>
+            <div class="why-features">
+              <div class="why-feature">
+                <div class="why-feature-icon">
+                  <span class="material-symbols-outlined">payments</span>
+                </div>
+                <div>
+                  <h4>Completely Free</h4>
+                  <p>No hidden fees or subscriptions. Your currency is your own expertise.</p>
+                </div>
+              </div>
+
+              <div class="why-feature">
+                <div class="why-feature-icon">
+                  <span class="material-symbols-outlined">language</span>
+                </div>
+                <div>
+                  <h4>Global Community</h4>
+                  <p>Connect with experts from Tokyo to New York without leaving your home.</p>
+                </div>
+              </div>
+
+              <div class="why-feature">
+                <div class="why-feature-icon">
+                  <span class="material-symbols-outlined">verified</span>
+                </div>
+                <div>
+                  <h4>Quality Assurance</h4>
+                  <p>A robust rating system ensures you're always matched with high-quality mentors.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Mosaic stats -->
+          <div class="stats-mosaic">
+            <div class="stats-col offset">
+              <div class="stat-block square">
+                <p class="stat-number">98%</p>
+                <p class="stat-label">Satisfaction Rate</p>
+              </div>
+              <div class="stat-block tall">
+                <p class="stat-number">24/7</p>
+                <p class="stat-label">Learning Access</p>
+              </div>
+            </div>
+            <div class="stats-col">
+              <div class="stat-block tall">
+                <p class="stat-number">500+</p>
+                <p class="stat-label">Unique Skills</p>
+              </div>
+              <div class="stat-block square">
+                <p class="stat-number">1M+</p>
+                <p class="stat-label">Lessons Swapped</p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- ── TESTIMONIALS ── -->
+      <section class="testimonials" id="testimonials">
+        <div class="section-header">
+          <h2 class="section-title">What Our Members Say</h2>
+          <p class="section-subtitle">Real stories from people who've transformed their lives through skill-swapping.
+          </p>
+        </div>
+
+        <div class="testimonials-grid">
+
+          <div class="testimonial-card">
+            <span class="material-symbols-outlined quote-icon">format_quote</span>
+            <div class="testimonial-author">
+              <div class="author-avatar"
+                style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBMQEraWLyTowWwGLsAPSQYRDVZ3zNkd3uHLVMswaNTE-Tw6hzatUkNjl06qoA9spxRx5pLOgwHB9rmjhq0dU3yUVVt_k4t7o_epLcqaijq8AGi13pEQPoKzvsLJlBXDWxB4LTDvJ4U-lsnSMJvsWGRvbg2No9-sg9n_GwdEwgBR89mHXNtS6BkIXrMvlipsTsOfYIaml2wqxss5z8tk6iWIhhX9kv8agMT9UCasWG-cl5q1k5nopu4FOWhGa8IVwMDfZ6WrmMyDOM');">
+              </div>
+              <div>
+                <p class="author-name">Sarah Jenkins</p>
+                <p class="author-role">UI Designer</p>
+              </div>
+            </div>
+            <p class="testimonial-quote">"I taught French to a developer in Berlin, and in exchange, he taught me React.
+              Now I'm a full-fledged Product Designer!"</p>
+          </div>
+
+          <div class="testimonial-card featured">
+            <span class="material-symbols-outlined quote-icon">format_quote</span>
+            <div class="testimonial-author">
+              <div class="author-avatar"
+                style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDtZQr8NeDcj0vzMrW4JKPUvQzuNO3d5-aPPM4nrkTeMmPrEMxy8js4f5pfUZZ_VFJunUQfr2YafzMWMXTNdjSCXj0OqxilF74GUlLxCFClkyA8jFHrdUZ-sdIBF4oVW0L-U8Dpm0AXX0AfDKo-Kn4r5HZL_BMTRe5S9DIxf0UogZKDn9hitS0MbEhWYO1VK-AMKTGTVi14Y0uidIikjpGXURb07YRVjHFyTkOP9cq1TTWOikj5KlZzi7DJsCA1DzpzH2fhMJyFLzk');">
+              </div>
+              <div>
+                <p class="author-name">Marcus Chen</p>
+                <p class="author-role">Software Engineer</p>
+              </div>
+            </div>
+            <p class="testimonial-quote">"SkillExchange is the most wholesome part of the internet. The community is
+              supportive and the matches are spot on."</p>
+          </div>
+
+          <div class="testimonial-card">
+            <span class="material-symbols-outlined quote-icon">format_quote</span>
+            <div class="testimonial-author">
+              <div class="author-avatar"
+                style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCV25Ys-syTomckdeXfKHPavW_Mk7w7c6OJwhx-UtZ09zzrKEtTtyGStfylkiv_kKEkHlRLnUDWF_TkdCY5piWwq_kXeG-R5ubYAxR8yEx1N1EGyjFnllOL9_UTAR39Uo9iQssdRkvnILs_vkIF-o5iCJyj8sxqORhYddS6CoBa7nZC5fnTAofTPLBSfHeRDhoqr3dk7CgmIgkLDzyC66yN72f1Zu6L6ZSHPPsr5tT0PnZMRly-JBBacNf35e5iqnA1ym1hnAksCLY');">
+              </div>
+              <div>
+                <p class="author-name">Elena Rodriguez</p>
+                <p class="author-role">Marketing Lead</p>
+              </div>
+            </div>
+            <p class="testimonial-quote">"I never thought I could learn photography for free. This platform has saved me
+              thousands in course fees."</p>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- ── CTA ── -->
+      <section class="cta-section">
+        <div class="cta-box">
+          <h2 class="cta-title">Ready to expand your<br>horizons?</h2>
+          <p class="cta-desc">Join 120,000+ experts and learners. No credit card required. Just a passion for growth.
+          </p>
+          <div class="cta-actions">
+            <button class="btn-cta-primary" onclick="window.location.href='signup.html'">Start Swapping Now</button>
+            <button class="btn-cta-secondary">View Skill Feed</button>
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+    <!-- ══════════════════════════════════════════
+       FOOTER
+  ══════════════════════════════════════════ -->
+    <footer>
+      <div class="footer-inner">
+        <div class="footer-grid">
+
+          <!-- Brand -->
+          <div class="footer-brand">
+            <div class="footer-logo">
+              <img src="assets/icon-w.png" alt="SkillExchange" style="height: 48px; width: auto; object-fit: contain;">
+              <h2>SkillExchange</h2>
+            </div>
+            <p class="footer-tagline">
+              The global platform for collaborative learning. Empowering individuals to share knowledge and build
+              careers together.
+            </p>
+            <div class="social-links">
+              <a href="#" class="social-link"><span class="material-symbols-outlined">public</span></a>
+              <a href="#" class="social-link"><span class="material-symbols-outlined">share</span></a>
+              <a href="#" class="social-link"><span class="material-symbols-outlined">alternate_email</span></a>
+            </div>
+          </div>
+
+          <!-- Platform -->
+          <div class="footer-col">
+            <h4>Platform</h4>
+            <ul>
+              <li><a href="#">How it Works</a></li>
+              <li><a href="#">Popular Skills</a></li>
+              <li><a href="#">Success Stories</a></li>
+              <li><a href="#">Safety &amp; Trust</a></li>
+            </ul>
+          </div>
+
+          <!-- Community -->
+          <div class="footer-col">
+            <h4>Community</h4>
+            <ul>
+              <li><a href="#">Events</a></li>
+              <li><a href="#">Mentors</a></li>
+              <li><a href="#">Guidelines</a></li>
+              <li><a href="#">Blog</a></li>
+            </ul>
+          </div>
+
+          <!-- Company -->
+          <div class="footer-col">
+            <h4>Company</h4>
+            <ul>
+              <li><a href="#">About Us</a></li>
+              <li><a href="#">Careers</a></li>
+              <li><a href="#">Contact</a></li>
+              <li><a href="#">Privacy Policy</a></li>
+            </ul>
+          </div>
+
+        </div>
+
+        <!-- Bottom bar -->
+        <div class="footer-bottom">
+          <p>© 2024 SkillExchange Platform Inc. All rights reserved.</p>
+          <div class="footer-bottom-links">
+            <a href="#">Terms of Service</a>
+            <a href="#">Cookie Settings</a>
+          </div>
+        </div>
+
+      </div>
+    </footer>
+    <script src="script.js"></script>
+  </div>
 </body>
+
 </html>
