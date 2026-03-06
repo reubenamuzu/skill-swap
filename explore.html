@@ -1,39 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Explore Skills - SkillExchange</title>
-  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"/>
-  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
-  <link rel="stylesheet" href="stylesheet/style.css"/>
-  <link rel="stylesheet" href="stylesheet/explore.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="stylesheet/style.css" />
+  <link rel="stylesheet" href="stylesheet/explore.css" />
 </head>
+
 <body>
 
   <!-- Explore Header -->
-  <header class="explore-header">
+  <header>
     <div class="header-inner">
-      <div class="header-left" style="gap:0">
+      <div class="header-left">
         <!-- Logo -->
         <a href="index.html" class="logo">
-          <img src="assets/icon-w.png" alt="SkillSwap" class="explore-logo-img">
+          <img src="assets/icon-w.png" alt="SkillSwap" class="nav-logo-icon">
         </a>
-        
         <!-- Desktop Nav -->
-        <nav class="main-nav">
+        <nav class="main-nav" id="main-nav">
           <a href="index.html">Home</a>
-          <a href="explore.html" style="color: #006280;">Explore</a>
+          <a href="explore.html" class="active">Explore</a>
           <a href="dashboard.html">Dashboard</a>
         </nav>
       </div>
 
       <div class="header-right">
-        <!-- Search -->
+        <!-- Search (desktop only) -->
         <div class="search-box">
           <span class="material-symbols-outlined">search</span>
-          <input type="text" placeholder="Search skills..."/>
+          <input type="text" placeholder="Search skills..." />
         </div>
+
+        <button class="burger-menu" id="burger-menu">
+          <img src="assets/menu-burger.png" alt="Menu" style="width: 24px; height: 24px; object-fit: contain;">
+        </button>
       </div>
     </div>
   </header>
@@ -46,17 +53,23 @@
 
   <!-- Grid section -->
   <section class="explore-grid">
-    
+
     <!-- Card 1 -->
     <div class="explore-card">
       <img src="assets/ui_ux_design.png" alt="UI/UX Design" class="explore-card-img">
       <div class="explore-card-body">
         <div class="explore-card-header">
           <h3 class="explore-card-title">UI/UX Design</h3>
+          <div class="explore-card-rating">
+            <span class="material-symbols-outlined">star</span>
+            4.9
+          </div>
         </div>
         <p class="explore-card-desc">Master Figma and learn user-centric design principles for modern applications.</p>
         <div class="explore-card-instructor">
-          <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuBMQEraWLyTowWwGLsAPSQYRDVZ3zNkd3uHLVMswaNTE-Tw6hzatUkNjl06qoA9spxRx5pLOgwHB9rmjhq0dU3yUVVt_k4t7o_epLcqaijq8AGi13pEQPoKzvsLJlBXDWxB4LTDvJ4U-lsnSMJvsWGRvbg2No9-sg9n_GwdEwgBR89mHXNtS6BkIXrMvlipsTsOfYIaml2wqxss5z8tk6iWIhhX9kv8agMT9UCasWG-cl5q1k5nopu4FOWhGa8IVwMDfZ6WrmMyDOM" alt="Sarah Jenkins">
+          <img
+            src="https://lh3.googleusercontent.com/aida-public/AB6AXuBMQEraWLyTowWwGLsAPSQYRDVZ3zNkd3uHLVMswaNTE-Tw6hzatUkNjl06qoA9spxRx5pLOgwHB9rmjhq0dU3yUVVt_k4t7o_epLcqaijq8AGi13pEQPoKzvsLJlBXDWxB4LTDvJ4U-lsnSMJvsWGRvbg2No9-sg9n_GwdEwgBR89mHXNtS6BkIXrMvlipsTsOfYIaml2wqxss5z8tk6iWIhhX9kv8agMT9UCasWG-cl5q1k5nopu4FOWhGa8IVwMDfZ6WrmMyDOM"
+            alt="Sarah Jenkins">
           <span>Sarah Jenkins</span>
         </div>
         <button class="btn-request" onclick="window.location.href='request-skill.html'">Request Skill</button>
@@ -69,10 +82,16 @@
       <div class="explore-card-body">
         <div class="explore-card-header">
           <h3 class="explore-card-title">Python Programming</h3>
+          <div class="explore-card-rating">
+            <span class="material-symbols-outlined">star</span>
+            4.8
+          </div>
         </div>
         <p class="explore-card-desc">Go from zero to hero in Python. Focus on data science and automation basics.</p>
         <div class="explore-card-instructor">
-          <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuDtZQr8NeDcj0vzMrW4JKPUvQzuNO3d5-aPPM4nrkTeMmPrEMxy8js4f5pfUZZ_VFJunUQfr2YafzMWMXTNdjSCXj0OqxilF74GUlLxCFClkyA8jFHrdUZ-sdIBF4oVW0L-U8Dpm0AXX0AfDKo-Kn4r5HZL_BMTRe5S9DIxf0UogZKDn9hitS0MbEhWYO1VK-AMKTGTVi14Y0uidIikjpGXURb07YRVjHFyTkOP9cq1TTWOikj5KlZzi7DJsCA1DzpzH2fhMJyFLzk" alt="David Chen">
+          <img
+            src="https://lh3.googleusercontent.com/aida-public/AB6AXuDtZQr8NeDcj0vzMrW4JKPUvQzuNO3d5-aPPM4nrkTeMmPrEMxy8js4f5pfUZZ_VFJunUQfr2YafzMWMXTNdjSCXj0OqxilF74GUlLxCFClkyA8jFHrdUZ-sdIBF4oVW0L-U8Dpm0AXX0AfDKo-Kn4r5HZL_BMTRe5S9DIxf0UogZKDn9hitS0MbEhWYO1VK-AMKTGTVi14Y0uidIikjpGXURb07YRVjHFyTkOP9cq1TTWOikj5KlZzi7DJsCA1DzpzH2fhMJyFLzk"
+            alt="David Chen">
           <span>David Chen</span>
         </div>
         <button class="btn-request" onclick="window.location.href='request-skill.html'">Request Skill</button>
@@ -85,10 +104,16 @@
       <div class="explore-card-body">
         <div class="explore-card-header">
           <h3 class="explore-card-title">Spanish Conversation</h3>
+          <div class="explore-card-rating">
+            <span class="material-symbols-outlined">star</span>
+            5.0
+          </div>
         </div>
         <p class="explore-card-desc">Improve your fluency through casual dialogue with native speakers.</p>
         <div class="explore-card-instructor">
-          <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuCV25Ys-syTomckdeXfKHPavW_Mk7w7c6OJwhx-UtZ09zzrKEtTtyGStfylkiv_kKEkHlRLnUDWF_TkdCY5piWwq_kXeG-R5ubYAxR8yEx1N1EGyjFnllOL9_UTAR39Uo9iQssdRkvnILs_vkIF-o5iCJyj8sxqORhYddS6CoBa7nZC5fnTAofTPLBSfHeRDhoqr3dk7CgmIgkLDzyC66yN72f1Zu6L6ZSHPPsr5tT0PnZMRly-JBBacNf35e5iqnA1ym1hnAksCLY" alt="Elena Rodriguez">
+          <img
+            src="https://lh3.googleusercontent.com/aida-public/AB6AXuCV25Ys-syTomckdeXfKHPavW_Mk7w7c6OJwhx-UtZ09zzrKEtTtyGStfylkiv_kKEkHlRLnUDWF_TkdCY5piWwq_kXeG-R5ubYAxR8yEx1N1EGyjFnllOL9_UTAR39Uo9iQssdRkvnILs_vkIF-o5iCJyj8sxqORhYddS6CoBa7nZC5fnTAofTPLBSfHeRDhoqr3dk7CgmIgkLDzyC66yN72f1Zu6L6ZSHPPsr5tT0PnZMRly-JBBacNf35e5iqnA1ym1hnAksCLY"
+            alt="Elena Rodriguez">
           <span>Elena Rodriguez</span>
         </div>
         <button class="btn-request" onclick="window.location.href='request-skill.html'">Request Skill</button>
@@ -107,9 +132,12 @@
           </div>
         </div>
         <p class="explore-card-desc">Learn SEO, SEM and social media strategies to grow your online presence.</p>
-        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 24px; margin-top: auto;">
+        <div
+          style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 24px; margin-top: auto;">
           <div class="explore-card-instructor" style="margin: 0;">
-            <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuBMQEraWLyTowWwGLsAPSQYRDVZ3zNkd3uHLVMswaNTE-Tw6hzatUkNjl06qoA9spxRx5pLOgwHB9rmjhq0dU3yUVVt_k4t7o_epLcqaijq8AGi13pEQPoKzvsLJlBXDWxB4LTDvJ4U-lsnSMJvsWGRvbg2No9-sg9n_GwdEwgBR89mHXNtS6BkIXrMvlipsTsOfYIaml2wqxss5z8tk6iWIhhX9kv8agMT9UCasWG-cl5q1k5nopu4FOWhGa8IVwMDfZ6WrmMyDOM" alt="Marcus Sterling">
+            <img
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuBMQEraWLyTowWwGLsAPSQYRDVZ3zNkd3uHLVMswaNTE-Tw6hzatUkNjl06qoA9spxRx5pLOgwHB9rmjhq0dU3yUVVt_k4t7o_epLcqaijq8AGi13pEQPoKzvsLJlBXDWxB4LTDvJ4U-lsnSMJvsWGRvbg2No9-sg9n_GwdEwgBR89mHXNtS6BkIXrMvlipsTsOfYIaml2wqxss5z8tk6iWIhhX9kv8agMT9UCasWG-cl5q1k5nopu4FOWhGa8IVwMDfZ6WrmMyDOM"
+              alt="Marcus Sterling">
             <span>Marcus Sterling</span>
           </div>
           <span class="explore-card-reviews">52 reviews</span>
@@ -124,10 +152,16 @@
       <div class="explore-card-body">
         <div class="explore-card-header">
           <h3 class="explore-card-title">Data Science with R</h3>
+          <div class="explore-card-rating">
+            <span class="material-symbols-outlined">star</span>
+            4.7
+          </div>
         </div>
         <p class="explore-card-desc">Analyze complex datasets and create beautiful visualizations with R.</p>
         <div class="explore-card-instructor">
-          <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuDtZQr8NeDcj0vzMrW4JKPUvQzuNO3d5-aPPM4nrkTeMmPrEMxy8js4f5pfUZZ_VFJunUQfr2YafzMWMXTNdjSCXj0OqxilF74GUlLxCFClkyA8jFHrdUZ-sdIBF4oVW0L-U8Dpm0AXX0AfDKo-Kn4r5HZL_BMTRe5S9DIxf0UogZKDn9hitS0MbEhWYO1VK-AMKTGTVi14Y0uidIikjpGXURb07YRVjHFyTkOP9cq1TTWOikj5KlZzi7DJsCA1DzpzH2fhMJyFLzk" alt="Julianna Moss">
+          <img
+            src="https://lh3.googleusercontent.com/aida-public/AB6AXuDtZQr8NeDcj0vzMrW4JKPUvQzuNO3d5-aPPM4nrkTeMmPrEMxy8js4f5pfUZZ_VFJunUQfr2YafzMWMXTNdjSCXj0OqxilF74GUlLxCFClkyA8jFHrdUZ-sdIBF4oVW0L-U8Dpm0AXX0AfDKo-Kn4r5HZL_BMTRe5S9DIxf0UogZKDn9hitS0MbEhWYO1VK-AMKTGTVi14Y0uidIikjpGXURb07YRVjHFyTkOP9cq1TTWOikj5KlZzi7DJsCA1DzpzH2fhMJyFLzk"
+            alt="Julianna Moss">
           <span>Julianna Moss</span>
         </div>
         <button class="btn-request" onclick="window.location.href='request-skill.html'">Request Skill</button>
@@ -140,26 +174,38 @@
       <div class="explore-card-body">
         <div class="explore-card-header">
           <h3 class="explore-card-title">Data Science with R</h3>
+          <div class="explore-card-rating">
+            <span class="material-symbols-outlined">star</span>
+            4.6
+          </div>
         </div>
         <p class="explore-card-desc">Analyze complex datasets and create beautiful visualizations with R.</p>
         <div class="explore-card-instructor">
-          <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuDtZQr8NeDcj0vzMrW4JKPUvQzuNO3d5-aPPM4nrkTeMmPrEMxy8js4f5pfUZZ_VFJunUQfr2YafzMWMXTNdjSCXj0OqxilF74GUlLxCFClkyA8jFHrdUZ-sdIBF4oVW0L-U8Dpm0AXX0AfDKo-Kn4r5HZL_BMTRe5S9DIxf0UogZKDn9hitS0MbEhWYO1VK-AMKTGTVi14Y0uidIikjpGXURb07YRVjHFyTkOP9cq1TTWOikj5KlZzi7DJsCA1DzpzH2fhMJyFLzk" alt="Julianna Moss">
+          <img
+            src="https://lh3.googleusercontent.com/aida-public/AB6AXuDtZQr8NeDcj0vzMrW4JKPUvQzuNO3d5-aPPM4nrkTeMmPrEMxy8js4f5pfUZZ_VFJunUQfr2YafzMWMXTNdjSCXj0OqxilF74GUlLxCFClkyA8jFHrdUZ-sdIBF4oVW0L-U8Dpm0AXX0AfDKo-Kn4r5HZL_BMTRe5S9DIxf0UogZKDn9hitS0MbEhWYO1VK-AMKTGTVi14Y0uidIikjpGXURb07YRVjHFyTkOP9cq1TTWOikj5KlZzi7DJsCA1DzpzH2fhMJyFLzk"
+            alt="Julianna Moss">
           <span>Julianna Moss</span>
         </div>
         <button class="btn-request" onclick="window.location.href='request-skill.html'">Request Skill</button>
       </div>
     </div>
-    
+
     <!-- Card 7 -->
     <div class="explore-card">
       <img src="assets/photography_lens.png" alt="Photography" class="explore-card-img">
       <div class="explore-card-body">
         <div class="explore-card-header">
           <h3 class="explore-card-title">Photography</h3>
+          <div class="explore-card-rating">
+            <span class="material-symbols-outlined">star</span>
+            4.9
+          </div>
         </div>
         <p class="explore-card-desc">Capture stunning portraits and landscapes using natural light.</p>
         <div class="explore-card-instructor">
-          <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuCV25Ys-syTomckdeXfKHPavW_Mk7w7c6OJwhx-UtZ09zzrKEtTtyGStfylkiv_kKEkHlRLnUDWF_TkdCY5piWwq_kXeG-R5ubYAxR8yEx1N1EGyjFnllOL9_UTAR39Uo9iQssdRkvnILs_vkIF-o5iCJyj8sxqORhYddS6CoBa7nZC5fnTAofTPLBSfHeRDhoqr3dk7CgmIgkLDzyC66yN72f1Zu6L6ZSHPPsr5tT0PnZMRly-JBBacNf35e5iqnA1ym1hnAksCLY" alt="Oliver Twist">
+          <img
+            src="https://lh3.googleusercontent.com/aida-public/AB6AXuCV25Ys-syTomckdeXfKHPavW_Mk7w7c6OJwhx-UtZ09zzrKEtTtyGStfylkiv_kKEkHlRLnUDWF_TkdCY5piWwq_kXeG-R5ubYAxR8yEx1N1EGyjFnllOL9_UTAR39Uo9iQssdRkvnILs_vkIF-o5iCJyj8sxqORhYddS6CoBa7nZC5fnTAofTPLBSfHeRDhoqr3dk7CgmIgkLDzyC66yN72f1Zu6L6ZSHPPsr5tT0PnZMRly-JBBacNf35e5iqnA1ym1hnAksCLY"
+            alt="Oliver Twist">
           <span>Oliver Twist</span>
         </div>
         <button class="btn-request" onclick="window.location.href='request-skill.html'">Request Skill</button>
@@ -172,10 +218,16 @@
       <div class="explore-card-body">
         <div class="explore-card-header">
           <h3 class="explore-card-title">UI/UX Design</h3>
+          <div class="explore-card-rating">
+            <span class="material-symbols-outlined">star</span>
+            4.8
+          </div>
         </div>
         <p class="explore-card-desc">Master Figma and learn user-centric design principles for modern applications.</p>
         <div class="explore-card-instructor">
-          <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuBMQEraWLyTowWwGLsAPSQYRDVZ3zNkd3uHLVMswaNTE-Tw6hzatUkNjl06qoA9spxRx5pLOgwHB9rmjhq0dU3yUVVt_k4t7o_epLcqaijq8AGi13pEQPoKzvsLJlBXDWxB4LTDvJ4U-lsnSMJvsWGRvbg2No9-sg9n_GwdEwgBR89mHXNtS6BkIXrMvlipsTsOfYIaml2wqxss5z8tk6iWIhhX9kv8agMT9UCasWG-cl5q1k5nopu4FOWhGa8IVwMDfZ6WrmMyDOM" alt="Sarah Jenkins">
+          <img
+            src="https://lh3.googleusercontent.com/aida-public/AB6AXuBMQEraWLyTowWwGLsAPSQYRDVZ3zNkd3uHLVMswaNTE-Tw6hzatUkNjl06qoA9spxRx5pLOgwHB9rmjhq0dU3yUVVt_k4t7o_epLcqaijq8AGi13pEQPoKzvsLJlBXDWxB4LTDvJ4U-lsnSMJvsWGRvbg2No9-sg9n_GwdEwgBR89mHXNtS6BkIXrMvlipsTsOfYIaml2wqxss5z8tk6iWIhhX9kv8agMT9UCasWG-cl5q1k5nopu4FOWhGa8IVwMDfZ6WrmMyDOM"
+            alt="Sarah Jenkins">
           <span>Sarah Jenkins</span>
         </div>
         <button class="btn-request" onclick="window.location.href='request-skill.html'">Request Skill</button>
@@ -206,7 +258,8 @@
             <img src="assets/icon-w.png" alt="SkillSwap" style="height: 36px;">
           </div>
           <p class="footer-tagline">
-            The global platform for collaborative learning. Empowering individuals to share knowledge and build careers together.
+            The global platform for collaborative learning. Empowering individuals to share knowledge and build careers
+            together.
           </p>
           <div class="social-links">
             <a href="#" class="social-link"><span class="material-symbols-outlined">public</span></a>
@@ -252,5 +305,7 @@
     </div>
   </footer>
 
+  <script src="script.js"></script>
 </body>
+
 </html>

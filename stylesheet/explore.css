@@ -15,23 +15,7 @@
   justify-content: space-between;
 }
 
-.explore-header .main-nav {
-  display: flex;
-  margin-left: 60px;
-  gap: 32px;
-}
-
-.explore-header .main-nav a {
-  font-size: 15px;
-  font-weight: 800;
-  text-transform: uppercase;
-  color: #000;
-  transition: opacity 0.2s;
-}
-
-.explore-header .main-nav a:hover {
-  opacity: 0.7;
-}
+/* Navigation managed by style.css animations */
 
 .explore-header .search-box {
   display: flex;
@@ -89,21 +73,31 @@
 
 .explore-card {
   background-color: var(--white);
-  border-radius: 12px;
+  border: 1px solid var(--primary-10);
+  border-radius: 16px;
   overflow: hidden;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.02);
   display: flex;
   flex-direction: column;
+  transition: box-shadow 0.25s;
+}
+
+.explore-card:hover {
+  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.12);
 }
 
 .explore-card-img {
   width: 100%;
   aspect-ratio: 4/3;
   object-fit: cover;
+  transition: transform 0.4s;
+}
+
+.explore-card:hover .explore-card-img {
+  transform: scale(1.05);
 }
 
 .explore-card-body {
-  padding: 24px;
+  padding: 18px;
   display: flex;
   flex-direction: column;
   flex: 1;
@@ -113,12 +107,12 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 12px;
+  margin-bottom: 6px;
 }
 
 .explore-card-title {
-  font-size: 18px;
   font-weight: 700;
+  font-size: 17px;
   color: #111;
 }
 
@@ -178,19 +172,20 @@
 
 .btn-request {
   width: 100%;
-  padding: 12px;
-  background-color: #f1f5f9;
-  color: #006280;
+  padding: 8px;
+  background-color: var(--primary-05);
+  color: var(--primary);
   border: none;
   border-radius: 8px;
-  font-size: 14px;
+  font-size: 13px;
   font-weight: 700;
   cursor: pointer;
-  transition: background-color 0.2s;
+  transition: background-color 0.2s, color 0.2s;
 }
 
-.btn-request:hover {
-  background-color: #e2e8f0;
+.explore-card:hover .btn-request {
+  background-color: var(--primary);
+  color: var(--white);
 }
 
 /* Pagination */

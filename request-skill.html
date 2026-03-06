@@ -1,34 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Request a Skill - SkillExchange</title>
-  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"/>
-  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
-  <link rel="stylesheet" href="stylesheet/style.css"/>
-  <link rel="stylesheet" href="stylesheet/request-skill.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="stylesheet/style.css" />
+  <link rel="stylesheet" href="stylesheet/request-skill.css" />
 </head>
+
 <body>
 
-  <!-- Request Header -->
-  <header class="request-header">
-    <div class="header-left" style="flex: 1;">
-      <a href="index.html" class="logo">
-        <img src="assets/icon-w.png" alt="SkillSwap" style="height: 48px; width: auto;">
+  <header>
+    <div class="header-inner">
+      <a href="explore.html" class="back-link">
+        <span class="material-symbols-outlined">arrow_back_ios</span> BACK
       </a>
     </div>
-    <div class="request-title-bar">
-      <h2>Request Skill Page</h2>
-    </div>
-    <div style="flex: 1;"></div> <!-- Spacer -->
   </header>
 
   <div class="request-container">
-    
-    <a href="explore.html" class="back-link">
-      <span class="material-symbols-outlined">arrow_back_ios</span> BACK
-    </a>
+
 
     <div class="proposal-label">
       <span class="material-symbols-outlined">send</span> NEW PROPOSAL
@@ -45,7 +41,9 @@
         <h3 class="skill-title">Advanced Python Programming</h3>
         <div class="skill-recipient">
           <span>Recipient:</span>
-          <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuDtZQr8NeDcj0vzMrW4JKPUvQzuNO3d5-aPPM4nrkTeMmPrEMxy8js4f5pfUZZ_VFJunUQfr2YafzMWMXTNdjSCXj0OqxilF74GUlLxCFClkyA8jFHrdUZ-sdIBF4oVW0L-U8Dpm0AXX0AfDKo-Kn4r5HZL_BMTRe5S9DIxf0UogZKDn9hitS0MbEhWYO1VK-AMKTGTVi14Y0uidIikjpGXURb07YRVjHFyTkOP9cq1TTWOikj5KlZzi7DJsCA1DzpzH2fhMJyFLzk" alt="Alex Rivera">
+          <img
+            src="https://lh3.googleusercontent.com/aida-public/AB6AXuDtZQr8NeDcj0vzMrW4JKPUvQzuNO3d5-aPPM4nrkTeMmPrEMxy8js4f5pfUZZ_VFJunUQfr2YafzMWMXTNdjSCXj0OqxilF74GUlLxCFClkyA8jFHrdUZ-sdIBF4oVW0L-U8Dpm0AXX0AfDKo-Kn4r5HZL_BMTRe5S9DIxf0UogZKDn9hitS0MbEhWYO1VK-AMKTGTVi14Y0uidIikjpGXURb07YRVjHFyTkOP9cq1TTWOikj5KlZzi7DJsCA1DzpzH2fhMJyFLzk"
+            alt="Alex Rivera">
           <span style="color: #111; font-weight: 500;">Alex Rivera</span>
         </div>
       </div>
@@ -53,7 +51,7 @@
 
     <!-- Main Form Box -->
     <div class="form-card">
-      
+
       <div class="form-section-title">
         <span class="material-symbols-outlined">handshake</span> What will you offer in return?
       </div>
@@ -79,7 +77,8 @@
       </div>
       <p class="form-section-desc">Explain why you'd like to swap and how you can help them</p>
 
-      <textarea class="message-textarea" placeholder="Hi Alex! I've been looking to deepen my Python knowledge for data science. In exchange, I can provide professional UI/UX feedback for your projects or teach you the fundamentals of React..."></textarea>
+      <textarea class="message-textarea"
+        placeholder="Hi Alex! I've been looking to deepen my Python knowledge for data science. In exchange, I can provide professional UI/UX feedback for your projects or teach you the fundamentals of React..."></textarea>
 
       <div class="form-actions">
         <button class="btn-cancel" onclick="window.location.href='explore.html'">Cancel</button>
@@ -93,11 +92,14 @@
       <span class="material-symbols-outlined">lightbulb</span>
       <div class="pro-tip-content">
         <h4>Pro Tip for Skill Exchange</h4>
-        <p>Personalized messages have a <a href="#">70% higher acceptance rate</a>. Be specific about what you want to learn and what unique value you bring to the table.</p>
+        <p>Personalized messages have a <a href="#">70% higher acceptance rate</a>. Be specific about what you want to
+          learn and what unique value you bring to the table.</p>
       </div>
     </div>
 
   </div>
 
+  <script src="script.js"></script>
 </body>
+
 </html>

@@ -12,16 +12,15 @@
 <body>
 
   <!-- Dashboard Header -->
-  <header class="dashboard-header">
+  <header>
     <div class="header-inner">
-      <div class="header-left" style="gap:0">
+      <div class="header-left">
         <!-- Logo -->
         <a href="index.html" class="logo">
-          <img src="assets/icon-w.png" alt="SkillSwap" style="height: 48px; width: auto;">
+          <img src="assets/icon-w.png" alt="SkillSwap" class="nav-logo-icon">
         </a>
-        
         <!-- Desktop Nav -->
-        <nav class="main-nav">
+        <nav class="main-nav" id="main-nav">
           <a href="index.html">Home</a>
           <a href="explore.html">Explore</a>
           <a href="dashboard.html" class="active">Dashboard</a>
@@ -29,11 +28,15 @@
       </div>
 
       <div class="header-right">
+        
         <!-- User Profile Nav -->
         <div class="user-nav-profile">
           <span>My Account</span>
           <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuBMQEraWLyTowWwGLsAPSQYRDVZ3zNkd3uHLVMswaNTE-Tw6hzatUkNjl06qoA9spxRx5pLOgwHB9rmjhq0dU3yUVVt_k4t7o_epLcqaijq8AGi13pEQPoKzvsLJlBXDWxB4LTDvJ4U-lsnSMJvsWGRvbg2No9-sg9n_GwdEwgBR89mHXNtS6BkIXrMvlipsTsOfYIaml2wqxss5z8tk6iWIhhX9kv8agMT9UCasWG-cl5q1k5nopu4FOWhGa8IVwMDfZ6WrmMyDOM" alt="User Avatar">
         </div>
+        <button class="burger-menu" id="burger-menu">
+          <img src="assets/menu-burger.png" alt="Menu" style="width: 24px; height: 24px; object-fit: contain;">
+        </button>
       </div>
     </div>
   </header>
@@ -242,5 +245,6 @@
     </div>
   </footer>
 
+  <script src="script.js"></script>
 </body>
 </html>

@@ -39,9 +39,9 @@ body {
   align-items: center;
   color: #006280;
   font-weight: 700;
-  font-size: 13px;
+  font-size: 14px;
   text-decoration: none;
-  margin-bottom: 48px;
+  margin: 0;
 }
 
 .back-link .material-symbols-outlined {

@@ -5,7 +5,8 @@
   font-family: 'Manrope', sans-serif;
 }
 
-body, html {
+body,
+html {
   width: 100%;
   height: 100vh;
   margin: 0;
@@ -20,7 +21,8 @@ body, html {
 /* Left side */
 .auth-illustration {
   flex: 1;
-  background-color: #03536d; /* Dark teal */
+  background-color: #006280;
+  /* Brand Teal */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -29,9 +31,9 @@ body, html {
 }
 
 .auth-illustration img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+  width: 80%;
+  height: 80%;
+  object-fit: contain;
   position: absolute;
 }
 
@@ -56,6 +58,13 @@ body, html {
   color: #111;
   margin-bottom: 2rem;
   text-align: center;
+}
+
+.auth-logo {
+  display: block;
+  margin: 0 auto 32px;
+  height: 48px;
+  object-fit: contain;
 }
 
 .form-group {
@@ -86,7 +95,7 @@ body, html {
   background: white;
   border-radius: 1.5rem;
   padding: 0 1.25rem;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.01);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.01);
   border: 1px solid #ebf0f4;
   height: 3.5rem;
 }
@@ -135,7 +144,7 @@ body, html {
 .btn-submit {
   width: 100%;
   padding: 1.15rem;
-  background-color: #03536d;
+  background-color: #006280;
   color: white;
   border: none;
   border-radius: 2rem;
@@ -147,7 +156,7 @@ body, html {
 }
 
 .btn-submit:hover {
-  background-color: #024358;
+  background-color: #004d66;
 }
 
 /* Link */
@@ -171,10 +180,14 @@ body, html {
   .auth-container {
     flex-direction: column;
   }
+
   .auth-illustration {
     display: none;
   }
+
   .auth-form-container {
     height: 100vh;
+    align-items: flex-start;
+    padding-top: 40px;
   }
 }

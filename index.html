@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>SkillExchange – Learn a Skill, Teach a Skill</title>
+  <title>SkillSwap – Learn a Skill, Teach a Skill</title>
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&display=swap"
     rel="stylesheet" />
   <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
@@ -27,7 +27,7 @@
           </a>
           <!-- Desktop Nav -->
           <nav class="main-nav" id="main-nav">
-            <a href="#how-it-works">Home</a>
+            <a href="#how-it-works" class="active">Home</a>
             <a href="explore.html">Explore</a>
             <a href="dashboard.html">Dashboard</a>
             <!-- <a href="#testimonials">Testimonials</a> -->
@@ -268,20 +268,24 @@
           <div class="stats-mosaic">
             <div class="stats-col offset">
               <div class="stat-block square">
+                <span class="material-symbols-outlined">sentiment_very_satisfied</span>
                 <p class="stat-number">98%</p>
                 <p class="stat-label">Satisfaction Rate</p>
               </div>
               <div class="stat-block tall">
+                <span class="material-symbols-outlined">schedule</span>
                 <p class="stat-number">24/7</p>
                 <p class="stat-label">Learning Access</p>
               </div>
             </div>
             <div class="stats-col">
               <div class="stat-block tall">
+                <span class="material-symbols-outlined">psychology</span>
                 <p class="stat-number">500+</p>
                 <p class="stat-label">Unique Skills</p>
               </div>
               <div class="stat-block square">
+                <span class="material-symbols-outlined">handshake</span>
                 <p class="stat-number">1M+</p>
                 <p class="stat-label">Lessons Swapped</p>
               </div>
@@ -300,54 +304,189 @@
         </div>
 
         <div class="testimonials-grid">
+          <div class="testimonials-track">
 
-          <div class="testimonial-card">
-            <span class="material-symbols-outlined quote-icon">format_quote</span>
-            <div class="testimonial-author">
-              <div class="author-avatar"
-                style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBMQEraWLyTowWwGLsAPSQYRDVZ3zNkd3uHLVMswaNTE-Tw6hzatUkNjl06qoA9spxRx5pLOgwHB9rmjhq0dU3yUVVt_k4t7o_epLcqaijq8AGi13pEQPoKzvsLJlBXDWxB4LTDvJ4U-lsnSMJvsWGRvbg2No9-sg9n_GwdEwgBR89mHXNtS6BkIXrMvlipsTsOfYIaml2wqxss5z8tk6iWIhhX9kv8agMT9UCasWG-cl5q1k5nopu4FOWhGa8IVwMDfZ6WrmMyDOM');">
+            <!-- Set 1 -->
+            <div class="testimonial-card">
+              <span class="material-symbols-outlined quote-icon">format_quote</span>
+              <div class="testimonial-author">
+                <div class="author-avatar"
+                  style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBMQEraWLyTowWwGLsAPSQYRDVZ3zNkd3uHLVMswaNTE-Tw6hzatUkNjl06qoA9spxRx5pLOgwHB9rmjhq0dU3yUVVt_k4t7o_epLcqaijq8AGi13pEQPoKzvsLJlBXDWxB4LTDvJ4U-lsnSMJvsWGRvbg2No9-sg9n_GwdEwgBR89mHXNtS6BkIXrMvlipsTsOfYIaml2wqxss5z8tk6iWIhhX9kv8agMT9UCasWG-cl5q1k5nopu4FOWhGa8IVwMDfZ6WrmMyDOM');">
+                </div>
+                <div>
+                  <p class="author-name">Sarah Jenkins</p>
+                  <p class="author-role">UI Designer</p>
+                </div>
               </div>
-              <div>
-                <p class="author-name">Sarah Jenkins</p>
-                <p class="author-role">UI Designer</p>
-              </div>
+              <p class="testimonial-quote">"I taught French to a developer in Berlin, and in exchange, he taught me React.
+                Now I'm a full-fledged Product Designer!"</p>
             </div>
-            <p class="testimonial-quote">"I taught French to a developer in Berlin, and in exchange, he taught me React.
-              Now I'm a full-fledged Product Designer!"</p>
-          </div>
 
-          <div class="testimonial-card featured">
-            <span class="material-symbols-outlined quote-icon">format_quote</span>
-            <div class="testimonial-author">
-              <div class="author-avatar"
-                style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDtZQr8NeDcj0vzMrW4JKPUvQzuNO3d5-aPPM4nrkTeMmPrEMxy8js4f5pfUZZ_VFJunUQfr2YafzMWMXTNdjSCXj0OqxilF74GUlLxCFClkyA8jFHrdUZ-sdIBF4oVW0L-U8Dpm0AXX0AfDKo-Kn4r5HZL_BMTRe5S9DIxf0UogZKDn9hitS0MbEhWYO1VK-AMKTGTVi14Y0uidIikjpGXURb07YRVjHFyTkOP9cq1TTWOikj5KlZzi7DJsCA1DzpzH2fhMJyFLzk');">
+            <div class="testimonial-card featured">
+              <span class="material-symbols-outlined quote-icon">format_quote</span>
+              <div class="testimonial-author">
+                <div class="author-avatar"
+                  style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDtZQr8NeDcj0vzMrW4JKPUvQzuNO3d5-aPPM4nrkTeMmPrEMxy8js4f5pfUZZ_VFJunUQfr2YafzMWMXTNdjSCXj0OqxilF74GUlLxCFClkyA8jFHrdUZ-sdIBF4oVW0L-U8Dpm0AXX0AfDKo-Kn4r5HZL_BMTRe5S9DIxf0UogZKDn9hitS0MbEhWYO1VK-AMKTGTVi14Y0uidIikjpGXURb07YRVjHFyTkOP9cq1TTWOikj5KlZzi7DJsCA1DzpzH2fhMJyFLzk');">
+                </div>
+                <div>
+                  <p class="author-name">Marcus Chen</p>
+                  <p class="author-role">Software Engineer</p>
+                </div>
               </div>
-              <div>
-                <p class="author-name">Marcus Chen</p>
-                <p class="author-role">Software Engineer</p>
-              </div>
+              <p class="testimonial-quote">"SkillExchange is the most wholesome part of the internet. The community is
+                supportive and the matches are spot on."</p>
             </div>
-            <p class="testimonial-quote">"SkillExchange is the most wholesome part of the internet. The community is
-              supportive and the matches are spot on."</p>
-          </div>
 
-          <div class="testimonial-card">
-            <span class="material-symbols-outlined quote-icon">format_quote</span>
-            <div class="testimonial-author">
-              <div class="author-avatar"
-                style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCV25Ys-syTomckdeXfKHPavW_Mk7w7c6OJwhx-UtZ09zzrKEtTtyGStfylkiv_kKEkHlRLnUDWF_TkdCY5piWwq_kXeG-R5ubYAxR8yEx1N1EGyjFnllOL9_UTAR39Uo9iQssdRkvnILs_vkIF-o5iCJyj8sxqORhYddS6CoBa7nZC5fnTAofTPLBSfHeRDhoqr3dk7CgmIgkLDzyC66yN72f1Zu6L6ZSHPPsr5tT0PnZMRly-JBBacNf35e5iqnA1ym1hnAksCLY');">
+            <div class="testimonial-card">
+              <span class="material-symbols-outlined quote-icon">format_quote</span>
+              <div class="testimonial-author">
+                <div class="author-avatar"
+                  style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCV25Ys-syTomckdeXfKHPavW_Mk7w7c6OJwhx-UtZ09zzrKEtTtyGStfylkiv_kKEkHlRLnUDWF_TkdCY5piWwq_kXeG-R5ubYAxR8yEx1N1EGyjFnllOL9_UTAR39Uo9iQssdRkvnILs_vkIF-o5iCJyj8sxqORhYddS6CoBa7nZC5fnTAofTPLBSfHeRDhoqr3dk7CgmIgkLDzyC66yN72f1Zu6L6ZSHPPsr5tT0PnZMRly-JBBacNf35e5iqnA1ym1hnAksCLY');">
+                </div>
+                <div>
+                  <p class="author-name">Elena Rodriguez</p>
+                  <p class="author-role">Marketing Lead</p>
+                </div>
               </div>
-              <div>
-                <p class="author-name">Elena Rodriguez</p>
-                <p class="author-role">Marketing Lead</p>
-              </div>
+              <p class="testimonial-quote">"I never thought I could learn photography for free. This platform has saved me
+                thousands in course fees."</p>
             </div>
-            <p class="testimonial-quote">"I never thought I could learn photography for free. This platform has saved me
-              thousands in course fees."</p>
-          </div>
 
+            <div class="testimonial-card">
+              <span class="material-symbols-outlined quote-icon">format_quote</span>
+              <div class="testimonial-author">
+                <div class="author-avatar"
+                  style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBMQEraWLyTowWwGLsAPSQYRDVZ3zNkd3uHLVMswaNTE-Tw6hzatUkNjl06qoA9spxRx5pLOgwHB9rmjhq0dU3yUVVt_k4t7o_epLcqaijq8AGi13pEQPoKzvsLJlBXDWxB4LTDvJ4U-lsnSMJvsWGRvbg2No9-sg9n_GwdEwgBR89mHXNtS6BkIXrMvlipsTsOfYIaml2wqxss5z8tk6iWIhhX9kv8agMT9UCasWG-cl5q1k5nopu4FOWhGa8IVwMDfZ6WrmMyDOM');">
+                </div>
+                <div>
+                  <p class="author-name">David Silva</p>
+                  <p class="author-role">Graphic Designer</p>
+                </div>
+              </div>
+              <p class="testimonial-quote">"I swapped my Photoshop skills for guitar lessons. The flexibility of scheduling makes it easy to stick with the program!"</p>
+            </div>
+
+            <div class="testimonial-card">
+              <span class="material-symbols-outlined quote-icon">format_quote</span>
+              <div class="testimonial-author">
+                <div class="author-avatar"
+                  style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDtZQr8NeDcj0vzMrW4JKPUvQzuNO3d5-aPPM4nrkTeMmPrEMxy8js4f5pfUZZ_VFJunUQfr2YafzMWMXTNdjSCXj0OqxilF74GUlLxCFClkyA8jFHrdUZ-sdIBF4oVW0L-U8Dpm0AXX0AfDKo-Kn4r5HZL_BMTRe5S9DIxf0UogZKDn9hitS0MbEhWYO1VK-AMKTGTVi14Y0uidIikjpGXURb07YRVjHFyTkOP9cq1TTWOikj5KlZzi7DJsCA1DzpzH2fhMJyFLzk');">
+                </div>
+                <div>
+                  <p class="author-name">Amelia K.</p>
+                  <p class="author-role">Business Analyst</p>
+                </div>
+              </div>
+              <p class="testimonial-quote">"Learning data analysis here helped me secure a promotion at work. The one-on-one mentorship format is truly unmatched."</p>
+            </div>
+
+            <div class="testimonial-card">
+              <span class="material-symbols-outlined quote-icon">format_quote</span>
+              <div class="testimonial-author">
+                <div class="author-avatar"
+                  style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCV25Ys-syTomckdeXfKHPavW_Mk7w7c6OJwhx-UtZ09zzrKEtTtyGStfylkiv_kKEkHlRLnUDWF_TkdCY5piWwq_kXeG-R5ubYAxR8yEx1N1EGyjFnllOL9_UTAR39Uo9iQssdRkvnILs_vkIF-o5iCJyj8sxqORhYddS6CoBa7nZC5fnTAofTPLBSfHeRDhoqr3dk7CgmIgkLDzyC66yN72f1Zu6L6ZSHPPsr5tT0PnZMRly-JBBacNf35e5iqnA1ym1hnAksCLY');">
+                </div>
+                <div>
+                  <p class="author-name">Oliver Twist</p>
+                  <p class="author-role">Student</p>
+                </div>
+              </div>
+              <p class="testimonial-quote">"As a college student on a budget, SkillSwap is a lifesaver. I get to learn real-world tools that my professors don't cover."</p>
+            </div>
+
+            <!-- Set 2 (Duplicated for Seamless Scroll) -->
+            <div class="testimonial-card">
+              <span class="material-symbols-outlined quote-icon">format_quote</span>
+              <div class="testimonial-author">
+                <div class="author-avatar"
+                  style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBMQEraWLyTowWwGLsAPSQYRDVZ3zNkd3uHLVMswaNTE-Tw6hzatUkNjl06qoA9spxRx5pLOgwHB9rmjhq0dU3yUVVt_k4t7o_epLcqaijq8AGi13pEQPoKzvsLJlBXDWxB4LTDvJ4U-lsnSMJvsWGRvbg2No9-sg9n_GwdEwgBR89mHXNtS6BkIXrMvlipsTsOfYIaml2wqxss5z8tk6iWIhhX9kv8agMT9UCasWG-cl5q1k5nopu4FOWhGa8IVwMDfZ6WrmMyDOM');">
+                </div>
+                <div>
+                  <p class="author-name">Sarah Jenkins</p>
+                  <p class="author-role">UI Designer</p>
+                </div>
+              </div>
+              <p class="testimonial-quote">"I taught French to a developer in Berlin, and in exchange, he taught me React.
+                Now I'm a full-fledged Product Designer!"</p>
+            </div>
+
+            <div class="testimonial-card featured">
+              <span class="material-symbols-outlined quote-icon">format_quote</span>
+              <div class="testimonial-author">
+                <div class="author-avatar"
+                  style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDtZQr8NeDcj0vzMrW4JKPUvQzuNO3d5-aPPM4nrkTeMmPrEMxy8js4f5pfUZZ_VFJunUQfr2YafzMWMXTNdjSCXj0OqxilF74GUlLxCFClkyA8jFHrdUZ-sdIBF4oVW0L-U8Dpm0AXX0AfDKo-Kn4r5HZL_BMTRe5S9DIxf0UogZKDn9hitS0MbEhWYO1VK-AMKTGTVi14Y0uidIikjpGXURb07YRVjHFyTkOP9cq1TTWOikj5KlZzi7DJsCA1DzpzH2fhMJyFLzk');">
+                </div>
+                <div>
+                  <p class="author-name">Marcus Chen</p>
+                  <p class="author-role">Software Engineer</p>
+                </div>
+              </div>
+              <p class="testimonial-quote">"SkillExchange is the most wholesome part of the internet. The community is
+                supportive and the matches are spot on."</p>
+            </div>
+
+            <div class="testimonial-card">
+              <span class="material-symbols-outlined quote-icon">format_quote</span>
+              <div class="testimonial-author">
+                <div class="author-avatar"
+                  style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCV25Ys-syTomckdeXfKHPavW_Mk7w7c6OJwhx-UtZ09zzrKEtTtyGStfylkiv_kKEkHlRLnUDWF_TkdCY5piWwq_kXeG-R5ubYAxR8yEx1N1EGyjFnllOL9_UTAR39Uo9iQssdRkvnILs_vkIF-o5iCJyj8sxqORhYddS6CoBa7nZC5fnTAofTPLBSfHeRDhoqr3dk7CgmIgkLDzyC66yN72f1Zu6L6ZSHPPsr5tT0PnZMRly-JBBacNf35e5iqnA1ym1hnAksCLY');">
+                </div>
+                <div>
+                  <p class="author-name">Elena Rodriguez</p>
+                  <p class="author-role">Marketing Lead</p>
+                </div>
+              </div>
+              <p class="testimonial-quote">"I never thought I could learn photography for free. This platform has saved me
+                thousands in course fees."</p>
+            </div>
+
+            <div class="testimonial-card">
+              <span class="material-symbols-outlined quote-icon">format_quote</span>
+              <div class="testimonial-author">
+                <div class="author-avatar"
+                  style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBMQEraWLyTowWwGLsAPSQYRDVZ3zNkd3uHLVMswaNTE-Tw6hzatUkNjl06qoA9spxRx5pLOgwHB9rmjhq0dU3yUVVt_k4t7o_epLcqaijq8AGi13pEQPoKzvsLJlBXDWxB4LTDvJ4U-lsnSMJvsWGRvbg2No9-sg9n_GwdEwgBR89mHXNtS6BkIXrMvlipsTsOfYIaml2wqxss5z8tk6iWIhhX9kv8agMT9UCasWG-cl5q1k5nopu4FOWhGa8IVwMDfZ6WrmMyDOM');">
+                </div>
+                <div>
+                  <p class="author-name">David Silva</p>
+                  <p class="author-role">Graphic Designer</p>
+                </div>
+              </div>
+              <p class="testimonial-quote">"I swapped my Photoshop skills for guitar lessons. The flexibility of scheduling makes it easy to stick with the program!"</p>
+            </div>
+
+            <div class="testimonial-card">
+              <span class="material-symbols-outlined quote-icon">format_quote</span>
+              <div class="testimonial-author">
+                <div class="author-avatar"
+                  style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDtZQr8NeDcj0vzMrW4JKPUvQzuNO3d5-aPPM4nrkTeMmPrEMxy8js4f5pfUZZ_VFJunUQfr2YafzMWMXTNdjSCXj0OqxilF74GUlLxCFClkyA8jFHrdUZ-sdIBF4oVW0L-U8Dpm0AXX0AfDKo-Kn4r5HZL_BMTRe5S9DIxf0UogZKDn9hitS0MbEhWYO1VK-AMKTGTVi14Y0uidIikjpGXURb07YRVjHFyTkOP9cq1TTWOikj5KlZzi7DJsCA1DzpzH2fhMJyFLzk');">
+                </div>
+                <div>
+                  <p class="author-name">Amelia K.</p>
+                  <p class="author-role">Business Analyst</p>
+                </div>
+              </div>
+              <p class="testimonial-quote">"Learning data analysis here helped me secure a promotion at work. The one-on-one mentorship format is truly unmatched."</p>
+            </div>
+
+            <div class="testimonial-card">
+              <span class="material-symbols-outlined quote-icon">format_quote</span>
+              <div class="testimonial-author">
+                <div class="author-avatar"
+                  style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCV25Ys-syTomckdeXfKHPavW_Mk7w7c6OJwhx-UtZ09zzrKEtTtyGStfylkiv_kKEkHlRLnUDWF_TkdCY5piWwq_kXeG-R5ubYAxR8yEx1N1EGyjFnllOL9_UTAR39Uo9iQssdRkvnILs_vkIF-o5iCJyj8sxqORhYddS6CoBa7nZC5fnTAofTPLBSfHeRDhoqr3dk7CgmIgkLDzyC66yN72f1Zu6L6ZSHPPsr5tT0PnZMRly-JBBacNf35e5iqnA1ym1hnAksCLY');">
+                </div>
+                <div>
+                  <p class="author-name">Oliver Twist</p>
+                  <p class="author-role">Student</p>
+                </div>
+              </div>
+              <p class="testimonial-quote">"As a college student on a budget, SkillSwap is a lifesaver. I get to learn real-world tools that my professors don't cover."</p>
+            </div>
+
+          </div>
         </div>
       </section>
+
+      
 
       <!-- ── CTA ── -->
       <section class="cta-section">
@@ -358,6 +497,52 @@
           <div class="cta-actions">
             <button class="btn-cta-primary" onclick="window.location.href='signup.html'">Start Swapping Now</button>
             <button class="btn-cta-secondary">View Skill Feed</button>
+          </div>
+        </div>
+      </section>
+
+      <!-- ── FAQ ── -->
+      <section class="faq-section" id="faq">
+        <div class="section-header">
+          <h2 class="section-title">Frequently Asked Questions</h2>
+          <p class="section-subtitle">Got questions? We've got answers.</p>
+        </div>
+        <div class="faq-container">
+          <div class="faq-item">
+            <div class="faq-question">
+              <h3>Is SkillExchange really free?</h3>
+              <span class="material-symbols-outlined plus-icon">add</span>
+            </div>
+            <div class="faq-answer">
+              <p>Yes! We operate purely on a time-bank system. When you teach a skill for an hour, you earn an hour to spend learning a skill from anyone else on the platform. No money is exchanged!</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-question">
+              <h3>Do I need to be an expert to teach?</h3>
+              <span class="material-symbols-outlined plus-icon">add</span>
+            </div>
+            <div class="faq-answer">
+              <p>Not at all. Everyone has something to share. Whether you're an advanced professional or simply enthusiatic about a hobby, there's a learner out there looking for exactly your level of experience.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-question">
+              <h3>How are sessions conducted?</h3>
+              <span class="material-symbols-outlined plus-icon">add</span>
+            </div>
+            <div class="faq-answer">
+              <p>Most sessions are conducted virtually using our built-in video streaming tools. You can also connect via third party platforms like Zoom or Google Meet if you and your learning partner prefer.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-question">
+              <h3>What if my partner doesn't show up?</h3>
+              <span class="material-symbols-outlined plus-icon">add</span>
+            </div>
+            <div class="faq-answer">
+              <p>If a partner fails to join a scheduled meeting, your time credits are automatically refunded by our system. Repeated no-shows are flagged by our moderation team to keep the community reliable.</p>
+            </div>
           </div>
         </div>
       </section>
