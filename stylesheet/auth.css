@@ -270,3 +270,101 @@ button:focus {
     font-size: 11px;
   }
 }
+
+/* ── Dark Mode Toggle (Auth Pages) ── */
+.auth-theme-toggle {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 50%;
+  width: 44px;
+  height: 44px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: all 0.25s ease;
+  z-index: 100;
+  color: #333;
+}
+
+.auth-theme-toggle:hover {
+  transform: scale(1.08);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.auth-theme-toggle .icon-light { display: none; }
+.auth-theme-toggle .icon-dark  { display: flex; }
+
+body.dark-mode .auth-theme-toggle .icon-light { display: flex; }
+body.dark-mode .auth-theme-toggle .icon-dark  { display: none; }
+
+/* ── Dark Mode Overrides ── */
+body.dark-mode {
+  background: #0f1419;
+}
+
+body.dark-mode .auth-theme-toggle {
+  background: #1c2128;
+  border-color: #30363d;
+  color: #e6edf3;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+body.dark-mode .auth-card {
+  background-color: #1c2128;
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.4), 0 10px 10px rgba(0, 0, 0, 0.3);
+}
+
+body.dark-mode .form-section {
+  background-color: #1c2128;
+}
+
+body.dark-mode h1 {
+  color: #e6edf3;
+}
+
+body.dark-mode .form-section span {
+  color: #6e7681;
+}
+
+body.dark-mode .social-container .social {
+  border-color: #30363d;
+}
+
+body.dark-mode .social-container .social:hover {
+  border-color: #484f58;
+  background-color: #242a32;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+body.dark-mode .form-section input {
+  background-color: #161b22;
+  color: #e6edf3;
+  border-color: transparent;
+}
+
+body.dark-mode .form-section input:focus {
+  border-color: #0097c7;
+  background-color: #0d1117;
+}
+
+body.dark-mode .form-section input::placeholder {
+  color: #6e7681;
+}
+
+body.dark-mode .input-group i {
+  color: #6e7681;
+}
+
+body.dark-mode .forgot-pass {
+  color: #8b949e;
+}
+
+body.dark-mode .info-section {
+  background: linear-gradient(135deg, #00607a, #003d4f);
+}

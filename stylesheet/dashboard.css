@@ -430,3 +430,144 @@ body {
     display: none;
   }
 }
+
+/* ── Dark Mode Overrides ── */
+body.dark-mode {
+  background-color: #0f1419;
+}
+
+body.dark-mode .profile-card {
+  background-color: #1c2128;
+  border-color: rgba(0, 151, 199, 0.12);
+}
+
+body.dark-mode .profile-card img {
+  border-color: #30363d;
+}
+
+body.dark-mode .profile-card h3 {
+  color: #e6edf3;
+}
+
+body.dark-mode .profile-card p {
+  color: #8b949e;
+}
+
+body.dark-mode .profile-stats {
+  border-bottom-color: #30363d;
+}
+
+body.dark-mode .stat-item h4 {
+  color: #3db8e5;
+}
+
+body.dark-mode .stat-item span {
+  color: #6e7681;
+}
+
+body.dark-mode .btn-edit-profile {
+  background-color: #242a32;
+  color: #e6edf3;
+}
+
+body.dark-mode .btn-edit-profile:hover {
+  background-color: #30363d;
+}
+
+body.dark-mode .sidebar-nav {
+  background-color: #1c2128;
+  border-color: rgba(0, 151, 199, 0.12);
+}
+
+body.dark-mode .sidebar-nav a {
+  color: #8b949e;
+}
+
+body.dark-mode .sidebar-nav a:hover,
+body.dark-mode .sidebar-nav a.active {
+  background-color: rgba(0, 151, 199, 0.06);
+  color: #3db8e5;
+  border-left-color: #3db8e5;
+}
+
+body.dark-mode .dashboard-section-title {
+  color: #e6edf3;
+}
+
+body.dark-mode .request-card {
+  background-color: #1c2128;
+  border-color: rgba(0, 151, 199, 0.12);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+body.dark-mode .request-details h4 {
+  color: #e6edf3;
+}
+
+body.dark-mode .request-details p {
+  color: #8b949e;
+}
+
+body.dark-mode .skill-tag {
+  background-color: #242a32;
+  color: #b1bac4;
+}
+
+body.dark-mode .skill-tag.primary {
+  background-color: rgba(0, 151, 199, 0.12);
+  color: #3db8e5;
+}
+
+body.dark-mode .exchange-direction {
+  color: #6e7681;
+}
+
+body.dark-mode .btn-decline {
+  background-color: #242a32;
+  color: #8b949e;
+  border-color: #30363d;
+}
+
+body.dark-mode .btn-decline:hover {
+  background-color: #30363d;
+  color: #e6edf3;
+}
+
+body.dark-mode .session-card {
+  background-color: #1c2128;
+  border-color: rgba(0, 151, 199, 0.12);
+}
+
+body.dark-mode .session-status {
+  background-color: rgba(22, 163, 74, 0.15);
+  color: #4ade80;
+}
+
+body.dark-mode .session-date {
+  color: #8b949e;
+}
+
+body.dark-mode .session-partner h4 {
+  color: #e6edf3;
+}
+
+body.dark-mode .session-partner p {
+  color: #8b949e;
+}
+
+body.dark-mode .btn-join-call {
+  background-color: #242a32;
+  color: #3db8e5;
+}
+
+body.dark-mode .btn-join-call:hover {
+  background-color: #30363d;
+}
+
+body.dark-mode .user-nav-profile span {
+  color: #e6edf3;
+}
+
+body.dark-mode .user-nav-profile img {
+  border-color: #30363d;
+}

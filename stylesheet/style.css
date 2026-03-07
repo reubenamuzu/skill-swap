@@ -1229,3 +1229,196 @@ footer {
     grid-column: span 1;
   }
 }
+
+/* ============================================================
+   DARK MODE TOGGLE
+   ============================================================ */
+.theme-toggle {
+  background: none;
+  border: 1px solid var(--primary-10);
+  border-radius: 8px;
+  padding: 6px 8px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--slate-600);
+  transition: all 0.25s ease;
+}
+
+.theme-toggle:hover {
+  background-color: var(--primary-05);
+  color: var(--primary);
+  border-color: var(--primary-20);
+}
+
+.theme-toggle .material-symbols-outlined {
+  font-size: 20px;
+}
+
+/* Hide the icon that doesn't match the current mode */
+.theme-toggle .icon-light { display: none; }
+.theme-toggle .icon-dark  { display: flex; }
+
+body.dark-mode .theme-toggle .icon-light { display: flex; }
+body.dark-mode .theme-toggle .icon-dark  { display: none; }
+
+/* ============================================================
+   DARK MODE OVERRIDES
+   ============================================================ */
+body.dark-mode {
+  --bg-light: #0f1419;
+  --white: #1c2128;
+  --slate-200: #30363d;
+  --slate-400: #6e7681;
+  --slate-500: #8b949e;
+  --slate-600: #b1bac4;
+  --slate-900: #e6edf3;
+  --text: #e6edf3;
+  --primary-05: rgba(0, 151, 199, 0.06);
+  --primary-10: rgba(0, 151, 199, 0.12);
+  --primary-20: rgba(0, 151, 199, 0.20);
+  --primary-30: rgba(0, 151, 199, 0.30);
+  background-color: var(--bg-light);
+  color: var(--text);
+}
+
+/* Header */
+body.dark-mode header {
+  background-color: rgba(15, 20, 25, 0.90);
+  border-bottom-color: var(--primary-10);
+}
+
+body.dark-mode .main-nav a {
+  color: var(--slate-500);
+}
+
+body.dark-mode .main-nav a:hover,
+body.dark-mode .main-nav a.active {
+  color: #3db8e5;
+}
+
+body.dark-mode .search-box {
+  background-color: rgba(0, 151, 199, 0.06);
+  border-color: var(--primary-10);
+}
+
+body.dark-mode .search-box input {
+  color: var(--text);
+}
+
+@media (max-width: 767px) {
+  body.dark-mode .main-nav {
+    background-color: #1c2128;
+    border-bottom-color: var(--primary-10);
+  }
+}
+
+/* Theme toggle dark mode styling */
+body.dark-mode .theme-toggle {
+  color: var(--slate-500);
+  border-color: var(--primary-10);
+}
+
+body.dark-mode .theme-toggle:hover {
+  color: #3db8e5;
+  background-color: rgba(0, 151, 199, 0.08);
+}
+
+/* Hero */
+body.dark-mode .hero-title {
+  color: var(--text);
+}
+
+body.dark-mode .btn-hero-secondary {
+  background-color: var(--white);
+  color: var(--text);
+  border-color: var(--primary-20);
+}
+
+body.dark-mode .stats-card {
+  background-color: #1c2128;
+  border-color: var(--primary-10);
+}
+
+/* How it Works */
+body.dark-mode .how-it-works {
+  background-color: var(--white);
+}
+
+body.dark-mode .step-card {
+  background-color: rgba(0, 151, 199, 0.04);
+  border-color: var(--primary-10);
+}
+
+body.dark-mode .step-card:hover {
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.3);
+}
+
+/* Skill Cards */
+body.dark-mode .skill-card {
+  background-color: var(--white);
+  border-color: var(--primary-10);
+}
+
+body.dark-mode .skill-card:hover {
+  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.4);
+}
+
+/* Why Us - already dark, no major changes needed */
+
+/* Testimonials */
+body.dark-mode .testimonials {
+  background-color: var(--white);
+}
+
+body.dark-mode .testimonial-card {
+  background-color: var(--bg-light);
+  border-color: transparent;
+}
+
+body.dark-mode .testimonial-card:hover {
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.3);
+  border-color: var(--primary-10);
+}
+
+body.dark-mode .testimonial-card.featured {
+  background-color: #242a32;
+  border-color: var(--primary-10);
+}
+
+/* FAQ */
+body.dark-mode .faq-section {
+  background-color: var(--white);
+}
+
+body.dark-mode .faq-item {
+  background-color: var(--bg-light);
+  border-color: var(--primary-10);
+}
+
+body.dark-mode .faq-question h3 {
+  color: var(--text);
+}
+
+/* CTA */
+body.dark-mode .cta-box {
+  background-color: rgba(0, 151, 199, 0.04);
+  border-color: var(--primary-20);
+}
+
+body.dark-mode .btn-cta-secondary {
+  background-color: var(--white);
+  color: var(--text);
+  border-color: var(--slate-200);
+}
+
+/* Footer */
+body.dark-mode footer {
+  background-color: var(--bg-light);
+  border-top-color: var(--primary-10);
+}
+
+body.dark-mode .footer-bottom {
+  border-top-color: var(--primary-10);
+}

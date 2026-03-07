@@ -243,3 +243,74 @@
     display: none;
   }
 }
+
+/* ── Dark Mode Overrides ── */
+body.dark-mode .explore-title-text {
+  color: #e6edf3;
+}
+
+body.dark-mode .explore-subtitle-text {
+  color: #8b949e;
+}
+
+body.dark-mode .explore-card {
+  background-color: #1c2128;
+  border-color: rgba(0, 151, 199, 0.12);
+}
+
+body.dark-mode .explore-card:hover {
+  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.4);
+}
+
+body.dark-mode .explore-card-title {
+  color: #e6edf3;
+}
+
+body.dark-mode .explore-card-rating {
+  color: #e6edf3;
+}
+
+body.dark-mode .explore-card-reviews {
+  color: #6e7681;
+}
+
+body.dark-mode .explore-card-desc {
+  color: #8b949e;
+}
+
+body.dark-mode .explore-card-instructor span {
+  color: #8b949e;
+}
+
+body.dark-mode .page-item {
+  background-color: #1c2128;
+  color: #b1bac4;
+  border-color: #30363d;
+}
+
+body.dark-mode .page-item:hover:not(.dots) {
+  border-color: #484f58;
+}
+
+body.dark-mode .page-item.active {
+  background-color: #006280;
+  color: #fff;
+  border-color: #006280;
+}
+
+body.dark-mode .page-item.dots {
+  background: transparent;
+  color: #6e7681;
+}
+
+body.dark-mode .explore-header .search-box {
+  background-color: #161b22;
+}
+
+body.dark-mode .explore-header .search-box input {
+  color: #e6edf3;
+}
+
+body.dark-mode .explore-header .search-box .material-symbols-outlined {
+  color: #6e7681;
+}

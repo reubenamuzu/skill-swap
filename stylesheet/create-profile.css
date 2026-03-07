@@ -147,3 +147,59 @@ body {
     padding: 24px;
   }
 }
+
+/* ── Dark Mode Overrides ── */
+body.dark-mode {
+  background-color: #0f1419;
+}
+
+body.dark-mode .create-profile-container {
+  background-color: #1c2128;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+}
+
+body.dark-mode .create-profile-header {
+  background-color: #003d4f;
+}
+
+body.dark-mode .form-group label {
+  color: #e6edf3;
+}
+
+body.dark-mode .form-group input,
+body.dark-mode .form-group select {
+  background-color: #161b22;
+  border-color: #30363d;
+  color: #e6edf3;
+}
+
+body.dark-mode .form-group input:focus,
+body.dark-mode .form-group select:focus {
+  border-color: #0097c7;
+}
+
+body.dark-mode .form-group input::placeholder {
+  color: #6e7681;
+}
+
+body.dark-mode .tags-input-wrapper {
+  background-color: #161b22;
+  border-color: #30363d;
+}
+
+body.dark-mode .tags-input-wrapper:focus-within {
+  border-color: #0097c7;
+}
+
+body.dark-mode .tag {
+  background-color: rgba(0, 151, 199, 0.12);
+  color: #3db8e5;
+}
+
+body.dark-mode .tag-input {
+  color: #e6edf3;
+}
+
+body.dark-mode .btn-submit-profile:hover {
+  background-color: #003d4f;
+}

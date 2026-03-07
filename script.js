@@ -1,4 +1,12 @@
 
+// ── Dark Mode ──
+// Apply saved theme immediately (before DOMContentLoaded) to prevent flash
+(function() {
+  if (localStorage.getItem('theme') === 'dark') {
+    document.body.classList.add('dark-mode');
+  }
+})();
+
 // Mobile Menu Toggle
 document.addEventListener('DOMContentLoaded', () => {
   const burgerMenu = document.getElementById('burger-menu');
@@ -29,6 +37,15 @@ document.addEventListener('DOMContentLoaded', () => {
       lastScrollY = window.scrollY;
     });
   }
+
+  // Dark Mode Toggle
+  document.querySelectorAll('.theme-toggle, .auth-theme-toggle').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.body.classList.toggle('dark-mode');
+      const isDark = document.body.classList.contains('dark-mode');
+      localStorage.setItem('theme', isDark ? 'dark' : 'light');
+    });
+  });
 
   // FAQ Accordion
   const faqItems = document.querySelectorAll('.faq-item');

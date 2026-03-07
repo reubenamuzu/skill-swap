@@ -343,3 +343,101 @@ body {
     padding: 12px;
   }
 }
+
+/* ── Dark Mode Overrides ── */
+body.dark-mode {
+  background-color: #0f1419;
+}
+
+body.dark-mode .request-heading {
+  color: #e6edf3;
+}
+
+body.dark-mode .request-subheading {
+  color: #8b949e;
+}
+
+body.dark-mode .request-title-bar h2 {
+  color: #e6edf3;
+}
+
+body.dark-mode .skill-info-card {
+  background-color: #1c2128;
+  border-color: rgba(0, 151, 199, 0.12);
+}
+
+body.dark-mode .skill-badge {
+  background-color: rgba(0, 151, 199, 0.12);
+  color: #3db8e5;
+}
+
+body.dark-mode .skill-title {
+  color: #e6edf3;
+}
+
+body.dark-mode .skill-recipient {
+  color: #8b949e;
+}
+
+body.dark-mode .form-card {
+  background-color: #1c2128;
+  border-color: rgba(0, 151, 199, 0.12);
+}
+
+body.dark-mode .form-section-title {
+  color: #e6edf3;
+}
+
+body.dark-mode .form-section-desc {
+  color: #8b949e;
+}
+
+body.dark-mode .custom-select {
+  background-color: #161b22;
+  border-color: #30363d;
+  color: #b1bac4;
+}
+
+body.dark-mode .chip {
+  background-color: rgba(0, 151, 199, 0.12);
+  color: #3db8e5;
+}
+
+body.dark-mode .message-textarea {
+  background-color: #161b22;
+  border-color: #30363d;
+  color: #e6edf3;
+}
+
+body.dark-mode .message-textarea::placeholder {
+  color: #6e7681;
+}
+
+body.dark-mode .form-actions {
+  border-top-color: #30363d;
+}
+
+body.dark-mode .btn-cancel {
+  color: #8b949e;
+}
+
+body.dark-mode .pro-tip {
+  background-color: rgba(0, 151, 199, 0.06);
+  border-color: rgba(0, 151, 199, 0.12);
+}
+
+body.dark-mode .pro-tip-content h4 {
+  color: #e6edf3;
+}
+
+body.dark-mode .pro-tip-content p {
+  color: #8b949e;
+}
+
+body.dark-mode .back-link {
+  color: #3db8e5;
+}
+
+body.dark-mode .proposal-label {
+  color: #3db8e5;
+}
