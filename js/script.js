@@ -61,6 +61,20 @@ function handleImageUpload(file, onSuccess) {
   reader.readAsDataURL(file);
 }
 
+function initPasswordToggle(inputId) {
+  const input = document.getElementById(inputId);
+  if (!input) return;
+  const btn = input.closest('.input-group').querySelector('.password-toggle');
+  if (!btn) return;
+  btn.addEventListener('click', () => {
+    const isVisible = input.type === 'text';
+    input.type = isVisible ? 'password' : 'text';
+    btn.setAttribute('aria-label', isVisible ? 'Show password' : 'Hide password');
+    const icon = btn.querySelector('i');
+    if (icon) icon.className = isVisible ? 'fas fa-eye' : 'fas fa-eye-slash';
+  });
+}
+
 function renderSkillTags(containerId, skills) {
   const container = document.getElementById(containerId);
   if (!container) return;
@@ -400,4 +414,6 @@ document.addEventListener('DOMContentLoaded', () => {
   initCreateProfile();
   initSearchToggle();
   initDashboard();
+  initPasswordToggle('login-password');
+  initPasswordToggle('signup-password');
 });

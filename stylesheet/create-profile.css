@@ -164,6 +164,7 @@ body {
 /* ── Dark Mode Overrides ── */
 body.dark-mode {
   background-color: #0f1419;
+  color: var(--text);
 }
 
 body.dark-mode .create-profile-container {
@@ -173,6 +174,7 @@ body.dark-mode .create-profile-container {
 
 body.dark-mode .create-profile-header {
   background-color: #003d4f;
+  color: #ffffff;
 }
 
 body.dark-mode .form-group label {

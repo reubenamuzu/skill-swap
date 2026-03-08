@@ -281,6 +281,8 @@ button:focus {
   border-radius: 50%;
   width: 44px;
   height: 44px;
+  padding: 0;
+  margin: 0;
   cursor: pointer;
   display: flex;
   align-items: center;
@@ -306,6 +308,7 @@ body.dark-mode .auth-theme-toggle .icon-dark  { display: none; }
 /* ── Dark Mode Overrides ── */
 body.dark-mode {
   background: #0f1419;
+  color: var(--text);
 }
 
 body.dark-mode .auth-theme-toggle {
@@ -367,6 +370,11 @@ body.dark-mode .forgot-pass {
 
 body.dark-mode .info-section {
   background: linear-gradient(135deg, #00607a, #003d4f);
+  color: #ffffff;
+}
+
+body.dark-mode .info-section h1 {
+  color: #ffffff;
 }
 
 /* ── Form error messages ── */
@@ -382,4 +390,47 @@ body.dark-mode .info-section {
 
 body.dark-mode .form-error {
   color: var(--error-dark);
+}
+
+/* ── Password Toggle ── */
+.password-toggle {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  padding: 0;
+  margin: 0;
+  width: auto;
+  color: #aaa;
+  font-size: 14px;
+  cursor: pointer;
+  transition: color 0.25s ease;
+  display: flex;
+  align-items: center;
+  z-index: 1;
+}
+
+.password-toggle:hover {
+  color: var(--primary);
+  transform: translateY(-50%);
+  box-shadow: none;
+  background: none;
+}
+
+.password-toggle:active {
+  transform: translateY(-50%) scale(0.97);
+}
+
+.input-group:has(.password-toggle) input {
+  padding-right: 40px;
+}
+
+body.dark-mode .password-toggle {
+  color: #6e7681;
+}
+
+body.dark-mode .password-toggle:hover {
+  color: var(--accent);
 }
