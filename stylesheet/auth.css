@@ -1,5 +1,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;800&display=swap');
 
+@property --border-angle {
+  syntax: '<angle>';
+  inherits: true;
+  initial-value: 0turn;
+}
+
+@keyframes border-spin {
+  to { --border-angle: 1turn; }
+}
+
 *, *::before, *::after {
   box-sizing: border-box;
 }
@@ -34,7 +44,21 @@ body {
 
 /* ── Card ────────────────────────────────────────────────────── */
 .auth-card {
-  background: var(--white);
+  border: 2px solid transparent;
+  background:
+    linear-gradient(var(--white), var(--white)) padding-box,
+    conic-gradient(
+      from var(--border-angle),
+      rgba(0, 98, 128, 0.12) 0%,
+      rgba(0, 98, 128, 0.12) 50%,
+      var(--primary) 60%,
+      #3db8e5 65%,
+      #ffffff 68%,
+      #3db8e5 71%,
+      var(--primary) 76%,
+      rgba(0, 98, 128, 0.12) 86%,
+      rgba(0, 98, 128, 0.12) 100%
+    ) border-box;
   border-radius: 24px;
   box-shadow: 0 4px 32px rgba(0, 0, 0, 0.08), 0 1px 4px rgba(0, 0, 0, 0.04);
   padding: 40px 36px;
@@ -43,7 +67,8 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  animation: authFadeUp 0.45s cubic-bezier(0.22, 1, 0.36, 1) both;
+  animation: authFadeUp 0.45s cubic-bezier(0.22, 1, 0.36, 1) both,
+             border-spin 4s linear 0.5s infinite;
 }
 
 @keyframes authFadeUp {
@@ -424,7 +449,20 @@ body.dark-mode .auth-theme-toggle:hover {
 }
 
 body.dark-mode .auth-card {
-  background: #1c2128;
+  background:
+    linear-gradient(#1c2128, #1c2128) padding-box,
+    conic-gradient(
+      from var(--border-angle),
+      rgba(48, 54, 61, 0.5) 0%,
+      rgba(48, 54, 61, 0.5) 50%,
+      #0097c7 60%,
+      #3db8e5 65%,
+      rgba(255, 255, 255, 0.7) 68%,
+      #3db8e5 71%,
+      #0097c7 76%,
+      rgba(48, 54, 61, 0.5) 86%,
+      rgba(48, 54, 61, 0.5) 100%
+    ) border-box;
   box-shadow: 0 4px 32px rgba(0, 0, 0, 0.4), 0 1px 4px rgba(0, 0, 0, 0.2);
 }
 
