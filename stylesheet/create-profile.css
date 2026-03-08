@@ -4,7 +4,7 @@
    ============================================================ */
 
 body {
-  background-color: #f7f9fa;
+  background-color: var(--bg-page);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -51,7 +51,7 @@ body {
   display: block;
   font-size: 14px;
   font-weight: 700;
-  color: #111;
+  color: var(--slate-900);
   margin-bottom: 8px;
 }
 
@@ -59,11 +59,11 @@ body {
 .form-group select {
   width: 100%;
   padding: 14px 16px;
-  background-color: #f8fafc;
-  border: 1px solid #e2e8f0;
+  background-color: var(--input-bg);
+  border: 1px solid var(--input-border);
   border-radius: 8px;
   font-size: 15px;
-  color: #1e293b;
+  color: var(--text);
   outline: none;
   font-family: inherit;
   transition: border-color 0.2s;
@@ -75,12 +75,12 @@ body {
 }
 
 .form-group input::placeholder {
-  color: #94a3b8;
+  color: var(--slate-400);
 }
 
 .tags-input-wrapper {
-  background-color: #f8fafc;
-  border: 1px solid #e2e8f0;
+  background-color: var(--input-bg);
+  border: 1px solid var(--input-border);
   border-radius: 8px;
   padding: 8px 12px;
   display: flex;
@@ -95,8 +95,8 @@ body {
 }
 
 .tag {
-  background-color: #e6f3f5;
-  color: #006280;
+  background-color: var(--tag-bg);
+  color: var(--primary);
   padding: 6px 12px;
   border-radius: 16px;
   font-size: 13px;
@@ -139,7 +139,7 @@ body {
 }
 
 .btn-submit-profile:hover {
-  background-color: #004d66;
+  background-color: var(--primary-dark);
 }
 
 @media (max-width: 640px) {
@@ -188,7 +188,7 @@ body.dark-mode .form-group select {
 
 body.dark-mode .form-group input:focus,
 body.dark-mode .form-group select:focus {
-  border-color: #0097c7;
+  border-color: var(--accent);
 }
 
 body.dark-mode .form-group input::placeholder {
@@ -201,12 +201,12 @@ body.dark-mode .tags-input-wrapper {
 }
 
 body.dark-mode .tags-input-wrapper:focus-within {
-  border-color: #0097c7;
+  border-color: var(--accent);
 }
 
 body.dark-mode .tag {
   background-color: rgba(0, 151, 199, 0.12);
-  color: #3db8e5;
+  color: var(--accent);
 }
 
 body.dark-mode .tag-input {
@@ -221,7 +221,7 @@ body.dark-mode .btn-submit-profile:hover {
 .optional-label {
   font-size: 12px;
   font-weight: 500;
-  color: #94a3b8;
+  color: var(--slate-400);
   margin-left: 4px;
 }
 
@@ -282,19 +282,19 @@ body.dark-mode .btn-submit-profile:hover {
 
 .photo-hint {
   font-size: 12px;
-  color: #94a3b8;
+  color: var(--slate-400);
   margin-top: 6px;
 }
 
 body.dark-mode .photo-preview {
   background-color: rgba(0, 151, 199, 0.08);
-  border-color: #0097c7;
-  color: #3db8e5;
+  border-color: var(--accent);
+  color: var(--accent);
 }
 
 body.dark-mode .btn-choose-photo {
-  border-color: #0097c7;
-  color: #3db8e5;
+  border-color: var(--accent);
+  color: var(--accent);
 }
 
 body.dark-mode .btn-choose-photo:hover {
@@ -303,7 +303,7 @@ body.dark-mode .btn-choose-photo:hover {
 
 /* ── Form error message ── */
 .form-error {
-  color: #e53e3e;
+  color: var(--error-color);
   font-size: 13px;
   font-weight: 600;
   margin-bottom: 8px;
@@ -312,5 +312,5 @@ body.dark-mode .btn-choose-photo:hover {
 }
 
 body.dark-mode .form-error {
-  color: #fc8181;
+  color: var(--error-dark);
 }

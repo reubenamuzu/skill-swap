@@ -193,45 +193,50 @@ const SKILLS_DATA = [
   }
 ];
 
-// ─── State ───────────────────────────────────────────────────────────────────
+// ── Constants ──────────────────────────────────────────────────────────────────
+const DEBOUNCE_MS = 300;
+const MOBILE_BREAKPOINT = 640;
+const PAGE_SIZE_MOBILE = 6;
+const PAGE_SIZE_DESKTOP = 8;
+
+// ── State ──────────────────────────────────────────────────────────────────────
 let currentCategory = 'All';
 let currentSort = 'best-rated';
 let currentSearch = '';
 let currentPage = 1;
-function getPageSize() {
-  return window.innerWidth <= 640 ? 6 : 8;
-}
 let searchDebounceTimer = null;
 
-// ─── Filtering & Sorting ─────────────────────────────────────────────────────
-function getFilteredSkills() {
-  let skills = SKILLS_DATA.slice();
-
-  if (currentCategory !== 'All') {
-    skills = skills.filter(s => s.category === currentCategory);
-  }
-
-  if (currentSearch) {
-    const q = currentSearch.toLowerCase();
-    skills = skills.filter(s =>
-      s.title.toLowerCase().includes(q) ||
-      s.description.toLowerCase().includes(q) ||
-      s.instructor.toLowerCase().includes(q)
-    );
-  }
-
-  if (currentSort === 'best-rated') {
-    skills.sort((a, b) => b.rating - a.rating);
-  } else if (currentSort === 'most-reviews') {
-    skills.sort((a, b) => b.reviews - a.reviews);
-  } else if (currentSort === 'newest') {
-    skills.sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt));
-  }
-
-  return skills;
+function getPageSize() {
+  return window.innerWidth < MOBILE_BREAKPOINT ? PAGE_SIZE_MOBILE : PAGE_SIZE_DESKTOP;
 }
 
-// ─── Card HTML ────────────────────────────────────────────────────────────────
+// ── Filtering & Sorting ────────────────────────────────────────────────────────
+function filterSkills(skills, category, search) {
+  return skills.filter(skill => {
+    const matchesCategory = !category || category === 'All' || skill.category === category;
+    const term = search.toLowerCase();
+    const matchesSearch = !term ||
+      skill.title.toLowerCase().includes(term) ||
+      skill.description.toLowerCase().includes(term) ||
+      skill.instructor.toLowerCase().includes(term);
+    return matchesCategory && matchesSearch;
+  });
+}
+
+function sortSkills(skills, sort) {
+  const sorted = [...skills];
+  if (sort === 'best-rated') sorted.sort((a, b) => b.rating - a.rating);
+  else if (sort === 'most-reviews') sorted.sort((a, b) => b.reviews - a.reviews);
+  else if (sort === 'newest') sorted.sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt));
+  return sorted;
+}
+
+function getFilteredSkills() {
+  const filtered = filterSkills(SKILLS_DATA, currentCategory, currentSearch);
+  return sortSkills(filtered, currentSort);
+}
+
+// ── Card HTML ──────────────────────────────────────────────────────────────────
 function buildCardHTML(skill) {
   return `
     <div class="explore-card">
@@ -259,7 +264,7 @@ function buildCardHTML(skill) {
   `;
 }
 
-// ─── Pagination ───────────────────────────────────────────────────────────────
+// ── Pagination ─────────────────────────────────────────────────────────────────
 function renderPagination(totalPages) {
   const pagination = document.getElementById('pagination');
   if (!pagination) return;
@@ -301,7 +306,6 @@ function renderPagination(totalPages) {
 
   pagination.innerHTML = html;
 
-  // Attach click handlers
   pagination.querySelectorAll('.page-item[data-page]').forEach(item => {
     item.addEventListener('click', () => {
       const p = item.dataset.page;
@@ -318,7 +322,7 @@ function renderPagination(totalPages) {
   });
 }
 
-// ─── Grid Render ──────────────────────────────────────────────────────────────
+// ── Grid Render ────────────────────────────────────────────────────────────────
 function renderGrid() {
   const grid = document.getElementById('skills-grid');
   if (!grid) return;
@@ -348,21 +352,34 @@ function renderGrid() {
   renderPagination(filtered.length === 0 ? 1 : totalPages);
 }
 
-// ─── Modal ────────────────────────────────────────────────────────────────────
-function openModal(id) {
-  const skill = SKILLS_DATA.find(s => s.id === id);
+// ── Modal ──────────────────────────────────────────────────────────────────────
+function openModal(skillId) {
+  const skill = SKILLS_DATA.find(s => s.id === skillId);
   if (!skill) return;
 
-  document.getElementById('modal-img').src = skill.image;
-  document.getElementById('modal-img').alt = skill.title;
-  document.getElementById('modal-category').textContent = skill.category;
-  document.getElementById('modal-rating').textContent = skill.rating.toFixed(1);
-  document.getElementById('modal-title').textContent = skill.title;
-  document.getElementById('modal-desc').textContent = skill.description;
-  document.getElementById('modal-instructor-avatar').src = skill.instructorAvatar;
-  document.getElementById('modal-instructor-avatar').alt = skill.instructor;
-  document.getElementById('modal-instructor-name').textContent = skill.instructor;
-  document.getElementById('modal-reviews').textContent = skill.reviews + ' reviews';
+  const fields = {
+    'modal-title':    skill.title,
+    'modal-category': skill.category,
+    'modal-desc':     skill.description,
+    'modal-rating':   skill.rating.toFixed(1),
+    'modal-reviews':  `${skill.reviews} reviews`,
+  };
+  Object.entries(fields).forEach(([id, value]) => {
+    const el = document.getElementById(id);
+    if (el) el.textContent = value;
+  });
+
+  const img = document.getElementById('modal-img');
+  if (img) { img.src = skill.image; img.alt = skill.title; }
+
+  const instructorAvatar = document.getElementById('modal-instructor-avatar');
+  if (instructorAvatar) {
+    instructorAvatar.src = skill.instructorAvatar;
+    instructorAvatar.alt = skill.instructor;
+  }
+
+  const instructorName = document.getElementById('modal-instructor-name');
+  if (instructorName) instructorName.textContent = skill.instructor;
 
   document.getElementById('skill-modal').classList.add('open');
   document.body.style.overflow = 'hidden';
@@ -373,7 +390,7 @@ function closeModal() {
   document.body.style.overflow = '';
 }
 
-// ─── Filter Toggle (mobile) ───────────────────────────────────────────────────
+// ── Filter Toggle (mobile) ─────────────────────────────────────────────────────
 function initFilterToggle() {
   const moreBtn = document.getElementById('filter-tab-more');
   if (!moreBtn) return;
@@ -409,7 +426,7 @@ function initFilterToggle() {
   window.addEventListener('resize', applyToggle);
 }
 
-// ─── Init ─────────────────────────────────────────────────────────────────────
+// ── Init ───────────────────────────────────────────────────────────────────────
 document.addEventListener('DOMContentLoaded', () => {
   if (!document.getElementById('skills-grid')) return;
 
@@ -443,7 +460,7 @@ document.addEventListener('DOMContentLoaded', () => {
         currentSearch = e.target.value.trim();
         currentPage = 1;
         renderGrid();
-      }, 300);
+      }, DEBOUNCE_MS);
     });
   }
 

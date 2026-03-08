@@ -4,13 +4,13 @@
    ============================================================ */
 
 body {
-  background-color: #f7f9fa; /* slightly different than bg-light if needed, keeping it light */
+  background-color: var(--bg-page); /* slightly different than bg-light if needed, keeping it light */
 }
 
 /* Header Overrides for Request Page */
 .request-header {
   border-bottom: 1px solid var(--primary-10);
-  background-color: #f7f9fa;
+  background-color: var(--bg-page);
   padding: 16px 32px;
   display: flex;
   align-items: center;
@@ -25,7 +25,7 @@ body {
 .request-title-bar h2 {
   font-size: 24px;
   font-weight: 800;
-  color: #111;
+  color: var(--slate-900);
 }
 
 .request-container {
@@ -37,7 +37,7 @@ body {
 .back-link {
   display: inline-flex;
   align-items: center;
-  color: #006280;
+  color: var(--primary);
   font-weight: 700;
   font-size: 14px;
   text-decoration: none;
@@ -52,7 +52,7 @@ body {
 .proposal-label {
   display: flex;
   align-items: center;
-  color: #006280;
+  color: var(--primary);
   font-size: 11px;
   font-weight: 800;
   text-transform: uppercase;
@@ -68,14 +68,14 @@ body {
 .request-heading {
   font-size: 32px;
   font-weight: 800;
-  color: #111;
+  color: var(--slate-900);
   margin-bottom: 8px;
   letter-spacing: -0.5px;
 }
 
 .request-subheading {
   font-size: 16px;
-  color: #64748b;
+  color: var(--slate-500);
   margin-bottom: 32px;
 }
 
@@ -105,8 +105,8 @@ body {
 }
 
 .skill-badge {
-  background-color: #e6f3f5;
-  color: #006280;
+  background-color: var(--tag-bg);
+  color: var(--primary);
   padding: 4px 8px;
   border-radius: 4px;
   font-size: 10px;
@@ -118,7 +118,7 @@ body {
 .skill-title {
   font-size: 20px;
   font-weight: 700;
-  color: #111;
+  color: var(--slate-900);
 }
 
 .skill-recipient {
@@ -126,11 +126,11 @@ body {
   align-items: center;
   gap: 8px;
   font-size: 14px;
-  color: #64748b;
+  color: var(--slate-500);
 }
 
 .recipient-name {
-  color: #111;
+  color: var(--slate-900);
   font-weight: 500;
 }
 
@@ -156,18 +156,18 @@ body {
   gap: 8px;
   font-size: 17px;
   font-weight: 700;
-  color: #111;
+  color: var(--slate-900);
   margin-bottom: 6px;
 }
 
 .form-section-title .material-symbols-outlined {
-  color: #006280;
+  color: var(--primary);
   font-size: 20px;
 }
 
 .form-section-desc {
   font-size: 14px;
-  color: #64748b;
+  color: var(--slate-500);
   margin-bottom: 16px;
 }
 
@@ -180,11 +180,11 @@ body {
   width: 100%;
   padding: 14px 16px;
   appearance: none;
-  background-color: #f8fafc;
-  border: 1px solid #e2e8f0;
+  background-color: var(--input-bg);
+  border: 1px solid var(--input-border);
   border-radius: 8px;
   font-size: 14px;
-  color: #475569;
+  color: var(--slate-600);
   outline: none;
   font-family: inherit;
   cursor: pointer;
@@ -195,7 +195,7 @@ body {
   right: 16px;
   top: 50%;
   transform: translateY(-50%);
-  color: #64748b;
+  color: var(--slate-500);
   pointer-events: none;
 }
 
@@ -209,8 +209,8 @@ body {
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  background-color: #e6f3f5;
-  color: #006280;
+  background-color: var(--tag-bg);
+  color: var(--primary);
   padding: 6px 12px;
   border-radius: 16px;
   font-size: 12px;
@@ -226,8 +226,8 @@ body {
   width: 100%;
   min-height: 140px;
   padding: 16px;
-  background-color: #f8fafc;
-  border: 1px solid #e2e8f0;
+  background-color: var(--input-bg);
+  border: 1px solid var(--input-border);
   border-radius: 8px;
   font-family: inherit;
   font-size: 14px;
@@ -239,7 +239,7 @@ body {
 }
 
 .message-textarea::placeholder {
-  color: #94a3b8;
+  color: var(--slate-400);
 }
 
 .form-actions {
@@ -249,13 +249,13 @@ body {
   gap: 24px;
   margin-top: 16px;
   padding-top: 24px;
-  border-top: 1px solid #e2e8f0;
+  border-top: 1px solid var(--input-border);
 }
 
 .btn-cancel {
   background: none;
   border: none;
-  color: #475569;
+  color: var(--slate-600);
   font-weight: 700;
   font-size: 14px;
   cursor: pointer;
@@ -269,7 +269,7 @@ body {
   display: flex;
   align-items: center;
   gap: 8px;
-  background-color: #006280;
+  background-color: var(--primary);
   color: white;
   padding: 12px 24px;
   border-radius: 8px;
@@ -281,7 +281,7 @@ body {
 }
 
 .btn-send:hover {
-  background-color: #004d66;
+  background-color: var(--primary-dark);
 }
 
 .btn-send .material-symbols-outlined {
@@ -300,25 +300,25 @@ body {
 }
 
 .pro-tip .material-symbols-outlined {
-  color: #006280;
+  color: var(--primary);
   font-size: 24px;
 }
 
 .pro-tip-content h4 {
   font-size: 15px;
   font-weight: 800;
-  color: #111;
+  color: var(--slate-900);
   margin-bottom: 6px;
 }
 
 .pro-tip-content p {
   font-size: 13px;
-  color: #475569;
+  color: var(--slate-600);
   line-height: 1.6;
 }
 
 .pro-tip-content a {
-  color: #006280;
+  color: var(--primary);
   font-weight: 600;
   text-decoration: none;
 }
@@ -383,7 +383,7 @@ body.dark-mode .skill-info-card {
 
 body.dark-mode .skill-badge {
   background-color: rgba(0, 151, 199, 0.12);
-  color: #3db8e5;
+  color: var(--accent);
 }
 
 body.dark-mode .skill-title {
@@ -419,7 +419,7 @@ body.dark-mode .custom-select {
 
 body.dark-mode .chip {
   background-color: rgba(0, 151, 199, 0.12);
-  color: #3db8e5;
+  color: var(--accent);
 }
 
 body.dark-mode .message-textarea {
@@ -454,9 +454,9 @@ body.dark-mode .pro-tip-content p {
 }
 
 body.dark-mode .back-link {
-  color: #3db8e5;
+  color: var(--accent);
 }
 
 body.dark-mode .proposal-label {
-  color: #3db8e5;
+  color: var(--accent);
 }

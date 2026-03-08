@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Explore Skills - SkillExchange</title>
+    <title>Explore Skills - SkillSwap</title>
     <link
       href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&display=swap"
       rel="stylesheet"
@@ -40,15 +40,23 @@
         <div class="header-right">
           <!-- Search toggle (mobile/tablet only) -->
           <button id="search-toggle-btn" aria-label="Open search">
-            <span class="material-symbols-outlined">search</span>
+            <span class="material-symbols-outlined" aria-hidden="true"
+              >search</span
+            >
           </button>
 
           <!-- Search box (desktop always-on; mobile/tablet expanded state) -->
           <div class="search-box">
             <button id="search-close-btn" aria-label="Close search">
-              <span class="material-symbols-outlined">arrow_back</span>
+              <span class="material-symbols-outlined" aria-hidden="true"
+                >arrow_back</span
+              >
             </button>
-            <span class="material-symbols-outlined search-icon">search</span>
+            <span
+              class="material-symbols-outlined search-icon"
+              aria-hidden="true"
+              >search</span
+            >
             <input
               type="text"
               id="search-input"
@@ -57,15 +65,17 @@
           </div>
 
           <button class="theme-toggle" aria-label="Toggle dark mode">
-            <span class="material-symbols-outlined icon-dark">dark_mode</span>
-            <span class="material-symbols-outlined icon-light">light_mode</span>
+            <span class="material-symbols-outlined icon-dark" aria-hidden="true"
+              >dark_mode</span
+            >
+            <span
+              class="material-symbols-outlined icon-light"
+              aria-hidden="true"
+              >light_mode</span
+            >
           </button>
           <button class="burger-menu" id="burger-menu">
-            <img
-              src="assets/menu-burger.png"
-              alt="Menu"
-              style="width: 24px; height: 24px; object-fit: contain"
-            />
+            <img src="assets/menu-burger.png" alt="Menu" class="burger-icon" />
           </button>
         </div>
       </div>
@@ -119,7 +129,11 @@
     <section class="explore-grid" id="skills-grid"></section>
 
     <!-- Dynamic Pagination -->
-    <div class="pagination" id="pagination"></div>
+    <nav
+      class="pagination"
+      id="pagination"
+      aria-label="Skills pagination"
+    ></nav>
 
     <!-- Footer (from style.css) -->
     <footer>
@@ -131,7 +145,7 @@
               <img
                 src="assets/icon-w.png"
                 alt="SkillSwap"
-                style="height: 48px; width: auto; object-fit: contain"
+                class="footer-logo-img"
               />
               <h2>SkillSwap</h2>
             </div>
@@ -141,13 +155,17 @@
             </p>
             <div class="social-links">
               <a href="#" class="social-link"
-                ><span class="material-symbols-outlined">public</span></a
+                ><span class="material-symbols-outlined" aria-hidden="true"
+                  >public</span
+                ></a
               >
               <a href="#" class="social-link"
-                ><span class="material-symbols-outlined">share</span></a
+                ><span class="material-symbols-outlined" aria-hidden="true"
+                  >share</span
+                ></a
               >
               <a href="#" class="social-link"
-                ><span class="material-symbols-outlined"
+                ><span class="material-symbols-outlined" aria-hidden="true"
                   >alternate_email</span
                 ></a
               >
@@ -200,14 +218,18 @@
     >
       <div class="skill-modal">
         <button class="skill-modal-close" id="modal-close" aria-label="Close">
-          <span class="material-symbols-outlined">close</span>
+          <span class="material-symbols-outlined" aria-hidden="true"
+            >close</span
+          >
         </button>
         <img id="modal-img" src="" alt="" class="skill-modal-img" />
         <div class="skill-modal-body">
           <div class="skill-modal-meta">
             <span id="modal-category" class="skill-modal-category"></span>
             <div class="explore-card-rating">
-              <span class="material-symbols-outlined">star</span>
+              <span class="material-symbols-outlined" aria-hidden="true"
+                >star</span
+              >
               <span id="modal-rating"></span>
             </div>
           </div>

@@ -4,7 +4,7 @@
    ============================================================ */
 
 body {
-  background-color: #f7f9fa;
+  background-color: var(--bg-page);
 }
 
 /* Header Overrides for Dashboard Page */
@@ -36,7 +36,7 @@ body {
   height: 34px;
   border-radius: 50%;
   object-fit: cover;
-  border: 2px solid #e2e8f0;
+  border: 2px solid var(--input-border);
 }
 
 .user-nav-profile span {
@@ -74,19 +74,19 @@ body {
   border-radius: 50%;
   object-fit: cover;
   margin: 0 auto 16px;
-  border: 4px solid #f1f5f9;
+  border: 4px solid var(--input-border);
 }
 
 .profile-card h3 {
   font-size: 20px;
   font-weight: 800;
-  color: #111;
+  color: var(--slate-900);
   margin-bottom: 4px;
 }
 
 .profile-card p {
   font-size: 14px;
-  color: #64748b;
+  color: var(--slate-500);
   margin-bottom: 24px;
 }
 
@@ -102,12 +102,12 @@ body {
 .stat-item h4 {
   font-size: 20px;
   font-weight: 800;
-  color: #006280;
+  color: var(--primary);
 }
 
 .stat-item span {
   font-size: 12px;
-  color: #94a3b8;
+  color: var(--slate-400);
   font-weight: 600;
   text-transform: uppercase;
 }
@@ -126,7 +126,7 @@ body {
 }
 
 .btn-edit-profile:hover {
-  background-color: #e2e8f0;
+  background-color: var(--input-border);
 }
 
 .sidebar-nav {
@@ -149,9 +149,9 @@ body {
 }
 
 .sidebar-nav a:hover, .sidebar-nav a.active {
-  background-color: #f8fafc;
-  color: #006280;
-  border-left-color: #006280;
+  background-color: var(--input-bg);
+  color: var(--primary);
+  border-left-color: var(--primary);
 }
 
 .sidebar-nav a .material-symbols-outlined {
@@ -189,11 +189,11 @@ body {
 .dashboard-section-title {
   font-size: 22px;
   font-weight: 800;
-  color: #111;
+  color: var(--slate-900);
 }
 
 .dashboard-section-link {
-  color: #006280;
+  color: var(--primary);
   font-size: 14px;
   font-weight: 700;
 }
@@ -222,13 +222,13 @@ body {
   gap: 8px;
   font-size: 15px;
   font-weight: 700;
-  color: #111;
+  color: var(--slate-900);
   margin-bottom: 16px;
 }
 
 .skills-panel-title .material-symbols-outlined {
   font-size: 20px;
-  color: #006280;
+  color: var(--primary);
 }
 
 .skills-tag-list {
@@ -239,7 +239,7 @@ body {
 
 .skills-empty {
   font-size: 13px;
-  color: #94a3b8;
+  color: var(--slate-400);
   font-weight: 500;
 }
 
@@ -253,7 +253,7 @@ body.dark-mode .skills-panel-title {
 }
 
 body.dark-mode .skills-panel-title .material-symbols-outlined {
-  color: #3db8e5;
+  color: var(--accent);
 }
 
 body.dark-mode .skills-empty {
@@ -300,13 +300,13 @@ body.dark-mode .skills-empty {
 .request-details h4 {
   font-size: 16px;
   font-weight: 800;
-  color: #111;
+  color: var(--slate-900);
   margin-bottom: 4px;
 }
 
 .request-details p {
   font-size: 14px;
-  color: #64748b;
+  color: var(--slate-500);
   margin-bottom: 12px;
 }
 
@@ -319,7 +319,7 @@ body.dark-mode .skills-empty {
 }
 
 .exchange-direction {
-  color: #94a3b8;
+  color: var(--slate-400);
   font-size: 16px;
 }
 
@@ -332,7 +332,7 @@ body.dark-mode .skills-empty {
 
 .skill-tag.primary {
   background-color: #e6f3f5;
-  color: #006280;
+  color: var(--primary);
 }
 
 .request-actions {
@@ -341,7 +341,7 @@ body.dark-mode .skills-empty {
 }
 
 .btn-accept {
-  background-color: #006280;
+  background-color: var(--primary);
   color: white;
   padding: 10px 20px;
   border-radius: 8px;
@@ -353,23 +353,23 @@ body.dark-mode .skills-empty {
 }
 
 .btn-accept:hover {
-  background-color: #004d66;
+  background-color: var(--primary-dark);
 }
 
 .btn-decline {
   background-color: white;
-  color: #64748b;
+  color: var(--slate-500);
   padding: 10px 20px;
   border-radius: 8px;
   font-weight: 700;
   font-size: 14px;
-  border: 1px solid #e2e8f0;
+  border: 1px solid var(--input-border);
   cursor: pointer;
   transition: all 0.2s;
 }
 
 .btn-decline:hover {
-  background-color: #f8fafc;
+  background-color: var(--input-bg);
   color: #0f172a;
 }
 
@@ -413,7 +413,7 @@ body.dark-mode .skills-empty {
 
 .session-date {
   font-size: 13px;
-  color: #64748b;
+  color: var(--slate-500);
   font-weight: 600;
   display: flex;
   align-items: center;
@@ -441,19 +441,19 @@ body.dark-mode .skills-empty {
 .session-partner h4 {
   font-size: 16px;
   font-weight: 700;
-  color: #111;
+  color: var(--slate-900);
 }
 
 .session-partner p {
   font-size: 13px;
-  color: #64748b;
+  color: var(--slate-500);
 }
 
 .btn-join-call {
   width: 100%;
   padding: 12px;
   background-color: #f1f5f9;
-  color: #006280;
+  color: var(--primary);
   border: none;
   border-radius: 8px;
   font-size: 14px;
@@ -467,7 +467,7 @@ body.dark-mode .skills-empty {
 }
 
 .btn-join-call:hover {
-  background-color: #e2e8f0;
+  background-color: var(--input-border);
 }
 
 @media (max-width: 1024px) {
@@ -600,7 +600,7 @@ body.dark-mode .profile-stats {
 }
 
 body.dark-mode .stat-item h4 {
-  color: #3db8e5;
+  color: var(--accent);
 }
 
 body.dark-mode .stat-item span {
@@ -628,8 +628,8 @@ body.dark-mode .sidebar-nav a {
 body.dark-mode .sidebar-nav a:hover,
 body.dark-mode .sidebar-nav a.active {
   background-color: rgba(0, 151, 199, 0.06);
-  color: #3db8e5;
-  border-left-color: #3db8e5;
+  color: var(--accent);
+  border-left-color: var(--accent);
 }
 
 body.dark-mode .dashboard-section-title {
@@ -657,7 +657,7 @@ body.dark-mode .skill-tag {
 
 body.dark-mode .skill-tag.primary {
   background-color: rgba(0, 151, 199, 0.12);
-  color: #3db8e5;
+  color: var(--accent);
 }
 
 body.dark-mode .exchange-direction {
@@ -699,7 +699,7 @@ body.dark-mode .session-partner p {
 
 body.dark-mode .btn-join-call {
   background-color: #242a32;
-  color: #3db8e5;
+  color: var(--accent);
 }
 
 body.dark-mode .btn-join-call:hover {
@@ -719,7 +719,7 @@ body.dark-mode .user-nav-profile img {
   width: 34px;
   height: 34px;
   border-radius: 50%;
-  background-color: #006280;
+  background-color: var(--primary);
   color: #fff;
   display: flex;
   align-items: center;
@@ -727,7 +727,7 @@ body.dark-mode .user-nav-profile img {
   font-size: 14px;
   font-weight: 800;
   letter-spacing: 0.5px;
-  border: 2px solid #e2e8f0;
+  border: 2px solid var(--input-border);
   flex-shrink: 0;
   font-family: 'Manrope', sans-serif;
 }
@@ -737,11 +737,11 @@ body.dark-mode .user-nav-profile img {
   height: 96px;
   font-size: 32px;
   margin: 0 auto 16px;
-  border: 4px solid #f1f5f9;
+  border: 4px solid var(--input-border);
 }
 
 body.dark-mode .user-avatar-initials {
-  background-color: #0097c7;
+  background-color: var(--accent);
   border-color: #30363d;
 }
 
@@ -789,14 +789,14 @@ body.dark-mode .user-avatar-initials.large {
   height: 96px;
   border-radius: 50%;
   object-fit: cover;
-  border: 4px solid #f1f5f9;
+  border: 4px solid var(--input-border);
   display: block;
 }
 
 .profile-photo.small {
   width: 40px;
   height: 40px;
-  border: 2px solid #e2e8f0;
+  border: 2px solid var(--input-border);
   flex-shrink: 0;
 }
 
@@ -810,7 +810,7 @@ body.dark-mode .profile-photo.small {
 
 /* ── Logout link in sidebar ── */
 #logout-btn {
-  color: #e53e3e !important;
+  color: var(--error-color) !important;
 }
 
 #logout-btn:hover {
@@ -819,7 +819,7 @@ body.dark-mode .profile-photo.small {
 }
 
 body.dark-mode #logout-btn {
-  color: #fc8181 !important;
+  color: var(--error-dark) !important;
 }
 
 body.dark-mode #logout-btn:hover {

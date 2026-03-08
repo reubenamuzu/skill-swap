@@ -32,8 +32,8 @@ function generateId() {
   return 'usr_' + Date.now();
 }
 
-function validateEmail(str) {
-  return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(str);
+function validateEmail(email) {
+  return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
 }
 
 function guardPage() {
@@ -43,6 +43,7 @@ function guardPage() {
 }
 
 function getInitials(name) {
+  if (!name || !name.trim()) return '?';
   const parts = name.trim().split(/\s+/);
   if (parts.length === 1) return parts[0][0].toUpperCase();
   return (parts[0][0] + parts[parts.length - 1][0]).toUpperCase();

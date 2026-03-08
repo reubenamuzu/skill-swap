@@ -1,16 +1,16 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;800&display=swap');
 
 * {
   box-sizing: border-box;
 }
 
 body {
-  background: #f6f5f7;
+  background: var(--bg-light);
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Manrope', sans-serif;
   height: 100vh;
   margin: 0;
 }
@@ -24,7 +24,7 @@ body {
 }
 
 .auth-card {
-  background-color: #fff;
+  background-color: var(--white);
   border-radius: 16px;
   box-shadow: 0 14px 28px rgba(0, 0, 0, 0.15), 0 10px 10px rgba(0, 0, 0, 0.1);
   display: flex;
@@ -48,8 +48,8 @@ body {
 /* ── Info / CTA Section ── */
 .info-section {
   width: 50%;
-  background: linear-gradient(135deg, #0097c7, #005f7f);
-  color: #fff;
+  background: linear-gradient(135deg, var(--primary), #005f7f);
+  color: var(--white);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -63,11 +63,11 @@ h1 {
   font-weight: 800;
   margin: 0 0 16px;
   font-size: 1.8rem;
-  color: #333;
+  color: var(--text);
 }
 
 .info-section h1 {
-  color: #fff;
+  color: var(--white);
 }
 
 .form-section span {
@@ -140,7 +140,7 @@ form {
 }
 
 .input-group:focus-within i {
-  color: #0097c7;
+  color: var(--primary);
 }
 
 .form-section input {
@@ -156,8 +156,8 @@ form {
 }
 
 .form-section input:focus {
-  border-color: #0097c7;
-  background-color: #fff;
+  border-color: var(--primary);
+  background-color: var(--white);
 }
 
 .form-section input::placeholder {
@@ -174,7 +174,7 @@ form {
 }
 
 .forgot-pass:hover {
-  color: #0097c7;
+  color: var(--primary);
 }
 
 /* ── Buttons ── */
@@ -182,9 +182,9 @@ button,
 .btn-primary,
 .btn-ghost {
   border-radius: 25px;
-  border: 2px solid #006280;
-  background-color: #006280;
-  color: #fff;
+  border: 2px solid var(--primary);
+  background-color: var(--primary);
+  color: var(--white);
   font-size: 12px;
   font-weight: 700;
   padding: 13px 48px;
@@ -199,8 +199,8 @@ button,
 
 button:hover,
 .btn-primary:hover {
-  background-color: #004d63;
-  border-color: #004d63;
+  background-color: var(--primary-dark);
+  border-color: var(--primary-dark);
   box-shadow: 0 4px 15px rgba(0, 98, 128, 0.35);
   transform: translateY(-1px);
 }
@@ -217,7 +217,7 @@ button:focus {
 
 .btn-ghost {
   background-color: transparent;
-  border-color: #fff;
+  border-color: var(--white);
 }
 
 .btn-ghost:hover {
@@ -276,7 +276,7 @@ button:focus {
   position: fixed;
   top: 20px;
   right: 20px;
-  background: #fff;
+  background: var(--white);
   border: 1px solid #ddd;
   border-radius: 50%;
   width: 44px;
@@ -289,7 +289,7 @@ button:focus {
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
   transition: all 0.25s ease;
   z-index: 100;
-  color: #333;
+  color: var(--text);
 }
 
 .auth-theme-toggle:hover {
@@ -349,7 +349,7 @@ body.dark-mode .form-section input {
 }
 
 body.dark-mode .form-section input:focus {
-  border-color: #0097c7;
+  border-color: var(--accent);
   background-color: #0d1117;
 }
 
@@ -371,7 +371,7 @@ body.dark-mode .info-section {
 
 /* ── Form error messages ── */
 .form-error {
-  color: #e53e3e;
+  color: var(--error-color);
   font-size: 13px;
   font-weight: 600;
   margin-top: 8px;
@@ -381,5 +381,5 @@ body.dark-mode .info-section {
 }
 
 body.dark-mode .form-error {
-  color: #fc8181;
+  color: var(--error-dark);
 }

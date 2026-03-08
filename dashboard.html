@@ -1,231 +1,328 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Dashboard - SkillExchange</title>
-  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"/>
-  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
-  <link rel="stylesheet" href="stylesheet/style.css"/>
-  <link rel="stylesheet" href="stylesheet/dashboard.css"/>
-</head>
-<body>
-
-  <!-- Dashboard Header -->
-  <header>
-    <div class="header-inner">
-      <div class="header-left">
-        <!-- Logo -->
-        <a href="index.html" class="logo">
-          <img src="assets/icon-w.png" alt="SkillSwap" class="nav-logo-icon">
-        </a>
-        <!-- Desktop Nav -->
-        <nav class="main-nav" id="main-nav">
-          <a href="index.html">Home</a>
-          <a href="explore.html">Explore</a>
-          <a href="dashboard.html" class="active">Dashboard</a>
-        </nav>
-      </div>
-
-      <div class="header-right">
-        <button class="theme-toggle" aria-label="Toggle dark mode">
-          <span class="material-symbols-outlined icon-dark">dark_mode</span>
-          <span class="material-symbols-outlined icon-light">light_mode</span>
-        </button>
-        <!-- User Profile Nav -->
-        <div class="user-nav-profile">
-          <span id="user-display-name">My Account</span>
-          <div id="nav-avatar" class="user-avatar-initials">?</div>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashboard - SkillSwap</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="stylesheet/style.css" />
+    <link rel="stylesheet" href="stylesheet/dashboard.css" />
+  </head>
+  <body>
+    <!-- Dashboard Header -->
+    <header>
+      <div class="header-inner">
+        <div class="header-left">
+          <!-- Logo -->
+          <a href="index.html" class="logo">
+            <img
+              src="assets/icon-w.png"
+              alt="SkillSwap"
+              class="nav-logo-icon"
+            />
+          </a>
+          <!-- Desktop Nav -->
+          <nav class="main-nav" id="main-nav">
+            <a href="index.html">Home</a>
+            <a href="explore.html">Explore</a>
+            <a href="dashboard.html" class="active">Dashboard</a>
+          </nav>
         </div>
-        <button class="burger-menu" id="burger-menu">
-          <img src="assets/menu-burger.png" alt="Menu" style="width: 24px; height: 24px; object-fit: contain;">
-        </button>
+
+        <div class="header-right">
+          <button class="theme-toggle" aria-label="Toggle dark mode">
+            <span class="material-symbols-outlined icon-dark" aria-hidden="true"
+              >dark_mode</span
+            >
+            <span
+              class="material-symbols-outlined icon-light"
+              aria-hidden="true"
+              >light_mode</span
+            >
+          </button>
+          <!-- User Profile Nav -->
+          <div class="user-nav-profile">
+            <span id="user-display-name">My Account</span>
+            <div id="nav-avatar" class="user-avatar-initials">?</div>
+          </div>
+          <button class="burger-menu" id="burger-menu">
+            <img src="assets/menu-burger.png" alt="Menu" class="burger-icon" />
+          </button>
+        </div>
       </div>
+    </header>
+
+    <!-- Dashboard Main Layout -->
+    <div class="dashboard-container">
+      <!-- Sidebar -->
+      <aside class="dashboard-sidebar">
+        <!-- Profile Card -->
+        <div class="profile-card">
+          <div
+            class="avatar-upload-wrapper"
+            id="avatar-upload-wrapper"
+            title="Change profile photo"
+          >
+            <div id="sidebar-avatar" class="user-avatar-initials large">?</div>
+            <div class="avatar-upload-overlay">
+              <span class="material-symbols-outlined" aria-hidden="true"
+                >photo_camera</span
+              >
+            </div>
+          </div>
+          <input
+            type="file"
+            id="photo-upload-input"
+            class="visually-hidden-input"
+            accept="image/*"
+          />
+          <h3 id="sidebar-name">Loading...</h3>
+          <p id="sidebar-subtitle"></p>
+
+          <div class="profile-stats">
+            <div class="stat-item">
+              <h4>12</h4>
+              <span>Swaps</span>
+            </div>
+            <div class="stat-item">
+              <h4>4.9</h4>
+              <span>Rating</span>
+            </div>
+          </div>
+
+          <button class="btn-edit-profile">Edit Profile</button>
+        </div>
+
+        <!-- Navigation Links -->
+        <div class="sidebar-nav">
+          <a href="#" class="active">
+            <span class="material-symbols-outlined" aria-hidden="true"
+              >dashboard</span
+            >
+            Overview
+          </a>
+          <a href="#">
+            <span class="material-symbols-outlined" aria-hidden="true"
+              >mail</span
+            >
+            Requests
+            <span class="nav-badge" aria-label="2 pending requests">2</span>
+          </a>
+          <a href="#">
+            <span class="material-symbols-outlined" aria-hidden="true"
+              >calendar_month</span
+            >
+            Schedule
+          </a>
+          <a href="#">
+            <span class="material-symbols-outlined" aria-hidden="true"
+              >history</span
+            >
+            Exchange History
+          </a>
+          <a href="#">
+            <span class="material-symbols-outlined" aria-hidden="true"
+              >settings</span
+            >
+            Settings
+          </a>
+          <a href="#" id="logout-btn">
+            <span class="material-symbols-outlined" aria-hidden="true"
+              >logout</span
+            >
+            Log Out
+          </a>
+        </div>
+      </aside>
+
+      <!-- Main Content -->
+      <main class="dashboard-content">
+        <!-- My Skills Section -->
+        <section>
+          <div class="dashboard-section-header">
+            <h2 class="dashboard-section-title">My Skills</h2>
+          </div>
+          <div class="skills-panels">
+            <div class="skills-panel">
+              <h3 class="skills-panel-title">
+                <span class="material-symbols-outlined" aria-hidden="true"
+                  >school</span
+                >
+                Skills I Can Teach
+              </h3>
+              <div id="skills-teach-list" class="skills-tag-list">
+                <span class="skills-empty">No skills added yet.</span>
+              </div>
+            </div>
+            <div class="skills-panel">
+              <h3 class="skills-panel-title">
+                <span class="material-symbols-outlined" aria-hidden="true"
+                  >auto_stories</span
+                >
+                Skills I Want to Learn
+              </h3>
+              <div id="skills-learn-list" class="skills-tag-list">
+                <span class="skills-empty">No skills added yet.</span>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Incoming Requests Section -->
+        <section>
+          <div class="dashboard-section-header">
+            <h2 class="dashboard-section-title">Incoming Requests</h2>
+            <a href="#" class="dashboard-section-link">View all</a>
+          </div>
+
+          <div class="request-list">
+            <!-- Request 1 -->
+            <div class="request-card">
+              <div class="request-info">
+                <img
+                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuDtZQr8NeDcj0vzMrW4JKPUvQzuNO3d5-aPPM4nrkTeMmPrEMxy8js4f5pfUZZ_VFJunUQfr2YafzMWMXTNdjSCXj0OqxilF74GUlLxCFClkyA8jFHrdUZ-sdIBF4oVW0L-U8Dpm0AXX0AfDKo-Kn4r5HZL_BMTRe5S9DIxf0UogZKDn9hitS0MbEhWYO1VK-AMKTGTVi14Y0uidIikjpGXURb07YRVjHFyTkOP9cq1TTWOikj5KlZzi7DJsCA1DzpzH2fhMJyFLzk"
+                  alt="David Chen"
+                  class="request-avatar"
+                />
+                <div class="request-details">
+                  <h4>David Chen</h4>
+                  <p>Wants to swap Python Programming for UI/UX Design</p>
+                  <div class="request-skills">
+                    <span class="skill-tag">Python</span>
+                    <span
+                      class="material-symbols-outlined exchange-direction"
+                      aria-hidden="true"
+                      >sync_alt</span
+                    >
+                    <span class="skill-tag primary">UI/UX Design</span>
+                  </div>
+                </div>
+              </div>
+              <div class="request-actions">
+                <button class="btn-decline">Decline</button>
+                <button class="btn-accept">Accept Swap</button>
+              </div>
+            </div>
+
+            <!-- Request 2 -->
+            <div class="request-card">
+              <div class="request-info">
+                <img
+                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuCV25Ys-syTomckdeXfKHPavW_Mk7w7c6OJwhx-UtZ09zzrKEtTtyGStfylkiv_kKEkHlRLnUDWF_TkdCY5piWwq_kXeG-R5ubYAxR8yEx1N1EGyjFnllOL9_UTAR39Uo9iQssdRkvnILs_vkIF-o5iCJyj8sxqORhYddS6CoBa7nZC5fnTAofTPLBSfHeRDhoqr3dk7CgmIgkLDzyC66yN72f1Zu6L6ZSHPPsr5tT0PnZMRly-JBBacNf35e5iqnA1ym1hnAksCLY"
+                  alt="Elena Rodriguez"
+                  class="request-avatar"
+                />
+                <div class="request-details">
+                  <h4>Elena Rodriguez</h4>
+                  <p>
+                    Wants to swap Spanish Conversation for Figma Prototyping
+                  </p>
+                  <div class="request-skills">
+                    <span class="skill-tag">Spanish</span>
+                    <span
+                      class="material-symbols-outlined exchange-direction"
+                      aria-hidden="true"
+                      >sync_alt</span
+                    >
+                    <span class="skill-tag primary">Figma Prototyping</span>
+                  </div>
+                </div>
+              </div>
+              <div class="request-actions">
+                <button class="btn-decline">Decline</button>
+                <button class="btn-accept">Accept Swap</button>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Active Sessions Section -->
+        <section>
+          <div class="dashboard-section-header">
+            <h2 class="dashboard-section-title">Upcoming Sessions</h2>
+          </div>
+
+          <div class="session-grid">
+            <!-- Session 1 -->
+            <div class="session-card">
+              <div class="session-header">
+                <span class="session-status"
+                  ><span class="material-symbols-outlined" aria-hidden="true"
+                    >check_circle</span
+                  >
+                  Confirmed</span
+                >
+                <span class="session-date"
+                  ><span class="material-symbols-outlined" aria-hidden="true"
+                    >schedule</span
+                  >
+                  Tomorrow, 2:00 PM</span
+                >
+              </div>
+              <div class="session-partner">
+                <img
+                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuDtZQr8NeDcj0vzMrW4JKPUvQzuNO3d5-aPPM4nrkTeMmPrEMxy8js4f5pfUZZ_VFJunUQfr2YafzMWMXTNdjSCXj0OqxilF74GUlLxCFClkyA8jFHrdUZ-sdIBF4oVW0L-U8Dpm0AXX0AfDKo-Kn4r5HZL_BMTRe5S9DIxf0UogZKDn9hitS0MbEhWYO1VK-AMKTGTVi14Y0uidIikjpGXURb07YRVjHFyTkOP9cq1TTWOikj5KlZzi7DJsCA1DzpzH2fhMJyFLzk"
+                  alt="Alex Rivera"
+                />
+                <div>
+                  <h4>Alex Rivera</h4>
+                  <p>Data Science with R</p>
+                </div>
+              </div>
+              <button class="btn-join-call">
+                <span class="material-symbols-outlined" aria-hidden="true"
+                  >videocam</span
+                >
+                Join Video Call
+              </button>
+            </div>
+
+            <!-- Session 2 -->
+            <div class="session-card">
+              <div class="session-header">
+                <span class="session-status status-pending"
+                  ><span class="material-symbols-outlined" aria-hidden="true"
+                    >pending</span
+                  >
+                  Pending</span
+                >
+                <span class="session-date"
+                  ><span class="material-symbols-outlined" aria-hidden="true"
+                    >schedule</span
+                  >
+                  Oct 12, 11:00 AM</span
+                >
+              </div>
+              <div class="session-partner">
+                <img
+                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuCV25Ys-syTomckdeXfKHPavW_Mk7w7c6OJwhx-UtZ09zzrKEtTtyGStfylkiv_kKEkHlRLnUDWF_TkdCY5piWwq_kXeG-R5ubYAxR8yEx1N1EGyjFnllOL9_UTAR39Uo9iQssdRkvnILs_vkIF-o5iCJyj8sxqORhYddS6CoBa7nZC5fnTAofTPLBSfHeRDhoqr3dk7CgmIgkLDzyC66yN72f1Zu6L6ZSHPPsr5tT0PnZMRly-JBBacNf35e5iqnA1ym1hnAksCLY"
+                  alt="Oliver Twist"
+                />
+                <div>
+                  <h4>Oliver Twist</h4>
+                  <p>Photography Basics</p>
+                </div>
+              </div>
+              <button class="btn-join-call status-disabled">
+                <span class="material-symbols-outlined" aria-hidden="true"
+                  >videocam_off</span
+                >
+                Not Available Yet
+              </button>
+            </div>
+          </div>
+        </section>
+      </main>
     </div>
-  </header>
 
-  <!-- Dashboard Main Layout -->
-  <div class="dashboard-container">
-    
-    <!-- Sidebar -->
-    <aside class="dashboard-sidebar">
-      <!-- Profile Card -->
-      <div class="profile-card">
-        <div class="avatar-upload-wrapper" id="avatar-upload-wrapper" title="Change profile photo">
-          <div id="sidebar-avatar" class="user-avatar-initials large">?</div>
-          <div class="avatar-upload-overlay">
-            <span class="material-symbols-outlined">photo_camera</span>
-          </div>
-        </div>
-        <input type="file" id="photo-upload-input" accept="image/*" style="display:none">
-        <h3 id="sidebar-name">Loading...</h3>
-        <p id="sidebar-subtitle"></p>
-        
-        <div class="profile-stats">
-          <div class="stat-item">
-            <h4>12</h4>
-            <span>Swaps</span>
-          </div>
-          <div class="stat-item">
-            <h4>4.9</h4>
-            <span>Rating</span>
-          </div>
-        </div>
-
-        <button class="btn-edit-profile">Edit Profile</button>
-      </div>
-
-      <!-- Navigation Links -->
-      <div class="sidebar-nav">
-        <a href="#" class="active">
-          <span class="material-symbols-outlined">dashboard</span> Overview
-        </a>
-        <a href="#">
-          <span class="material-symbols-outlined">mail</span> Requests
-          <span class="nav-badge">2</span>
-        </a>
-        <a href="#">
-          <span class="material-symbols-outlined">calendar_month</span> Schedule
-        </a>
-        <a href="#">
-          <span class="material-symbols-outlined">history</span> Exchange History
-        </a>
-        <a href="#">
-          <span class="material-symbols-outlined">settings</span> Settings
-        </a>
-        <a href="#" id="logout-btn">
-          <span class="material-symbols-outlined">logout</span> Log Out
-        </a>
-      </div>
-    </aside>
-
-    <!-- Main Content -->
-    <main class="dashboard-content">
-
-      <!-- My Skills Section -->
-      <section>
-        <div class="dashboard-section-header">
-          <h2 class="dashboard-section-title">My Skills</h2>
-        </div>
-        <div class="skills-panels">
-          <div class="skills-panel">
-            <h3 class="skills-panel-title">
-              <span class="material-symbols-outlined">school</span> Skills I Can Teach
-            </h3>
-            <div id="skills-teach-list" class="skills-tag-list">
-              <span class="skills-empty">No skills added yet.</span>
-            </div>
-          </div>
-          <div class="skills-panel">
-            <h3 class="skills-panel-title">
-              <span class="material-symbols-outlined">auto_stories</span> Skills I Want to Learn
-            </h3>
-            <div id="skills-learn-list" class="skills-tag-list">
-              <span class="skills-empty">No skills added yet.</span>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- Incoming Requests Section -->
-      <section>
-        <div class="dashboard-section-header">
-          <h2 class="dashboard-section-title">Incoming Requests</h2>
-          <a href="#" class="dashboard-section-link">View all</a>
-        </div>
-        
-        <div class="request-list">
-          
-          <!-- Request 1 -->
-          <div class="request-card">
-            <div class="request-info">
-              <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuDtZQr8NeDcj0vzMrW4JKPUvQzuNO3d5-aPPM4nrkTeMmPrEMxy8js4f5pfUZZ_VFJunUQfr2YafzMWMXTNdjSCXj0OqxilF74GUlLxCFClkyA8jFHrdUZ-sdIBF4oVW0L-U8Dpm0AXX0AfDKo-Kn4r5HZL_BMTRe5S9DIxf0UogZKDn9hitS0MbEhWYO1VK-AMKTGTVi14Y0uidIikjpGXURb07YRVjHFyTkOP9cq1TTWOikj5KlZzi7DJsCA1DzpzH2fhMJyFLzk" alt="David Chen" class="request-avatar">
-              <div class="request-details">
-                <h4>David Chen</h4>
-                <p>Wants to swap Python Programming for UI/UX Design</p>
-                <div class="request-skills">
-                  <span class="skill-tag">Python</span>
-                  <span class="material-symbols-outlined exchange-direction">sync_alt</span>
-                  <span class="skill-tag primary">UI/UX Design</span>
-                </div>
-              </div>
-            </div>
-            <div class="request-actions">
-              <button class="btn-decline">Decline</button>
-              <button class="btn-accept">Accept Swap</button>
-            </div>
-          </div>
-
-          <!-- Request 2 -->
-          <div class="request-card">
-            <div class="request-info">
-              <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuCV25Ys-syTomckdeXfKHPavW_Mk7w7c6OJwhx-UtZ09zzrKEtTtyGStfylkiv_kKEkHlRLnUDWF_TkdCY5piWwq_kXeG-R5ubYAxR8yEx1N1EGyjFnllOL9_UTAR39Uo9iQssdRkvnILs_vkIF-o5iCJyj8sxqORhYddS6CoBa7nZC5fnTAofTPLBSfHeRDhoqr3dk7CgmIgkLDzyC66yN72f1Zu6L6ZSHPPsr5tT0PnZMRly-JBBacNf35e5iqnA1ym1hnAksCLY" alt="Elena Rodriguez" class="request-avatar">
-              <div class="request-details">
-                <h4>Elena Rodriguez</h4>
-                <p>Wants to swap Spanish Conversation for Figma Prototyping</p>
-                <div class="request-skills">
-                  <span class="skill-tag">Spanish</span>
-                  <span class="material-symbols-outlined exchange-direction">sync_alt</span>
-                  <span class="skill-tag primary">Figma Prototyping</span>
-                </div>
-              </div>
-            </div>
-            <div class="request-actions">
-              <button class="btn-decline">Decline</button>
-              <button class="btn-accept">Accept Swap</button>
-            </div>
-          </div>
-
-        </div>
-      </section>
-
-      <!-- Active Sessions Section -->
-      <section>
-        <div class="dashboard-section-header">
-          <h2 class="dashboard-section-title">Upcoming Sessions</h2>
-        </div>
-
-        <div class="session-grid">
-          
-          <!-- Session 1 -->
-          <div class="session-card">
-            <div class="session-header">
-              <span class="session-status"><span class="material-symbols-outlined">check_circle</span> Confirmed</span>
-              <span class="session-date"><span class="material-symbols-outlined">schedule</span> Tomorrow, 2:00 PM</span>
-            </div>
-            <div class="session-partner">
-              <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuDtZQr8NeDcj0vzMrW4JKPUvQzuNO3d5-aPPM4nrkTeMmPrEMxy8js4f5pfUZZ_VFJunUQfr2YafzMWMXTNdjSCXj0OqxilF74GUlLxCFClkyA8jFHrdUZ-sdIBF4oVW0L-U8Dpm0AXX0AfDKo-Kn4r5HZL_BMTRe5S9DIxf0UogZKDn9hitS0MbEhWYO1VK-AMKTGTVi14Y0uidIikjpGXURb07YRVjHFyTkOP9cq1TTWOikj5KlZzi7DJsCA1DzpzH2fhMJyFLzk" alt="Alex Rivera">
-              <div>
-                <h4>Alex Rivera</h4>
-                <p>Data Science with R</p>
-              </div>
-            </div>
-            <button class="btn-join-call"><span class="material-symbols-outlined">videocam</span> Join Video Call</button>
-          </div>
-
-          <!-- Session 2 -->
-          <div class="session-card">
-            <div class="session-header">
-              <span class="session-status" style="background-color: #fef08a; color: #854d0e;"><span class="material-symbols-outlined">pending</span> Pending</span>
-              <span class="session-date"><span class="material-symbols-outlined">schedule</span> Oct 12, 11:00 AM</span>
-            </div>
-            <div class="session-partner">
-              <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuCV25Ys-syTomckdeXfKHPavW_Mk7w7c6OJwhx-UtZ09zzrKEtTtyGStfylkiv_kKEkHlRLnUDWF_TkdCY5piWwq_kXeG-R5ubYAxR8yEx1N1EGyjFnllOL9_UTAR39Uo9iQssdRkvnILs_vkIF-o5iCJyj8sxqORhYddS6CoBa7nZC5fnTAofTPLBSfHeRDhoqr3dk7CgmIgkLDzyC66yN72f1Zu6L6ZSHPPsr5tT0PnZMRly-JBBacNf35e5iqnA1ym1hnAksCLY" alt="Oliver Twist">
-              <div>
-                <h4>Oliver Twist</h4>
-                <p>Photography Basics</p>
-              </div>
-            </div>
-            <button class="btn-join-call" style="background-color: #f1f5f9; color: #94a3b8; cursor: not-allowed;"><span class="material-symbols-outlined">videocam_off</span> Not Available Yet</button>
-          </div>
-
-        </div>
-      </section>
-
-    </main>
-  </div>
-
-  <script src="js/auth.js"></script>
-  <script src="js/script.js"></script>
-</body>
+    <script src="js/auth.js"></script>
+    <script src="js/script.js"></script>
+  </body>
 </html>
