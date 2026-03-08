@@ -202,6 +202,70 @@ body {
   text-decoration: underline;
 }
 
+/* Skills Section */
+.skills-panels {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+
+.skills-panel {
+  background-color: var(--white);
+  border: 1px solid var(--primary-10);
+  border-radius: 16px;
+  padding: 24px;
+}
+
+.skills-panel-title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 15px;
+  font-weight: 700;
+  color: #111;
+  margin-bottom: 16px;
+}
+
+.skills-panel-title .material-symbols-outlined {
+  font-size: 20px;
+  color: #006280;
+}
+
+.skills-tag-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.skills-empty {
+  font-size: 13px;
+  color: #94a3b8;
+  font-weight: 500;
+}
+
+body.dark-mode .skills-panel {
+  background-color: #1c2128;
+  border-color: rgba(0, 151, 199, 0.12);
+}
+
+body.dark-mode .skills-panel-title {
+  color: #e6edf3;
+}
+
+body.dark-mode .skills-panel-title .material-symbols-outlined {
+  color: #3db8e5;
+}
+
+body.dark-mode .skills-empty {
+  color: #6e7681;
+}
+
+@media (max-width: 768px) {
+  .skills-panels {
+    grid-template-columns: 1fr;
+  }
+}
+
 /* Request Cards */
 .request-list {
   display: flex;

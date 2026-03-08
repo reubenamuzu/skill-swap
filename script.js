@@ -331,8 +331,21 @@ document.addEventListener('DOMContentLoaded', () => {
     } else {
       const user = getCurrentUser();
 
-      document.getElementById('sidebar-name').textContent = user.name;
-      document.getElementById('user-display-name').textContent = user.name;
+      document.getElementById('sidebar-name').textContent = user.name || 'SkillSwap Member';
+      document.getElementById('user-display-name').textContent = user.name || 'My Account';
+
+      // Render skills
+      function renderSkillTags(containerId, skills) {
+        const container = document.getElementById(containerId);
+        if (!container) return;
+        if (!skills || skills.length === 0) {
+          container.innerHTML = '<span class="skills-empty">No skills added yet.</span>';
+          return;
+        }
+        container.innerHTML = skills.map(s => `<span class="skill-tag">${s}</span>`).join('');
+      }
+      renderSkillTags('skills-teach-list', user.skillsToTeach);
+      renderSkillTags('skills-learn-list', user.skillsToLearn);
 
       const subtitle = user.school && user.degree
         ? `${user.school} · ${user.degree}`
