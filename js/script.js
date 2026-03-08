@@ -70,7 +70,7 @@ document.addEventListener('DOMContentLoaded', () => {
     window.addEventListener('scroll', () => {
       // If mobile menu is open, don't hide the header
       if (mainNav && mainNav.classList.contains('open')) return;
-      
+
       if (window.scrollY > lastScrollY && window.scrollY > 80) {
         // Scrolling down & past 80px
         header.classList.add('nav-hidden');
