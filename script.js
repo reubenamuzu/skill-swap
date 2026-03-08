@@ -323,6 +323,25 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
+  // ── Explore page: expanding search on mobile/tablet ──
+  const searchToggleBtn = document.getElementById('search-toggle-btn');
+  const searchCloseBtn = document.getElementById('search-close-btn');
+  const searchInput = document.getElementById('search-input');
+  const pageHeader = document.querySelector('header');
+
+  if (searchToggleBtn && searchCloseBtn && searchInput && pageHeader) {
+    searchToggleBtn.addEventListener('click', () => {
+      pageHeader.classList.add('search-expanded');
+      searchInput.focus();
+    });
+
+    searchCloseBtn.addEventListener('click', () => {
+      pageHeader.classList.remove('search-expanded');
+      searchInput.value = '';
+      searchInput.dispatchEvent(new Event('input'));
+    });
+  }
+
   // ── Dashboard ──
   if (document.getElementById('sidebar-name')) {
     // Auth guard

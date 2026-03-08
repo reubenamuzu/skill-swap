@@ -720,12 +720,12 @@ body.dark-mode .skill-modal {
 }
 
 body.dark-mode .skill-modal-close {
-  background: rgba(255, 255, 255, 0.08);
+  background: #2d333b;
   color: #e6edf3;
 }
 
 body.dark-mode .skill-modal-close:hover {
-  background: rgba(255, 255, 255, 0.14);
+  background: #373e47;
 }
 
 body.dark-mode .skill-modal-title {

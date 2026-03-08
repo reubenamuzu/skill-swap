@@ -336,6 +336,105 @@ body.dark-mode .nav-profile-name {
   color: var(--slate-500);
 }
 
+/* Search toggle button (mobile/tablet only) */
+#search-toggle-btn {
+  display: none;
+  background: none;
+  border: 1px solid var(--primary-10);
+  border-radius: 8px;
+  padding: 6px 8px;
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+  color: var(--slate-600);
+  transition: all 0.25s ease;
+}
+
+#search-toggle-btn:hover {
+  background-color: var(--primary-05);
+  color: var(--primary);
+  border-color: var(--primary-20);
+}
+
+#search-toggle-btn .material-symbols-outlined {
+  font-size: 20px;
+}
+
+/* Close button inside search box (mobile/tablet only) */
+#search-close-btn {
+  display: none;
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  color: var(--slate-600);
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+#search-close-btn .material-symbols-outlined {
+  font-size: 20px;
+}
+
+/* Mobile/tablet: show toggle, hide close btn by default */
+@media (max-width: 1023px) {
+  #search-toggle-btn {
+    display: flex;
+  }
+
+  .search-box .search-icon {
+    display: none;
+  }
+
+  /* Expanded search state */
+  header.search-expanded .header-left {
+    display: none;
+  }
+
+  header.search-expanded .search-box {
+    display: flex;
+    flex: 1;
+    border-radius: 8px;
+    padding: 7px 12px;
+  }
+
+  header.search-expanded .search-box input {
+    flex: 1;
+    width: 100%;
+  }
+
+  header.search-expanded #search-close-btn {
+    display: flex;
+  }
+
+  header.search-expanded #search-toggle-btn {
+    display: none;
+  }
+
+  header.search-expanded .theme-toggle {
+    display: none;
+  }
+
+  header.search-expanded .burger-menu {
+    display: none;
+  }
+}
+
+body.dark-mode #search-toggle-btn {
+  color: var(--slate-500);
+  border-color: var(--primary-10);
+}
+
+body.dark-mode #search-toggle-btn:hover {
+  background-color: rgba(0, 151, 199, 0.06);
+  color: #3db8e5;
+}
+
+body.dark-mode #search-close-btn {
+  color: var(--slate-500);
+}
+
 .btn-nav {
   background-color: var(--primary);
   color: var(--white);

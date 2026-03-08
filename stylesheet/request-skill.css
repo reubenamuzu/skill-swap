@@ -129,6 +129,11 @@ body {
   color: #64748b;
 }
 
+.recipient-name {
+  color: #111;
+  font-weight: 500;
+}
+
 .skill-recipient img {
   width: 24px;
   height: 24px;
@@ -387,6 +392,10 @@ body.dark-mode .skill-title {
 
 body.dark-mode .skill-recipient {
   color: #8b949e;
+}
+
+body.dark-mode .recipient-name {
+  color: #e6edf3;
 }
 
 body.dark-mode .form-card {

@@ -1,184 +1,240 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Explore Skills - SkillExchange</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="stylesheet/style.css" />
+    <link rel="stylesheet" href="stylesheet/explore.css" />
+  </head>
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Explore Skills - SkillExchange</title>
-  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&display=swap"
-    rel="stylesheet" />
-  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
-    rel="stylesheet" />
-  <link rel="stylesheet" href="stylesheet/style.css" />
-  <link rel="stylesheet" href="stylesheet/explore.css" />
-</head>
-
-<body>
-
-  <!-- Explore Header -->
-  <header>
-    <div class="header-inner">
-      <div class="header-left">
-        <!-- Logo -->
-        <a href="index.html" class="logo">
-          <img src="assets/icon-w.png" alt="SkillSwap" class="nav-logo-icon">
-        </a>
-        <!-- Desktop Nav -->
-        <nav class="main-nav" id="main-nav">
-          <a href="index.html">Home</a>
-          <a href="explore.html" class="active">Explore</a>
-          <a href="dashboard.html">Dashboard</a>
-        </nav>
-      </div>
-
-      <div class="header-right">
-        <!-- Search (desktop only) -->
-        <div class="search-box">
-          <span class="material-symbols-outlined">search</span>
-          <input type="text" id="search-input" placeholder="Search skills..." />
+  <body>
+    <!-- Explore Header -->
+    <header>
+      <div class="header-inner">
+        <div class="header-left">
+          <!-- Logo -->
+          <a href="index.html" class="logo">
+            <img
+              src="assets/icon-w.png"
+              alt="SkillSwap"
+              class="nav-logo-icon"
+            />
+          </a>
+          <!-- Desktop Nav -->
+          <nav class="main-nav" id="main-nav">
+            <a href="index.html">Home</a>
+            <a href="explore.html" class="active">Explore</a>
+            <a href="dashboard.html">Dashboard</a>
+          </nav>
         </div>
 
-        <button class="theme-toggle" aria-label="Toggle dark mode">
-          <span class="material-symbols-outlined icon-dark">dark_mode</span>
-          <span class="material-symbols-outlined icon-light">light_mode</span>
+        <div class="header-right">
+          <!-- Search toggle (mobile/tablet only) -->
+          <button id="search-toggle-btn" aria-label="Open search">
+            <span class="material-symbols-outlined">search</span>
+          </button>
+
+          <!-- Search box (desktop always-on; mobile/tablet expanded state) -->
+          <div class="search-box">
+            <button id="search-close-btn" aria-label="Close search">
+              <span class="material-symbols-outlined">arrow_back</span>
+            </button>
+            <span class="material-symbols-outlined search-icon">search</span>
+            <input
+              type="text"
+              id="search-input"
+              placeholder="Search skills..."
+            />
+          </div>
+
+          <button class="theme-toggle" aria-label="Toggle dark mode">
+            <span class="material-symbols-outlined icon-dark">dark_mode</span>
+            <span class="material-symbols-outlined icon-light">light_mode</span>
+          </button>
+          <button class="burger-menu" id="burger-menu">
+            <img
+              src="assets/menu-burger.png"
+              alt="Menu"
+              style="width: 24px; height: 24px; object-fit: contain"
+            />
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <!-- Title section -->
+    <section class="explore-title-section">
+      <h1 class="explore-title-text">Explore Skills</h1>
+      <p class="explore-subtitle-text">
+        Discover experts ready to trade knowledge with you.
+      </p>
+    </section>
+
+    <!-- Filter & Sort Controls -->
+    <section class="explore-controls">
+      <div class="filter-bar" id="filter-bar">
+        <button class="filter-tab active" data-category="All">All</button>
+        <button class="filter-tab" data-category="Design">Design</button>
+        <button class="filter-tab" data-category="Development">
+          Development
         </button>
-        <button class="burger-menu" id="burger-menu">
-          <img src="assets/menu-burger.png" alt="Menu" style="width: 24px; height: 24px; object-fit: contain;">
+        <button class="filter-tab" data-category="Language">Language</button>
+        <button class="filter-tab" data-category="Photography">
+          Photography
         </button>
-      </div>
-    </div>
-  </header>
-
-  <!-- Title section -->
-  <section class="explore-title-section">
-    <h1 class="explore-title-text">Explore Skills</h1>
-    <p class="explore-subtitle-text">Discover experts ready to trade knowledge with you.</p>
-  </section>
-
-  <!-- Filter & Sort Controls -->
-  <section class="explore-controls">
-    <div class="filter-bar" id="filter-bar">
-      <button class="filter-tab active" data-category="All">All</button>
-      <button class="filter-tab" data-category="Design">Design</button>
-      <button class="filter-tab" data-category="Development">Development</button>
-      <button class="filter-tab" data-category="Language">Language</button>
-      <button class="filter-tab" data-category="Photography">Photography</button>
-      <button class="filter-tab" data-category="Music">Music</button>
-      <button class="filter-tab" data-category="Cooking">Cooking</button>
-      <button class="filter-tab" data-category="Marketing">Marketing</button>
-      <button class="filter-tab" data-category="Data Science">Data Science</button>
-      <button class="filter-tab filter-tab-more" id="filter-tab-more" style="display:none">Show more</button>
-    </div>
-    <div class="sort-wrapper">
-      <label for="sort-select" class="sr-only">Sort by</label>
-      <select id="sort-select" class="sort-select">
-        <option value="best-rated">Best Rated</option>
-        <option value="most-reviews">Most Reviews</option>
-        <option value="newest">Newest</option>
-      </select>
-    </div>
-  </section>
-
-  <!-- Dynamic Grid -->
-  <section class="explore-grid" id="skills-grid"></section>
-
-  <!-- Dynamic Pagination -->
-  <div class="pagination" id="pagination"></div>
-
-  <!-- Footer (from style.css) -->
-  <footer>
-    <div class="footer-inner">
-      <div class="footer-grid">
-
-        <!-- Brand -->
-        <div class="footer-brand">
-          <div class="footer-logo">
-            <img src="assets/icon-w.png" alt="SkillSwap" style="height: 48px; width: auto; object-fit: contain">
-                <h2>SkillSwap</h2>
-
-          </div>
-          <p class="footer-tagline">
-            The global platform for collaborative learning. Empowering individuals to share knowledge and build careers
-            together.
-          </p>
-          <div class="social-links">
-            <a href="#" class="social-link"><span class="material-symbols-outlined">public</span></a>
-            <a href="#" class="social-link"><span class="material-symbols-outlined">share</span></a>
-            <a href="#" class="social-link"><span class="material-symbols-outlined">alternate_email</span></a>
-          </div>
-        </div>
-
-        <!-- Platform -->
-        <div class="footer-col">
-          <h4>Platform</h4>
-          <ul>
-            <li><a href="#">How it Works</a></li>
-            <li><a href="#">Popular Skills</a></li>
-            <li><a href="#">Success Stories</a></li>
-            <li><a href="#">Safety &amp; Trust</a></li>
-          </ul>
-        </div>
-
-        <!-- Community -->
-        <div class="footer-col">
-          <h4>Community</h4>
-          <ul>
-            <li><a href="#">Events</a></li>
-            <li><a href="#">Mentors</a></li>
-            <li><a href="#">Guidelines</a></li>
-            <li><a href="#">Blog</a></li>
-          </ul>
-        </div>
-
-        <!-- Company -->
-        <div class="footer-col">
-          <h4>Company</h4>
-          <ul>
-            <li><a href="#">About Us</a></li>
-            <li><a href="#">Careers</a></li>
-            <li><a href="#">Contact</a></li>
-            <li><a href="#">Privacy Policy</a></li>
-          </ul>
-        </div>
-
-      </div>
-    </div>
-  </footer>
-
-  <!-- Skill Details Modal -->
-  <div id="skill-modal" class="skill-modal-overlay" role="dialog" aria-modal="true" aria-labelledby="modal-title">
-    <div class="skill-modal">
-      <button class="skill-modal-close" id="modal-close" aria-label="Close">
-        <span class="material-symbols-outlined">close</span>
-      </button>
-      <img id="modal-img" src="" alt="" class="skill-modal-img">
-      <div class="skill-modal-body">
-        <div class="skill-modal-meta">
-          <span id="modal-category" class="skill-modal-category"></span>
-          <div class="explore-card-rating">
-            <span class="material-symbols-outlined">star</span>
-            <span id="modal-rating"></span>
-          </div>
-        </div>
-        <h2 id="modal-title" class="skill-modal-title"></h2>
-        <p id="modal-desc" class="skill-modal-desc"></p>
-        <div class="skill-modal-instructor">
-          <img id="modal-instructor-avatar" src="" alt="">
-          <div>
-            <p id="modal-instructor-name" class="skill-modal-instructor-name"></p>
-            <p id="modal-reviews" class="skill-modal-reviews"></p>
-          </div>
-        </div>
-        <button class="btn-request skill-modal-request" onclick="window.location.href='request-skill.html'">
-          Request Skill
+        <button class="filter-tab" data-category="Music">Music</button>
+        <button class="filter-tab" data-category="Cooking">Cooking</button>
+        <button class="filter-tab" data-category="Marketing">Marketing</button>
+        <button class="filter-tab" data-category="Data Science">
+          Data Science
+        </button>
+        <button
+          class="filter-tab filter-tab-more"
+          id="filter-tab-more"
+          style="display: none"
+        >
+          Show more
         </button>
       </div>
+      <div class="sort-wrapper">
+        <label for="sort-select" class="sr-only">Sort by</label>
+        <select id="sort-select" class="sort-select">
+          <option value="best-rated">Best Rated</option>
+          <option value="most-reviews">Most Reviews</option>
+          <option value="newest">Newest</option>
+        </select>
+      </div>
+    </section>
+
+    <!-- Dynamic Grid -->
+    <section class="explore-grid" id="skills-grid"></section>
+
+    <!-- Dynamic Pagination -->
+    <div class="pagination" id="pagination"></div>
+
+    <!-- Footer (from style.css) -->
+    <footer>
+      <div class="footer-inner">
+        <div class="footer-grid">
+          <!-- Brand -->
+          <div class="footer-brand">
+            <div class="footer-logo">
+              <img
+                src="assets/icon-w.png"
+                alt="SkillSwap"
+                style="height: 48px; width: auto; object-fit: contain"
+              />
+              <h2>SkillSwap</h2>
+            </div>
+            <p class="footer-tagline">
+              The global platform for collaborative learning. Empowering
+              individuals to share knowledge and build careers together.
+            </p>
+            <div class="social-links">
+              <a href="#" class="social-link"
+                ><span class="material-symbols-outlined">public</span></a
+              >
+              <a href="#" class="social-link"
+                ><span class="material-symbols-outlined">share</span></a
+              >
+              <a href="#" class="social-link"
+                ><span class="material-symbols-outlined"
+                  >alternate_email</span
+                ></a
+              >
+            </div>
+          </div>
+
+          <!-- Platform -->
+          <div class="footer-col">
+            <h4>Platform</h4>
+            <ul>
+              <li><a href="#">How it Works</a></li>
+              <li><a href="#">Popular Skills</a></li>
+              <li><a href="#">Success Stories</a></li>
+              <li><a href="#">Safety &amp; Trust</a></li>
+            </ul>
+          </div>
+
+          <!-- Community -->
+          <div class="footer-col">
+            <h4>Community</h4>
+            <ul>
+              <li><a href="#">Events</a></li>
+              <li><a href="#">Mentors</a></li>
+              <li><a href="#">Guidelines</a></li>
+              <li><a href="#">Blog</a></li>
+            </ul>
+          </div>
+
+          <!-- Company -->
+          <div class="footer-col">
+            <h4>Company</h4>
+            <ul>
+              <li><a href="#">About Us</a></li>
+              <li><a href="#">Careers</a></li>
+              <li><a href="#">Contact</a></li>
+              <li><a href="#">Privacy Policy</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Skill Details Modal -->
+    <div
+      id="skill-modal"
+      class="skill-modal-overlay"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="modal-title"
+    >
+      <div class="skill-modal">
+        <button class="skill-modal-close" id="modal-close" aria-label="Close">
+          <span class="material-symbols-outlined">close</span>
+        </button>
+        <img id="modal-img" src="" alt="" class="skill-modal-img" />
+        <div class="skill-modal-body">
+          <div class="skill-modal-meta">
+            <span id="modal-category" class="skill-modal-category"></span>
+            <div class="explore-card-rating">
+              <span class="material-symbols-outlined">star</span>
+              <span id="modal-rating"></span>
+            </div>
+          </div>
+          <h2 id="modal-title" class="skill-modal-title"></h2>
+          <p id="modal-desc" class="skill-modal-desc"></p>
+          <div class="skill-modal-instructor">
+            <img id="modal-instructor-avatar" src="" alt="" />
+            <div>
+              <p
+                id="modal-instructor-name"
+                class="skill-modal-instructor-name"
+              ></p>
+              <p id="modal-reviews" class="skill-modal-reviews"></p>
+            </div>
+          </div>
+          <button
+            class="btn-request skill-modal-request"
+            onclick="window.location.href = 'request-skill.html'"
+          >
+            Request Skill
+          </button>
+        </div>
+      </div>
     </div>
-  </div>
 
-  <script src="js/auth.js"></script>
-  <script src="js/explore.js"></script>
-  <script src="script.js"></script>
-</body>
-
+    <script src="js/auth.js"></script>
+    <script src="js/explore.js"></script>
+    <script src="script.js"></script>
+  </body>
 </html>
