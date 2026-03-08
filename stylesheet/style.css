@@ -37,6 +37,10 @@ body {
   font-family: 'Manrope', sans-serif;
   font-size: 16px;
   background-color: var(--bg-light);
+  background-image:
+    linear-gradient(var(--primary-05) 1px, transparent 1px),
+    linear-gradient(90deg, var(--primary-05) 1px, transparent 1px);
+  background-size: 50px 50px;
   color: var(--text);
   min-height: 100vh;
   overflow-x: hidden;
@@ -101,18 +105,18 @@ header.nav-hidden {
 .header-left {
   display: flex;
   align-items: center;
-  gap: 32px;
+  gap: 30px;
 }
 
 .logo {
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 6px;
   color: var(--primary);
 }
 
 .nav-logo-icon {
-  height: 60px;
+  height: 56px;
   width: auto;
   object-fit: contain;
 }
@@ -180,6 +184,54 @@ header.nav-hidden {
   cursor: pointer;
 }
 
+.burger-menu img {
+  width: 20px !important;
+  height: 20px !important;
+}
+
+/* ── Navbar profile chip (index.html, logged-in) ── */
+.nav-profile-chip {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: default;
+}
+
+.nav-profile-avatar {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background-color: var(--primary);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 13px;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+.nav-profile-photo {
+  object-fit: cover;
+  background-color: transparent;
+}
+
+.nav-profile-name {
+  display: none;
+}
+
+@media (max-width: 640px) {
+  .nav-profile-chip { display: none; }
+}
+
+body.dark-mode .nav-profile-avatar {
+  background-color: #0097c7;
+}
+
+body.dark-mode .nav-profile-name {
+  color: #e6edf3;
+}
+
 @media (max-width: 767px) {
   .btn-nav {
     display: none !important;
@@ -193,7 +245,6 @@ header.nav-hidden {
 
   .main-nav {
     display: none;
-    /* hidden by default on mobile */
     flex-direction: column;
     position: absolute;
     top: 100%;
@@ -201,15 +252,58 @@ header.nav-hidden {
     width: 100%;
     background-color: var(--white);
     border-bottom: 1px solid var(--primary-10);
-    padding: 24px;
+    padding: 20px 24px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
     align-items: flex-start;
-    gap: 20px;
+    gap: 0;
     z-index: 100;
+    /* reset desktop spacing */
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  .main-nav a {
+    width: 100%;
+    padding: 14px 0;
+    font-size: 16px;
+    border-bottom: 1px solid var(--primary-10);
+  }
+
+  .main-nav a:last-child {
+    border-bottom: none;
+  }
+
+  /* hide the active underline indicator on mobile — full-width row already shows active */
+  .main-nav a::after {
+    display: none;
   }
 
   .main-nav.open {
     display: flex;
+  }
+
+  /* header padding tighter on small screens */
+  .header-inner {
+    padding: 10px 16px;
+  }
+
+  /* logo smaller on mobile */
+  .nav-logo-icon {
+    height: 52px;
+  }
+
+  .header-left {
+    gap: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .header-inner {
+    padding: 8px 12px;
+  }
+
+  .nav-logo-icon {
+    height: 44px;
   }
 }
 
@@ -272,6 +366,21 @@ header.nav-hidden {
   }
 }
 
+@media (max-width: 767px) {
+  .hero-inner {
+    align-items: center;
+  }
+
+  .hero-content {
+    text-align: center;
+    align-items: center;
+  }
+
+  .hero-actions {
+    justify-content: center;
+  }
+}
+
 .hero-inner {
   display: flex;
   flex-direction: column;
@@ -311,7 +420,7 @@ header.nav-hidden {
 }
 
 .hero-title {
-  font-size: clamp(36px, 5vw, 64px);
+  font-size: clamp(48px, 5vw + 24px, 72px);
   font-weight: 900;
   line-height: 1.1;
   letter-spacing: -1px;
@@ -1203,10 +1312,20 @@ footer {
   }
 }
 
-@media (min-width: 1024px) {
+@media (min-width: 768px) {
   .hero-inner {
     flex-direction: row;
     align-items: center;
+  }
+
+  .hero-visual {
+    max-width: 45%;
+  }
+}
+
+@media (min-width: 1024px) {
+  .hero-visual {
+    max-width: 100%;
   }
 
   .search-box {
@@ -1312,6 +1431,10 @@ body.dark-mode .search-box input {
     background-color: #1c2128;
     border-bottom-color: var(--primary-10);
   }
+
+  body.dark-mode .main-nav a {
+    border-bottom-color: var(--primary-10);
+  }
 }
 
 /* Theme toggle dark mode styling */
@@ -1365,7 +1488,58 @@ body.dark-mode .skill-card:hover {
   box-shadow: 0 16px 48px rgba(0, 0, 0, 0.4);
 }
 
-/* Why Us - already dark, no major changes needed */
+/* Why Us — dark mode */
+body.dark-mode .why-us {
+  background-color: #0a1628;
+  background-image: radial-gradient(ellipse at 60% 0%, rgba(0, 151, 199, 0.12) 0%, transparent 60%);
+}
+
+body.dark-mode .why-us-title {
+  color: #e6edf3;
+}
+
+body.dark-mode .why-feature:hover {
+  background-color: rgba(0, 151, 199, 0.08);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+}
+
+body.dark-mode .why-feature-icon {
+  background-color: rgba(0, 151, 199, 0.18);
+}
+
+body.dark-mode .why-feature h4 {
+  color: #e6edf3;
+}
+
+body.dark-mode .why-feature p {
+  color: rgba(230, 237, 243, 0.65);
+}
+
+body.dark-mode .stat-block {
+  background-color: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(0, 151, 199, 0.18);
+}
+
+body.dark-mode .stat-block:hover {
+  background-color: rgba(0, 151, 199, 0.10);
+  box-shadow: 0 16px 32px rgba(0, 0, 0, 0.4);
+}
+
+body.dark-mode .stat-number {
+  color: #3db8e5;
+}
+
+body.dark-mode .stat-label {
+  color: rgba(230, 237, 243, 0.65);
+}
+
+body.dark-mode .why-us .material-symbols-outlined {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+body.dark-mode .stat-block:hover .material-symbols-outlined {
+  color: #fff;
+}
 
 /* Testimonials */
 body.dark-mode .testimonials {

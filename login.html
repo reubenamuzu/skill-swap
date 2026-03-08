@@ -33,16 +33,17 @@
         </div>
         <span>or use your account</span>
 
-        <form action="index.html" method="GET">
+        <form id="login-form">
           <div class="input-group">
             <i class="fas fa-envelope"></i>
-            <input type="email" placeholder="Email" required />
+            <input type="email" id="login-email" placeholder="Email" />
           </div>
           <div class="input-group">
             <i class="fas fa-lock"></i>
-            <input type="password" placeholder="Password" required />
+            <input type="password" id="login-password" placeholder="Password" />
           </div>
           <a href="#" class="forgot-pass">Forgot your password?</a>
+          <p class="form-error" id="login-error" aria-live="polite"></p>
           <button type="submit" class="btn-primary">Sign In</button>
         </form>
       </div>
@@ -56,6 +57,7 @@
 
     </div>
   </div>
+  <script src="js/auth.js"></script>
   <script src="script.js"></script>
 </body>
 

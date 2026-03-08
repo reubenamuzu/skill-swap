@@ -135,6 +135,7 @@
   font-size: 12px;
   color: #94a3b8;
   font-weight: 500;
+  margin-left: auto;
 }
 
 .explore-card-desc {
@@ -233,14 +234,83 @@
   .explore-grid {
     grid-template-columns: repeat(2, 1fr);
   }
+
+  .explore-controls {
+    padding: 0 20px;
+  }
+}
+
+@media (max-width: 767px) {
+  .explore-controls {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 12px;
+    padding: 0 16px;
+  }
+
+  /* Filter tabs: wrap on mobile, hidden tabs collapse */
+  .filter-bar {
+    flex-wrap: wrap;
+  }
+
+  /* Sort dropdown: full width */
+  .sort-select {
+    width: 100%;
+    padding: 10px 14px;
+  }
+
+  .sort-wrapper {
+    width: 100%;
+  }
 }
 
 @media (max-width: 640px) {
   .explore-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+    padding: 0 12px;
   }
-  .explore-header .main-nav, .explore-header .search-box {
-    display: none;
+
+  .explore-title-section {
+    padding: 24px 16px 16px;
+  }
+
+  .explore-card-body {
+    padding: 12px;
+  }
+
+  .explore-card-title {
+    font-size: 14px;
+  }
+
+  .explore-card-desc {
+    font-size: 13px;
+    margin-bottom: 12px;
+  }
+
+  .explore-card-instructor {
+    margin-bottom: 12px;
+    gap: 6px;
+  }
+
+  .explore-card-instructor img {
+    width: 26px;
+    height: 26px;
+  }
+
+  .explore-card-instructor span {
+    font-size: 12px;
+  }
+
+  .explore-card-actions {
+    flex-direction: column;
+    gap: 6px;
+  }
+}
+
+@media (max-width: 380px) {
+  .explore-grid {
+    grid-template-columns: 1fr;
   }
 }
 
@@ -313,4 +383,372 @@ body.dark-mode .explore-header .search-box input {
 
 body.dark-mode .explore-header .search-box .material-symbols-outlined {
   color: #6e7681;
+}
+
+/* ── Filter & Sort Controls ── */
+.explore-controls {
+  max-width: 1400px;
+  margin: 0 auto 24px;
+  padding: 0 32px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.filter-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.filter-tab {
+  padding: 8px 18px;
+  border-radius: 999px;
+  border: 1px solid #e2e8f0;
+  background-color: #fff;
+  color: #475569;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+  font-family: 'Manrope', sans-serif;
+}
+
+.filter-tab:hover {
+  border-color: #cbd5e1;
+  color: #006280;
+}
+
+.filter-tab.active {
+  background-color: #006280;
+  border-color: #006280;
+  color: #fff;
+}
+
+.sort-wrapper {
+  flex-shrink: 0;
+}
+
+.sort-select {
+  padding: 8px 16px;
+  border-radius: 8px;
+  border: 1px solid #e2e8f0;
+  background-color: #fff;
+  color: #475569;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  outline: none;
+  font-family: 'Manrope', sans-serif;
+  transition: border-color 0.2s;
+}
+
+.sort-select:focus {
+  border-color: #006280;
+}
+
+/* ── No results state ── */
+.no-results {
+  grid-column: 1 / -1;
+  text-align: center;
+  padding: 80px 20px;
+  color: #94a3b8;
+}
+
+.no-results-icon {
+  margin-bottom: 16px;
+}
+
+.no-results-icon .material-symbols-outlined {
+  font-size: 48px;
+  color: #cbd5e1;
+}
+
+.no-results h3 {
+  font-size: 20px;
+  font-weight: 700;
+  color: #475569;
+  margin-bottom: 8px;
+}
+
+.no-results p {
+  font-size: 15px;
+}
+
+/* ── Filter hidden state & show-more button ── */
+.filter-tab-hidden {
+  display: none !important;
+}
+
+.filter-tab-more {
+  border-style: dashed;
+  color: var(--primary);
+  border-color: var(--primary);
+  background-color: transparent;
+}
+
+.filter-tab-more:hover {
+  background-color: var(--primary-10);
+}
+
+body.dark-mode .filter-tab-more {
+  border-color: #0097c7;
+  color: #3db8e5;
+  background-color: transparent;
+}
+
+body.dark-mode .filter-tab-more:hover {
+  background-color: rgba(0, 151, 199, 0.1);
+}
+
+/* Screen reader utility */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* ── Dark mode for new controls ── */
+body.dark-mode .filter-tab {
+  background-color: #1c2128;
+  border-color: #30363d;
+  color: #8b949e;
+}
+
+body.dark-mode .filter-tab:hover {
+  border-color: #484f58;
+  color: #3db8e5;
+}
+
+body.dark-mode .filter-tab.active {
+  background-color: #006280;
+  border-color: #006280;
+  color: #fff;
+}
+
+body.dark-mode .sort-select {
+  background-color: #1c2128;
+  border-color: #30363d;
+  color: #b1bac4;
+}
+
+body.dark-mode .sort-select:focus {
+  border-color: #0097c7;
+}
+
+body.dark-mode .no-results h3 {
+  color: #8b949e;
+}
+
+body.dark-mode .no-results-icon .material-symbols-outlined {
+  color: #484f58;
+}
+
+/* ── Card Actions (two-button row) ── */
+.explore-card-actions {
+  display: flex;
+  gap: 8px;
+}
+
+.btn-details {
+  flex: 1;
+  padding: 8px;
+  background-color: transparent;
+  color: var(--primary);
+  border: 1px solid var(--primary);
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background-color 0.2s, color 0.2s;
+  font-family: 'Manrope', sans-serif;
+}
+
+.btn-details:hover {
+  background-color: var(--primary-10);
+}
+
+.explore-card-actions .btn-request {
+  flex: 1;
+}
+
+/* ── Skill Details Modal ── */
+.skill-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s;
+  padding: 16px;
+}
+
+.skill-modal-overlay.open {
+  opacity: 1;
+  pointer-events: all;
+}
+
+.skill-modal {
+  background: #fff;
+  border-radius: 20px;
+  max-width: 560px;
+  width: 100%;
+  max-height: 90vh;
+  overflow-y: auto;
+  position: relative;
+  transform: translateY(16px);
+  transition: transform 0.25s;
+}
+
+.skill-modal-overlay.open .skill-modal {
+  transform: translateY(0);
+}
+
+.skill-modal-close {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  background: rgba(0, 0, 0, 0.06);
+  border: none;
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 1;
+  transition: background 0.2s;
+}
+
+.skill-modal-close:hover {
+  background: rgba(0, 0, 0, 0.12);
+}
+
+.skill-modal-img {
+  width: 100%;
+  aspect-ratio: 16/9;
+  object-fit: cover;
+  border-radius: 20px 20px 0 0;
+}
+
+.skill-modal-body {
+  padding: 24px;
+}
+
+.skill-modal-meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.skill-modal-category {
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--primary);
+  background: var(--primary-05);
+  padding: 4px 12px;
+  border-radius: 999px;
+}
+
+.skill-modal-title {
+  font-size: 22px;
+  font-weight: 800;
+  color: #111;
+  margin-bottom: 12px;
+}
+
+.skill-modal-desc {
+  font-size: 15px;
+  color: #64748b;
+  line-height: 1.7;
+  margin-bottom: 20px;
+}
+
+.skill-modal-instructor {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 24px;
+  padding: 14px;
+  background: #f8fafc;
+  border-radius: 12px;
+}
+
+.skill-modal-instructor img {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+.skill-modal-instructor-name {
+  font-size: 14px;
+  font-weight: 700;
+  color: #1e293b;
+}
+
+.skill-modal-reviews {
+  font-size: 12px;
+  color: #94a3b8;
+  margin-top: 2px;
+}
+
+.skill-modal-request {
+  width: 100%;
+  padding: 12px;
+  font-size: 15px;
+}
+
+/* ── Dark mode: modal ── */
+body.dark-mode .skill-modal {
+  background: #1c2128;
+}
+
+body.dark-mode .skill-modal-close {
+  background: rgba(255, 255, 255, 0.08);
+  color: #e6edf3;
+}
+
+body.dark-mode .skill-modal-close:hover {
+  background: rgba(255, 255, 255, 0.14);
+}
+
+body.dark-mode .skill-modal-title {
+  color: #e6edf3;
+}
+
+body.dark-mode .skill-modal-desc {
+  color: #8b949e;
+}
+
+body.dark-mode .skill-modal-instructor {
+  background: #161b22;
+}
+
+body.dark-mode .skill-modal-instructor-name {
+  color: #e6edf3;
+}
+
+body.dark-mode .btn-details {
+  border-color: #0097c7;
+  color: #3db8e5;
+}
+
+body.dark-mode .btn-details:hover {
+  background-color: rgba(0, 151, 199, 0.1);
 }

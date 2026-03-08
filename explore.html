@@ -35,7 +35,7 @@
         <!-- Search (desktop only) -->
         <div class="search-box">
           <span class="material-symbols-outlined">search</span>
-          <input type="text" placeholder="Search skills..." />
+          <input type="text" id="search-input" placeholder="Search skills..." />
         </div>
 
         <button class="theme-toggle" aria-label="Toggle dark mode">
@@ -55,201 +55,35 @@
     <p class="explore-subtitle-text">Discover experts ready to trade knowledge with you.</p>
   </section>
 
-  <!-- Grid section -->
-  <section class="explore-grid">
-
-    <!-- Card 1 -->
-    <div class="explore-card">
-      <img src="assets/ui_ux_design.png" alt="UI/UX Design" class="explore-card-img">
-      <div class="explore-card-body">
-        <div class="explore-card-header">
-          <h3 class="explore-card-title">UI/UX Design</h3>
-          <div class="explore-card-rating">
-            <span class="material-symbols-outlined">star</span>
-            4.9
-          </div>
-        </div>
-        <p class="explore-card-desc">Master Figma and learn user-centric design principles for modern applications.</p>
-        <div class="explore-card-instructor">
-          <img
-            src="https://lh3.googleusercontent.com/aida-public/AB6AXuBMQEraWLyTowWwGLsAPSQYRDVZ3zNkd3uHLVMswaNTE-Tw6hzatUkNjl06qoA9spxRx5pLOgwHB9rmjhq0dU3yUVVt_k4t7o_epLcqaijq8AGi13pEQPoKzvsLJlBXDWxB4LTDvJ4U-lsnSMJvsWGRvbg2No9-sg9n_GwdEwgBR89mHXNtS6BkIXrMvlipsTsOfYIaml2wqxss5z8tk6iWIhhX9kv8agMT9UCasWG-cl5q1k5nopu4FOWhGa8IVwMDfZ6WrmMyDOM"
-            alt="Sarah Jenkins">
-          <span>Sarah Jenkins</span>
-        </div>
-        <button class="btn-request" onclick="window.location.href='request-skill.html'">Request Skill</button>
-      </div>
+  <!-- Filter & Sort Controls -->
+  <section class="explore-controls">
+    <div class="filter-bar" id="filter-bar">
+      <button class="filter-tab active" data-category="All">All</button>
+      <button class="filter-tab" data-category="Design">Design</button>
+      <button class="filter-tab" data-category="Development">Development</button>
+      <button class="filter-tab" data-category="Language">Language</button>
+      <button class="filter-tab" data-category="Photography">Photography</button>
+      <button class="filter-tab" data-category="Music">Music</button>
+      <button class="filter-tab" data-category="Cooking">Cooking</button>
+      <button class="filter-tab" data-category="Marketing">Marketing</button>
+      <button class="filter-tab" data-category="Data Science">Data Science</button>
+      <button class="filter-tab filter-tab-more" id="filter-tab-more" style="display:none">Show more</button>
     </div>
-
-    <!-- Card 2 -->
-    <div class="explore-card">
-      <img src="assets/python_programming.png" alt="Python Programming" class="explore-card-img">
-      <div class="explore-card-body">
-        <div class="explore-card-header">
-          <h3 class="explore-card-title">Python Programming</h3>
-          <div class="explore-card-rating">
-            <span class="material-symbols-outlined">star</span>
-            4.8
-          </div>
-        </div>
-        <p class="explore-card-desc">Go from zero to hero in Python. Focus on data science and automation basics.</p>
-        <div class="explore-card-instructor">
-          <img
-            src="https://lh3.googleusercontent.com/aida-public/AB6AXuDtZQr8NeDcj0vzMrW4JKPUvQzuNO3d5-aPPM4nrkTeMmPrEMxy8js4f5pfUZZ_VFJunUQfr2YafzMWMXTNdjSCXj0OqxilF74GUlLxCFClkyA8jFHrdUZ-sdIBF4oVW0L-U8Dpm0AXX0AfDKo-Kn4r5HZL_BMTRe5S9DIxf0UogZKDn9hitS0MbEhWYO1VK-AMKTGTVi14Y0uidIikjpGXURb07YRVjHFyTkOP9cq1TTWOikj5KlZzi7DJsCA1DzpzH2fhMJyFLzk"
-            alt="David Chen">
-          <span>David Chen</span>
-        </div>
-        <button class="btn-request" onclick="window.location.href='request-skill.html'">Request Skill</button>
-      </div>
+    <div class="sort-wrapper">
+      <label for="sort-select" class="sr-only">Sort by</label>
+      <select id="sort-select" class="sort-select">
+        <option value="best-rated">Best Rated</option>
+        <option value="most-reviews">Most Reviews</option>
+        <option value="newest">Newest</option>
+      </select>
     </div>
-
-    <!-- Card 3 -->
-    <div class="explore-card">
-      <img src="assets/spanish_conversation.png" alt="Spanish Conversation" class="explore-card-img">
-      <div class="explore-card-body">
-        <div class="explore-card-header">
-          <h3 class="explore-card-title">Spanish Conversation</h3>
-          <div class="explore-card-rating">
-            <span class="material-symbols-outlined">star</span>
-            5.0
-          </div>
-        </div>
-        <p class="explore-card-desc">Improve your fluency through casual dialogue with native speakers.</p>
-        <div class="explore-card-instructor">
-          <img
-            src="https://lh3.googleusercontent.com/aida-public/AB6AXuCV25Ys-syTomckdeXfKHPavW_Mk7w7c6OJwhx-UtZ09zzrKEtTtyGStfylkiv_kKEkHlRLnUDWF_TkdCY5piWwq_kXeG-R5ubYAxR8yEx1N1EGyjFnllOL9_UTAR39Uo9iQssdRkvnILs_vkIF-o5iCJyj8sxqORhYddS6CoBa7nZC5fnTAofTPLBSfHeRDhoqr3dk7CgmIgkLDzyC66yN72f1Zu6L6ZSHPPsr5tT0PnZMRly-JBBacNf35e5iqnA1ym1hnAksCLY"
-            alt="Elena Rodriguez">
-          <span>Elena Rodriguez</span>
-        </div>
-        <button class="btn-request" onclick="window.location.href='request-skill.html'">Request Skill</button>
-      </div>
-    </div>
-
-    <!-- Card 4 -->
-    <div class="explore-card">
-      <img src="assets/digital_marketing.png" alt="Digital Marketing" class="explore-card-img">
-      <div class="explore-card-body">
-        <div class="explore-card-header">
-          <h3 class="explore-card-title">Digital Marketing</h3>
-          <div class="explore-card-rating">
-            <span class="material-symbols-outlined">star</span>
-            4.5
-          </div>
-        </div>
-        <p class="explore-card-desc">Learn SEO, SEM and social media strategies to grow your online presence.</p>
-        <div
-          style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 24px; margin-top: auto;">
-          <div class="explore-card-instructor" style="margin: 0;">
-            <img
-              src="https://lh3.googleusercontent.com/aida-public/AB6AXuBMQEraWLyTowWwGLsAPSQYRDVZ3zNkd3uHLVMswaNTE-Tw6hzatUkNjl06qoA9spxRx5pLOgwHB9rmjhq0dU3yUVVt_k4t7o_epLcqaijq8AGi13pEQPoKzvsLJlBXDWxB4LTDvJ4U-lsnSMJvsWGRvbg2No9-sg9n_GwdEwgBR89mHXNtS6BkIXrMvlipsTsOfYIaml2wqxss5z8tk6iWIhhX9kv8agMT9UCasWG-cl5q1k5nopu4FOWhGa8IVwMDfZ6WrmMyDOM"
-              alt="Marcus Sterling">
-            <span>Marcus Sterling</span>
-          </div>
-          <span class="explore-card-reviews">52 reviews</span>
-        </div>
-        <button class="btn-request" onclick="window.location.href='request-skill.html'">Request Skill</button>
-      </div>
-    </div>
-
-    <!-- Card 5 -->
-    <div class="explore-card">
-      <img src="assets/data_science.png" alt="Data Science with R" class="explore-card-img">
-      <div class="explore-card-body">
-        <div class="explore-card-header">
-          <h3 class="explore-card-title">Data Science with R</h3>
-          <div class="explore-card-rating">
-            <span class="material-symbols-outlined">star</span>
-            4.7
-          </div>
-        </div>
-        <p class="explore-card-desc">Analyze complex datasets and create beautiful visualizations with R.</p>
-        <div class="explore-card-instructor">
-          <img
-            src="https://lh3.googleusercontent.com/aida-public/AB6AXuDtZQr8NeDcj0vzMrW4JKPUvQzuNO3d5-aPPM4nrkTeMmPrEMxy8js4f5pfUZZ_VFJunUQfr2YafzMWMXTNdjSCXj0OqxilF74GUlLxCFClkyA8jFHrdUZ-sdIBF4oVW0L-U8Dpm0AXX0AfDKo-Kn4r5HZL_BMTRe5S9DIxf0UogZKDn9hitS0MbEhWYO1VK-AMKTGTVi14Y0uidIikjpGXURb07YRVjHFyTkOP9cq1TTWOikj5KlZzi7DJsCA1DzpzH2fhMJyFLzk"
-            alt="Julianna Moss">
-          <span>Julianna Moss</span>
-        </div>
-        <button class="btn-request" onclick="window.location.href='request-skill.html'">Request Skill</button>
-      </div>
-    </div>
-
-    <!-- Card 6 -->
-    <div class="explore-card">
-      <img src="assets/data_science.png" alt="Data Science with R" class="explore-card-img">
-      <div class="explore-card-body">
-        <div class="explore-card-header">
-          <h3 class="explore-card-title">Data Science with R</h3>
-          <div class="explore-card-rating">
-            <span class="material-symbols-outlined">star</span>
-            4.6
-          </div>
-        </div>
-        <p class="explore-card-desc">Analyze complex datasets and create beautiful visualizations with R.</p>
-        <div class="explore-card-instructor">
-          <img
-            src="https://lh3.googleusercontent.com/aida-public/AB6AXuDtZQr8NeDcj0vzMrW4JKPUvQzuNO3d5-aPPM4nrkTeMmPrEMxy8js4f5pfUZZ_VFJunUQfr2YafzMWMXTNdjSCXj0OqxilF74GUlLxCFClkyA8jFHrdUZ-sdIBF4oVW0L-U8Dpm0AXX0AfDKo-Kn4r5HZL_BMTRe5S9DIxf0UogZKDn9hitS0MbEhWYO1VK-AMKTGTVi14Y0uidIikjpGXURb07YRVjHFyTkOP9cq1TTWOikj5KlZzi7DJsCA1DzpzH2fhMJyFLzk"
-            alt="Julianna Moss">
-          <span>Julianna Moss</span>
-        </div>
-        <button class="btn-request" onclick="window.location.href='request-skill.html'">Request Skill</button>
-      </div>
-    </div>
-
-    <!-- Card 7 -->
-    <div class="explore-card">
-      <img src="assets/photography_lens.png" alt="Photography" class="explore-card-img">
-      <div class="explore-card-body">
-        <div class="explore-card-header">
-          <h3 class="explore-card-title">Photography</h3>
-          <div class="explore-card-rating">
-            <span class="material-symbols-outlined">star</span>
-            4.9
-          </div>
-        </div>
-        <p class="explore-card-desc">Capture stunning portraits and landscapes using natural light.</p>
-        <div class="explore-card-instructor">
-          <img
-            src="https://lh3.googleusercontent.com/aida-public/AB6AXuCV25Ys-syTomckdeXfKHPavW_Mk7w7c6OJwhx-UtZ09zzrKEtTtyGStfylkiv_kKEkHlRLnUDWF_TkdCY5piWwq_kXeG-R5ubYAxR8yEx1N1EGyjFnllOL9_UTAR39Uo9iQssdRkvnILs_vkIF-o5iCJyj8sxqORhYddS6CoBa7nZC5fnTAofTPLBSfHeRDhoqr3dk7CgmIgkLDzyC66yN72f1Zu6L6ZSHPPsr5tT0PnZMRly-JBBacNf35e5iqnA1ym1hnAksCLY"
-            alt="Oliver Twist">
-          <span>Oliver Twist</span>
-        </div>
-        <button class="btn-request" onclick="window.location.href='request-skill.html'">Request Skill</button>
-      </div>
-    </div>
-
-    <!-- Card 8 -->
-    <div class="explore-card">
-      <img src="assets/ui_ux_design.png" alt="UI/UX Design" class="explore-card-img">
-      <div class="explore-card-body">
-        <div class="explore-card-header">
-          <h3 class="explore-card-title">UI/UX Design</h3>
-          <div class="explore-card-rating">
-            <span class="material-symbols-outlined">star</span>
-            4.8
-          </div>
-        </div>
-        <p class="explore-card-desc">Master Figma and learn user-centric design principles for modern applications.</p>
-        <div class="explore-card-instructor">
-          <img
-            src="https://lh3.googleusercontent.com/aida-public/AB6AXuBMQEraWLyTowWwGLsAPSQYRDVZ3zNkd3uHLVMswaNTE-Tw6hzatUkNjl06qoA9spxRx5pLOgwHB9rmjhq0dU3yUVVt_k4t7o_epLcqaijq8AGi13pEQPoKzvsLJlBXDWxB4LTDvJ4U-lsnSMJvsWGRvbg2No9-sg9n_GwdEwgBR89mHXNtS6BkIXrMvlipsTsOfYIaml2wqxss5z8tk6iWIhhX9kv8agMT9UCasWG-cl5q1k5nopu4FOWhGa8IVwMDfZ6WrmMyDOM"
-            alt="Sarah Jenkins">
-          <span>Sarah Jenkins</span>
-        </div>
-        <button class="btn-request" onclick="window.location.href='request-skill.html'">Request Skill</button>
-      </div>
-    </div>
-
   </section>
 
-  <!-- Pagination -->
-  <div class="pagination">
-    <div class="page-item"><span class="material-symbols-outlined">chevron_left</span></div>
-    <div class="page-item active">1</div>
-    <div class="page-item">2</div>
-    <div class="page-item">3</div>
-    <div class="page-item dots">...</div>
-    <div class="page-item">12</div>
-    <div class="page-item"><span class="material-symbols-outlined">chevron_right</span></div>
-  </div>
+  <!-- Dynamic Grid -->
+  <section class="explore-grid" id="skills-grid"></section>
+
+  <!-- Dynamic Pagination -->
+  <div class="pagination" id="pagination"></div>
 
   <!-- Footer (from style.css) -->
   <footer>
@@ -259,7 +93,9 @@
         <!-- Brand -->
         <div class="footer-brand">
           <div class="footer-logo">
-            <img src="assets/icon-w.png" alt="SkillSwap" style="height: 36px;">
+            <img src="assets/icon-w.png" alt="SkillSwap" style="height: 48px; width: auto; object-fit: contain">
+                <h2>SkillSwap</h2>
+
           </div>
           <p class="footer-tagline">
             The global platform for collaborative learning. Empowering individuals to share knowledge and build careers
@@ -309,6 +145,39 @@
     </div>
   </footer>
 
+  <!-- Skill Details Modal -->
+  <div id="skill-modal" class="skill-modal-overlay" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+    <div class="skill-modal">
+      <button class="skill-modal-close" id="modal-close" aria-label="Close">
+        <span class="material-symbols-outlined">close</span>
+      </button>
+      <img id="modal-img" src="" alt="" class="skill-modal-img">
+      <div class="skill-modal-body">
+        <div class="skill-modal-meta">
+          <span id="modal-category" class="skill-modal-category"></span>
+          <div class="explore-card-rating">
+            <span class="material-symbols-outlined">star</span>
+            <span id="modal-rating"></span>
+          </div>
+        </div>
+        <h2 id="modal-title" class="skill-modal-title"></h2>
+        <p id="modal-desc" class="skill-modal-desc"></p>
+        <div class="skill-modal-instructor">
+          <img id="modal-instructor-avatar" src="" alt="">
+          <div>
+            <p id="modal-instructor-name" class="skill-modal-instructor-name"></p>
+            <p id="modal-reviews" class="skill-modal-reviews"></p>
+          </div>
+        </div>
+        <button class="btn-request skill-modal-request" onclick="window.location.href='request-skill.html'">
+          Request Skill
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/auth.js"></script>
+  <script src="js/explore.js"></script>
   <script src="script.js"></script>
 </body>
 

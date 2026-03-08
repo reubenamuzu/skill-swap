@@ -32,17 +32,15 @@ body {
 }
 
 .user-nav-profile img {
-  width: 40px;
-  height: 40px;
+  width: 34px;
+  height: 34px;
   border-radius: 50%;
   object-fit: cover;
   border: 2px solid #e2e8f0;
 }
 
 .user-nav-profile span {
-  font-weight: 700;
-  font-size: 14px;
-  color: #111;
+  display: none;
 }
 
 /* Main Dashboard Grid */
@@ -411,22 +409,70 @@ body {
 @media (max-width: 1024px) {
   .dashboard-container {
     grid-template-columns: 1fr;
+    margin-top: 24px;
   }
+
 }
 
 @media (max-width: 768px) {
+  .dashboard-container {
+    padding: 0 16px;
+    gap: 24px;
+    margin-bottom: 48px;
+  }
+
   .session-grid {
     grid-template-columns: 1fr;
   }
+
   .request-card {
     flex-direction: column;
     align-items: stretch;
+    gap: 16px;
   }
+
+  .request-info {
+    flex-direction: row;
+    align-items: flex-start;
+  }
+
   .request-actions {
     display: grid;
     grid-template-columns: 1fr 1fr;
   }
-  .dashboard-header .main-nav {
+
+  .profile-card {
+    padding: 24px 16px;
+  }
+
+  .sidebar-nav a {
+    padding: 12px 16px;
+    font-size: 14px;
+  }
+
+  .dashboard-section-title {
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 480px) {
+  .dashboard-container {
+    padding: 0 12px;
+  }
+
+  .request-card {
+    padding: 16px;
+  }
+
+  .session-card {
+    padding: 16px;
+  }
+
+  .request-actions {
+    grid-template-columns: 1fr;
+  }
+
+  .user-nav-profile {
     display: none;
   }
 }
@@ -570,4 +616,116 @@ body.dark-mode .user-nav-profile span {
 
 body.dark-mode .user-nav-profile img {
   border-color: #30363d;
+}
+
+/* ── User avatar initials ── */
+.user-avatar-initials {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background-color: #006280;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  font-weight: 800;
+  letter-spacing: 0.5px;
+  border: 2px solid #e2e8f0;
+  flex-shrink: 0;
+  font-family: 'Manrope', sans-serif;
+}
+
+.user-avatar-initials.large {
+  width: 96px;
+  height: 96px;
+  font-size: 32px;
+  margin: 0 auto 16px;
+  border: 4px solid #f1f5f9;
+}
+
+body.dark-mode .user-avatar-initials {
+  background-color: #0097c7;
+  border-color: #30363d;
+}
+
+body.dark-mode .user-avatar-initials.large {
+  border-color: #30363d;
+}
+
+/* ── Avatar upload wrapper ── */
+.avatar-upload-wrapper {
+  position: relative;
+  width: 96px;
+  margin: 0 auto 16px;
+  cursor: pointer;
+}
+
+/* Remove default margin from the initials div when inside wrapper */
+.avatar-upload-wrapper .user-avatar-initials.large {
+  margin: 0;
+}
+
+.avatar-upload-overlay {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.45);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.2s;
+  color: #fff;
+}
+
+.avatar-upload-wrapper:hover .avatar-upload-overlay {
+  opacity: 1;
+}
+
+.avatar-upload-overlay .material-symbols-outlined {
+  font-size: 28px;
+}
+
+/* Profile photo <img> element (replaces initials when a photo is set) */
+.profile-photo {
+  width: 96px;
+  height: 96px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid #f1f5f9;
+  display: block;
+}
+
+.profile-photo.small {
+  width: 40px;
+  height: 40px;
+  border: 2px solid #e2e8f0;
+  flex-shrink: 0;
+}
+
+body.dark-mode .profile-photo {
+  border-color: #30363d;
+}
+
+body.dark-mode .profile-photo.small {
+  border-color: #30363d;
+}
+
+/* ── Logout link in sidebar ── */
+#logout-btn {
+  color: #e53e3e !important;
+}
+
+#logout-btn:hover {
+  background-color: rgba(229, 62, 62, 0.08) !important;
+  color: #c53030 !important;
+}
+
+body.dark-mode #logout-btn {
+  color: #fc8181 !important;
+}
+
+body.dark-mode #logout-btn:hover {
+  background-color: rgba(252, 129, 129, 0.1) !important;
 }

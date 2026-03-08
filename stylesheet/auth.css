@@ -368,3 +368,18 @@ body.dark-mode .forgot-pass {
 body.dark-mode .info-section {
   background: linear-gradient(135deg, #00607a, #003d4f);
 }
+
+/* ── Form error messages ── */
+.form-error {
+  color: #e53e3e;
+  font-size: 13px;
+  font-weight: 600;
+  margin-top: 8px;
+  margin-bottom: 4px;
+  min-height: 18px;
+  text-align: center;
+}
+
+body.dark-mode .form-error {
+  color: #fc8181;
+}

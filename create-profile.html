@@ -22,41 +22,56 @@
       <p>Tell us a bit about yourself so we can match you with the right peers.</p>
     </div>
 
-    <form class="create-profile-form" action="dashboard.html" method="GET">
-      
+    <form class="create-profile-form" id="profile-form">
+
+      <div class="form-group photo-upload-group">
+        <label>Profile Photo <span class="optional-label">(optional)</span></label>
+        <div class="photo-preview-wrapper">
+          <div class="photo-preview" id="photo-preview">
+            <span class="material-symbols-outlined">person</span>
+          </div>
+          <div class="photo-upload-actions">
+            <button type="button" class="btn-choose-photo" id="btn-choose-photo">
+              <span class="material-symbols-outlined">upload</span> Choose Photo
+            </button>
+            <p class="photo-hint">JPG, PNG or GIF &middot; Max 2MB</p>
+          </div>
+        </div>
+        <input type="file" id="profile-photo-input" accept="image/*" style="display:none">
+      </div>
+
       <div class="form-group">
         <label>School / University</label>
-        <input type="text" placeholder="e.g. Stanford University" required>
+        <input type="text" id="school-input" placeholder="e.g. Stanford University">
       </div>
 
       <div class="form-group">
         <label>Degree / Program</label>
-        <input type="text" placeholder="e.g. B.S. Computer Science" required>
+        <input type="text" id="degree-input" placeholder="e.g. B.S. Computer Science">
       </div>
 
       <div class="form-group">
         <label>Skills I have (to teach)</label>
-        <div class="tags-input-wrapper">
-          <div class="tag">HTML/CSS <span class="material-symbols-outlined">close</span></div>
-          <div class="tag">JavaScript <span class="material-symbols-outlined">close</span></div>
+        <div class="tags-input-wrapper" id="teach-tags-wrapper">
           <input type="text" class="tag-input" placeholder="Type and press enter...">
         </div>
       </div>
 
       <div class="form-group">
         <label>Skills I want to learn</label>
-        <div class="tags-input-wrapper">
-          <div class="tag">Python <span class="material-symbols-outlined">close</span></div>
+        <div class="tags-input-wrapper" id="learn-tags-wrapper">
           <input type="text" class="tag-input" placeholder="Type and press enter...">
         </div>
       </div>
 
+      <p class="form-error" id="profile-error" aria-live="polite"></p>
       <button type="submit" class="btn-submit-profile">Complete Profile</button>
-      
+
     </form>
 
   </div>
 
+  <script src="js/auth.js"></script>
   <script src="script.js"></script>
 </body>
 </html>

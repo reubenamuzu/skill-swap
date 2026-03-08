@@ -323,24 +323,34 @@ body {
 }
 
 @media (max-width: 640px) {
+  .request-container {
+    padding: 0 16px;
+    margin: 20px auto 48px;
+  }
+
   .skill-info-card {
     flex-direction: column;
     align-items: flex-start;
   }
+
   .skill-info-img {
     width: 100%;
     height: auto;
     aspect-ratio: 16/9;
   }
+
   .form-actions {
     flex-direction: column-reverse;
     align-items: stretch;
   }
+
   .btn-send {
     justify-content: center;
   }
+
   .btn-cancel {
     padding: 12px;
+    text-align: center;
   }
 }
 
