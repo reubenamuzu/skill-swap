@@ -244,15 +244,18 @@ body.dark-mode .nav-profile-name {
   }
 
   .main-nav {
-    display: none;
+    display: flex;
     flex-direction: column;
     position: absolute;
     top: 100%;
-    left: 0;
-    width: 100%;
+    right: 0;
+    left: auto;
+    width: 240px;
     background-color: var(--white);
-    border-bottom: 1px solid var(--primary-10);
-    padding: 20px 24px;
+    border: 1px solid var(--primary-10);
+    border-top: none;
+    border-radius: 0 0 12px 12px;
+    padding: 8px 0;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
     align-items: flex-start;
     gap: 0;
@@ -260,12 +263,18 @@ body.dark-mode .nav-profile-name {
     /* reset desktop spacing */
     margin-left: 0;
     margin-right: 0;
+    /* animation */
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    pointer-events: none;
+    transition: opacity 0.25s ease, transform 0.25s ease, visibility 0.25s;
   }
 
   .main-nav a {
     width: 100%;
-    padding: 14px 0;
-    font-size: 16px;
+    padding: 12px 20px;
+    font-size: 15px;
     border-bottom: 1px solid var(--primary-10);
   }
 
@@ -279,7 +288,10 @@ body.dark-mode .nav-profile-name {
   }
 
   .main-nav.open {
-    display: flex;
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+    pointer-events: auto;
   }
 
   /* header padding tighter on small screens */
