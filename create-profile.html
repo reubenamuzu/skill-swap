@@ -3,118 +3,137 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Create Profile - SkillSwap</title>
-    <link
-      href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
-      rel="stylesheet"
-    />
+    <title>Complete Profile - SkillSwap</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="stylesheet/style.css" />
+    <link rel="stylesheet" href="stylesheet/auth.css" />
     <link rel="stylesheet" href="stylesheet/create-profile.css" />
   </head>
+
   <body>
-    <button
-      class="theme-toggle theme-toggle-fixed"
-      aria-label="Toggle dark mode"
-    >
-      <span class="material-symbols-outlined icon-dark" aria-hidden="true"
-        >dark_mode</span
-      >
-      <span class="material-symbols-outlined icon-light" aria-hidden="true"
-        >light_mode</span
-      >
-    </button>
 
-    <div class="create-profile-container">
-      <div class="create-profile-header">
-        <h1>Let's finish your profile</h1>
-        <p>
-          Tell us a bit about yourself so we can match you with the right peers.
-        </p>
-      </div>
-
-      <form class="create-profile-form" id="profile-form">
-        <div class="form-group photo-upload-group">
-          <label
-            >Profile Photo <span class="optional-label">(optional)</span></label
-          >
-          <div class="photo-preview-wrapper">
-            <div class="photo-preview" id="photo-preview">
-              <span class="material-symbols-outlined" aria-hidden="true"
-                >person</span
-              >
-            </div>
-            <div class="photo-upload-actions">
-              <button
-                type="button"
-                class="btn-choose-photo"
-                id="btn-choose-photo"
-              >
-                <span class="material-symbols-outlined" aria-hidden="true"
-                  >upload</span
-                >
-                Choose Photo
-              </button>
-              <p class="photo-hint">JPG, PNG or GIF &middot; Max 2MB</p>
-            </div>
-          </div>
-          <input
-            type="file"
-            id="profile-photo-input"
-            class="visually-hidden-input"
-            accept="image/*"
-          />
-        </div>
-
-        <div class="form-group">
-          <label>School / University</label>
-          <input
-            type="text"
-            id="school-input"
-            placeholder="e.g. Stanford University"
-          />
-        </div>
-
-        <div class="form-group">
-          <label>Degree / Program</label>
-          <input
-            type="text"
-            id="degree-input"
-            placeholder="e.g. B.S. Computer Science"
-          />
-        </div>
-
-        <div class="form-group">
-          <label>Skills I have (to teach)</label>
-          <div class="tags-input-wrapper" id="teach-tags-wrapper">
-            <input
-              type="text"
-              class="tag-input"
-              placeholder="Type and press enter..."
-            />
-          </div>
-        </div>
-
-        <div class="form-group">
-          <label>Skills I want to learn</label>
-          <div class="tags-input-wrapper" id="learn-tags-wrapper">
-            <input
-              type="text"
-              class="tag-input"
-              placeholder="Type and press enter..."
-            />
-          </div>
-        </div>
-
-        <p class="form-error" id="profile-error" aria-live="polite"></p>
-        <button type="submit" class="btn-submit-profile">
-          Complete Profile
-        </button>
-      </form>
+    <!-- ── Top bar with dark mode toggle ────────────────────── -->
+    <div class="auth-topbar">
+      <button class="auth-theme-toggle" aria-label="Toggle dark mode">
+        <i class="fas fa-moon icon-dark"  aria-hidden="true"></i>
+        <i class="fas fa-sun  icon-light" aria-hidden="true"></i>
+      </button>
     </div>
+
+    <!-- ── Centered page area ───────────────────────────────── -->
+    <div class="auth-page profile-page">
+      <div class="auth-card profile-card">
+
+        <!-- Brand image -->
+        <a href="index.html" class="auth-logo-link" aria-label="Go to SkillSwap home">
+          <img src="assets/image swip.png" alt="SkillSwap" class="auth-logo" />
+        </a>
+
+        <!-- Heading -->
+        <h1 class="auth-heading">Complete your profile</h1>
+        <p class="auth-subheading">Tell us about yourself so we can match you with the right peers.</p>
+
+        <!-- Profile form -->
+        <form id="profile-form" novalidate>
+
+          <!-- Photo upload -->
+          <div class="form-group photo-upload-group">
+            <label class="profile-label">
+              Profile photo
+              <span class="optional-label">(optional)</span>
+            </label>
+            <div class="photo-preview-wrapper">
+              <div class="photo-preview" id="photo-preview">
+                <span class="material-symbols-outlined" aria-hidden="true">person</span>
+              </div>
+              <div class="photo-upload-actions">
+                <button type="button" class="btn-choose-photo" id="btn-choose-photo">
+                  <span class="material-symbols-outlined" aria-hidden="true">upload</span>
+                  Choose photo
+                </button>
+                <p class="photo-hint">JPG, PNG or GIF &middot; Max 2MB</p>
+              </div>
+            </div>
+            <input
+              type="file"
+              id="profile-photo-input"
+              class="sr-only"
+              accept="image/*"
+            />
+          </div>
+
+          <!-- School -->
+          <div class="form-group">
+            <label for="school-input" class="profile-label">School / University</label>
+            <div class="profile-input-group">
+              <i class="fas fa-graduation-cap" aria-hidden="true"></i>
+              <input
+                type="text"
+                id="school-input"
+                class="auth-input profile-input"
+                placeholder="e.g. Stanford University"
+                autocomplete="organization"
+              />
+            </div>
+          </div>
+
+          <!-- Degree -->
+          <div class="form-group">
+            <label for="degree-input" class="profile-label">Degree / Program</label>
+            <div class="profile-input-group">
+              <i class="fas fa-book" aria-hidden="true"></i>
+              <input
+                type="text"
+                id="degree-input"
+                class="auth-input profile-input"
+                placeholder="e.g. B.S. Computer Science"
+              />
+            </div>
+          </div>
+
+          <!-- Skills to teach -->
+          <div class="form-group">
+            <label class="profile-label">
+              Skills I can teach
+              <span class="required-label">*</span>
+            </label>
+            <div class="tags-input-wrapper" id="teach-tags-wrapper">
+              <input
+                type="text"
+                class="tag-input"
+                placeholder="Type a skill and press Enter..."
+                aria-label="Add skills to teach"
+              />
+            </div>
+            <p class="field-hint">Add at least one skill you can teach others.</p>
+          </div>
+
+          <!-- Skills to learn -->
+          <div class="form-group">
+            <label class="profile-label">Skills I want to learn</label>
+            <div class="tags-input-wrapper" id="learn-tags-wrapper">
+              <input
+                type="text"
+                class="tag-input"
+                placeholder="Type a skill and press Enter..."
+                aria-label="Add skills to learn"
+              />
+            </div>
+          </div>
+
+          <!-- Error -->
+          <p class="form-error" id="profile-error" aria-live="polite" role="alert"></p>
+
+          <!-- Submit -->
+          <button type="submit" class="auth-submit-btn btn-submit-profile">
+            Complete Profile
+          </button>
+
+        </form>
+
+      </div><!-- /auth-card.profile-card -->
+    </div><!-- /auth-page -->
 
     <script src="js/auth.js"></script>
     <script src="js/script.js"></script>
