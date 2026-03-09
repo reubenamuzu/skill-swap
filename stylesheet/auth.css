@@ -288,6 +288,16 @@ form {
 }
 
 /* ── Form error message ──────────────────────────────────────── */
+.form-success {
+  color: #16a34a;
+  font-size: 0.8rem;
+  font-weight: 600;
+  min-height: 18px;
+  margin: 0 0 8px;
+  text-align: center;
+  display: block;
+}
+
 .form-error {
   color: var(--error-color);
   font-size: 0.8rem;

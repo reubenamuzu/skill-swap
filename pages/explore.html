@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Explore Skills - SkillSwap</title>
-    <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+    <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg" />
     <link
       href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&display=swap"
       rel="stylesheet"
@@ -13,8 +13,9 @@
       href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="stylesheet/style.css" />
-    <link rel="stylesheet" href="stylesheet/explore.css" />
+    <link rel="stylesheet" href="../stylesheet/style.css" />
+    <link rel="stylesheet" href="../stylesheet/dashboard.css" />
+    <link rel="stylesheet" href="../stylesheet/explore.css" />
   </head>
 
   <body>
@@ -23,16 +24,16 @@
       <div class="header-inner">
         <div class="header-left">
           <!-- Logo -->
-          <a href="index.html" class="logo">
+          <a href="../index.html" class="logo">
             <img
-              src="assets/icon-w.png"
+              src="../assets/icon-w.png"
               alt="SkillSwap"
               class="nav-logo-icon"
             />
           </a>
           <!-- Desktop Nav -->
           <nav class="main-nav" id="main-nav">
-            <a href="index.html">Home</a>
+            <a href="../index.html">Home</a>
             <a href="explore.html" class="active">Explore</a>
             <a href="dashboard.html">Dashboard</a>
           </nav>
@@ -75,8 +76,13 @@
               >light_mode</span
             >
           </button>
+          <!-- User Profile Nav -->
+          <a href="edit-profile.html" class="user-nav-profile" aria-label="Edit your profile">
+            <span id="user-display-name">My Account</span>
+            <div id="nav-avatar" class="user-avatar-initials">?</div>
+          </a>
           <button class="burger-menu" id="burger-menu">
-            <img src="assets/menu-burger.png" alt="Menu" class="burger-icon" />
+            <img src="../assets/menu-burger.png" alt="Menu" class="burger-icon" />
           </button>
         </div>
       </div>
@@ -144,7 +150,7 @@
           <div class="footer-brand">
             <div class="footer-logo">
               <img
-                src="assets/icon-w.png"
+                src="../assets/icon-w.png"
                 alt="SkillSwap"
                 class="footer-logo-img"
               />
@@ -256,8 +262,8 @@
       </div>
     </div>
 
-    <script src="js/auth.js"></script>
-    <script src="js/explore.js"></script>
-    <script src="js/script.js"></script>
+    <script src="../js/auth.js"></script>
+    <script src="../js/explore.js"></script>
+    <script src="../js/script.js"></script>
   </body>
 </html>

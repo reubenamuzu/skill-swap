@@ -48,3 +48,21 @@ function getInitials(name) {
   if (parts.length === 1) return parts[0][0].toUpperCase();
   return (parts[0][0] + parts[parts.length - 1][0]).toUpperCase();
 }
+
+const SS_REQUESTS_KEY = 'ss_requests';
+
+function getRequests() {
+  try {
+    return JSON.parse(localStorage.getItem(SS_REQUESTS_KEY)) || [];
+  } catch {
+    return [];
+  }
+}
+
+function saveRequests(arr) {
+  localStorage.setItem(SS_REQUESTS_KEY, JSON.stringify(arr));
+}
+
+function generateRequestId() {
+  return 'req_' + Date.now() + '_' + Math.floor(Math.random() * 1000);
+}

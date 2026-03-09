@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Request a Skill - SkillSwap</title>
-    <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+    <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg" />
     <link
       href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&display=swap"
       rel="stylesheet"
@@ -13,8 +13,8 @@
       href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="stylesheet/style.css" />
-    <link rel="stylesheet" href="stylesheet/request-skill.css" />
+    <link rel="stylesheet" href="../stylesheet/style.css" />
+    <link rel="stylesheet" href="../stylesheet/request-skill.css" />
   </head>
 
   <body>
@@ -51,20 +51,20 @@
       <!-- Skill Info Box -->
       <div class="skill-info-card">
         <img
-          src="assets/python_programming.png"
+          src="../assets/python_programming.png"
           alt="Python Programming"
           class="skill-info-img"
         />
         <div class="skill-info-details">
           <span class="skill-badge">SKILL REQUESTED</span>
-          <h3 class="skill-title">Advanced Python Programming</h3>
+          <h3 class="skill-title" id="request-skill-title">Advanced Python Programming</h3>
           <div class="skill-recipient">
             <span>Recipient:</span>
             <img
               src="https://lh3.googleusercontent.com/aida-public/AB6AXuDtZQr8NeDcj0vzMrW4JKPUvQzuNO3d5-aPPM4nrkTeMmPrEMxy8js4f5pfUZZ_VFJunUQfr2YafzMWMXTNdjSCXj0OqxilF74GUlLxCFClkyA8jFHrdUZ-sdIBF4oVW0L-U8Dpm0AXX0AfDKo-Kn4r5HZL_BMTRe5S9DIxf0UogZKDn9hitS0MbEhWYO1VK-AMKTGTVi14Y0uidIikjpGXURb07YRVjHFyTkOP9cq1TTWOikj5KlZzi7DJsCA1DzpzH2fhMJyFLzk"
               alt="Alex Rivera"
             />
-            <span class="recipient-name">Alex Rivera</span>
+            <span class="recipient-name" id="request-recipient-name">Alex Rivera</span>
           </div>
         </div>
       </div>
@@ -82,26 +82,17 @@
         </p>
 
         <div class="custom-select-wrapper">
-          <select class="custom-select">
+          <select class="custom-select" id="offer-select">
             <option value="" disabled selected>
               Select from your teaching list
             </option>
-            <option value="ui_ux">UI/UX Design</option>
-            <option value="react">React Fundamentals</option>
           </select>
           <span class="material-symbols-outlined" aria-hidden="true"
             >keyboard_arrow_down</span
           >
         </div>
 
-        <div class="selected-chips">
-          <div class="chip">
-            UI/UX Design
-            <span class="material-symbols-outlined" aria-hidden="true"
-              >close</span
-            >
-          </div>
-        </div>
+        <div class="selected-chips" id="selected-chips"></div>
 
         <div class="form-section-title">
           <span class="material-symbols-outlined" aria-hidden="true"
@@ -114,6 +105,7 @@
         </p>
 
         <textarea
+          id="request-message"
           class="message-textarea"
           placeholder="Hi Alex! I've been looking to deepen my Python knowledge for data science. In exchange, I can provide professional UI/UX feedback for your projects or teach you the fundamentals of React..."
         ></textarea>
@@ -125,7 +117,7 @@
           >
             Cancel
           </button>
-          <button class="btn-send">
+          <button class="btn-send" id="send-request-btn">
             Send Request
             <span class="material-symbols-outlined" aria-hidden="true"
               >send</span
@@ -148,7 +140,7 @@
       </div>
     </div>
 
-    <script src="js/auth.js"></script>
-    <script src="js/script.js"></script>
+    <script src="../js/auth.js"></script>
+    <script src="../js/script.js"></script>
   </body>
 </html>

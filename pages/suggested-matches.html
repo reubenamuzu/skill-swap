@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Suggested Matches - SkillSwap</title>
+    <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../stylesheet/style.css" />
+    <link rel="stylesheet" href="../stylesheet/dashboard.css" />
+  </head>
+  <body>
+    <!-- Header -->
+    <header>
+      <div class="header-inner">
+        <div class="header-left">
+          <a href="../index.html" class="logo">
+            <img src="../assets/icon-w.png" alt="SkillSwap" class="nav-logo-icon" />
+          </a>
+          <nav class="main-nav" id="main-nav">
+            <a href="../index.html">Home</a>
+            <a href="explore.html">Explore</a>
+            <a href="dashboard.html">Dashboard</a>
+          </nav>
+        </div>
+        <div class="header-right">
+          <button class="theme-toggle" aria-label="Toggle dark mode">
+            <span class="material-symbols-outlined icon-dark" aria-hidden="true">dark_mode</span>
+            <span class="material-symbols-outlined icon-light" aria-hidden="true">light_mode</span>
+          </button>
+          <a href="edit-profile.html" class="user-nav-profile" aria-label="Edit your profile">
+            <span id="user-display-name">My Account</span>
+            <div id="nav-avatar" class="user-avatar-initials">?</div>
+          </a>
+          <button class="burger-menu" id="burger-menu">
+            <img src="../assets/menu-burger.png" alt="Menu" class="burger-icon" />
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <div class="dashboard-container">
+      <!-- Sidebar -->
+      <aside class="dashboard-sidebar">
+        <div class="profile-card">
+          <div id="matches-sidebar-avatar" class="user-avatar-initials large">?</div>
+          <h3 id="matches-sidebar-name">Loading...</h3>
+          <p id="matches-sidebar-subtitle"></p>
+          <a href="edit-profile.html" class="btn-edit-profile">Edit Profile</a>
+        </div>
+
+        <div class="sidebar-nav">
+          <a href="dashboard.html">
+            <span class="material-symbols-outlined" aria-hidden="true">dashboard</span>
+            Overview
+          </a>
+          <a href="dashboard.html">
+            <span class="material-symbols-outlined" aria-hidden="true">mail</span>
+            Requests
+          </a>
+          <a href="suggested-matches.html" class="active">
+            <span class="material-symbols-outlined" aria-hidden="true">auto_awesome</span>
+            Suggested Matches
+          </a>
+          <a href="exchange-history.html">
+            <span class="material-symbols-outlined" aria-hidden="true">history</span>
+            Exchange History
+          </a>
+          <a href="settings.html">
+            <span class="material-symbols-outlined" aria-hidden="true">settings</span>
+            Settings
+          </a>
+          <a href="#" id="matches-logout-btn">
+            <span class="material-symbols-outlined" aria-hidden="true">logout</span>
+            Log Out
+          </a>
+        </div>
+      </aside>
+
+      <!-- Main Content -->
+      <main class="dashboard-content">
+        <section>
+          <div class="dashboard-section-header">
+            <h2 class="dashboard-section-title">Suggested Matches</h2>
+            <span class="match-algo-label">
+              <span class="material-symbols-outlined" aria-hidden="true">auto_awesome</span>
+              Based on your skills
+            </span>
+          </div>
+          <div class="matches-grid" id="matches-grid">
+            <!-- Populated dynamically by script.js -->
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <script src="../js/auth.js"></script>
+    <script src="../js/script.js"></script>
+  </body>
+</html>

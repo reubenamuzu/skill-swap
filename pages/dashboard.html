@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Dashboard - SkillSwap</title>
-    <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+    <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg" />
     <link
       href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&display=swap"
       rel="stylesheet"
@@ -13,8 +13,8 @@
       href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="stylesheet/style.css" />
-    <link rel="stylesheet" href="stylesheet/dashboard.css" />
+    <link rel="stylesheet" href="../stylesheet/style.css" />
+    <link rel="stylesheet" href="../stylesheet/dashboard.css" />
   </head>
   <body>
     <!-- Dashboard Header -->
@@ -22,16 +22,16 @@
       <div class="header-inner">
         <div class="header-left">
           <!-- Logo -->
-          <a href="index.html" class="logo">
+          <a href="../index.html" class="logo">
             <img
-              src="assets/icon-w.png"
+              src="../assets/icon-w.png"
               alt="SkillSwap"
               class="nav-logo-icon"
             />
           </a>
           <!-- Desktop Nav -->
           <nav class="main-nav" id="main-nav">
-            <a href="index.html">Home</a>
+            <a href="../index.html">Home</a>
             <a href="explore.html">Explore</a>
             <a href="dashboard.html" class="active">Dashboard</a>
           </nav>
@@ -54,7 +54,7 @@
             <div id="nav-avatar" class="user-avatar-initials">?</div>
           </a>
           <button class="burger-menu" id="burger-menu">
-            <img src="assets/menu-burger.png" alt="Menu" class="burger-icon" />
+            <img src="../assets/menu-burger.png" alt="Menu" class="burger-icon" />
           </button>
         </div>
       </div>
@@ -89,7 +89,7 @@
 
           <div class="profile-stats">
             <div class="stat-item">
-              <h4>12</h4>
+              <h4 id="swap-count">0</h4>
               <span>Swaps</span>
             </div>
             <div class="stat-item">
@@ -114,21 +114,21 @@
               >mail</span
             >
             Requests
-            <span class="nav-badge" aria-label="2 pending requests">2</span>
+            <span class="nav-badge" id="requests-badge" aria-label="pending requests">0</span>
           </a>
-          <a href="#">
+          <a href="suggested-matches.html">
             <span class="material-symbols-outlined" aria-hidden="true"
-              >calendar_month</span
+              >auto_awesome</span
             >
-            Schedule
+            Suggested Matches
           </a>
-          <a href="#">
+          <a href="exchange-history.html">
             <span class="material-symbols-outlined" aria-hidden="true"
               >history</span
             >
             Exchange History
           </a>
-          <a href="#">
+          <a href="settings.html">
             <span class="material-symbols-outlined" aria-hidden="true"
               >settings</span
             >
@@ -183,64 +183,8 @@
             <a href="#" class="dashboard-section-link">View all</a>
           </div>
 
-          <div class="request-list">
-            <!-- Request 1 -->
-            <div class="request-card">
-              <div class="request-info">
-                <img
-                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuDtZQr8NeDcj0vzMrW4JKPUvQzuNO3d5-aPPM4nrkTeMmPrEMxy8js4f5pfUZZ_VFJunUQfr2YafzMWMXTNdjSCXj0OqxilF74GUlLxCFClkyA8jFHrdUZ-sdIBF4oVW0L-U8Dpm0AXX0AfDKo-Kn4r5HZL_BMTRe5S9DIxf0UogZKDn9hitS0MbEhWYO1VK-AMKTGTVi14Y0uidIikjpGXURb07YRVjHFyTkOP9cq1TTWOikj5KlZzi7DJsCA1DzpzH2fhMJyFLzk"
-                  alt="David Chen"
-                  class="request-avatar"
-                />
-                <div class="request-details">
-                  <h4>David Chen</h4>
-                  <p>Wants to swap Python Programming for UI/UX Design</p>
-                  <div class="request-skills">
-                    <span class="skill-tag">Python</span>
-                    <span
-                      class="material-symbols-outlined exchange-direction"
-                      aria-hidden="true"
-                      >sync_alt</span
-                    >
-                    <span class="skill-tag primary">UI/UX Design</span>
-                  </div>
-                </div>
-              </div>
-              <div class="request-actions">
-                <button class="btn-decline">Decline</button>
-                <button class="btn-accept">Accept Swap</button>
-              </div>
-            </div>
-
-            <!-- Request 2 -->
-            <div class="request-card">
-              <div class="request-info">
-                <img
-                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuCV25Ys-syTomckdeXfKHPavW_Mk7w7c6OJwhx-UtZ09zzrKEtTtyGStfylkiv_kKEkHlRLnUDWF_TkdCY5piWwq_kXeG-R5ubYAxR8yEx1N1EGyjFnllOL9_UTAR39Uo9iQssdRkvnILs_vkIF-o5iCJyj8sxqORhYddS6CoBa7nZC5fnTAofTPLBSfHeRDhoqr3dk7CgmIgkLDzyC66yN72f1Zu6L6ZSHPPsr5tT0PnZMRly-JBBacNf35e5iqnA1ym1hnAksCLY"
-                  alt="Elena Rodriguez"
-                  class="request-avatar"
-                />
-                <div class="request-details">
-                  <h4>Elena Rodriguez</h4>
-                  <p>
-                    Wants to swap Spanish Conversation for Figma Prototyping
-                  </p>
-                  <div class="request-skills">
-                    <span class="skill-tag">Spanish</span>
-                    <span
-                      class="material-symbols-outlined exchange-direction"
-                      aria-hidden="true"
-                      >sync_alt</span
-                    >
-                    <span class="skill-tag primary">Figma Prototyping</span>
-                  </div>
-                </div>
-              </div>
-              <div class="request-actions">
-                <button class="btn-decline">Decline</button>
-                <button class="btn-accept">Accept Swap</button>
-              </div>
-            </div>
+          <div class="request-list" id="request-list">
+            <!-- Populated dynamically by script.js -->
           </div>
         </section>
 
@@ -323,7 +267,7 @@
       </main>
     </div>
 
-    <script src="js/auth.js"></script>
-    <script src="js/script.js"></script>
+    <script src="../js/auth.js"></script>
+    <script src="../js/script.js"></script>
   </body>
 </html>

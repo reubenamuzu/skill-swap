@@ -1,0 +1,298 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Settings - SkillSwap</title>
+    <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+    <link rel="stylesheet" href="../stylesheet/style.css" />
+    <link rel="stylesheet" href="../stylesheet/dashboard.css" />
+    <style>
+      .settings-card {
+        background: var(--white);
+        border-radius: 16px;
+        border: 1px solid var(--slate-200);
+        padding: 28px;
+        margin-bottom: 20px;
+      }
+      .settings-card h3 {
+        margin: 0 0 4px;
+        font-size: 1rem;
+        font-weight: 700;
+        color: var(--text);
+      }
+      .settings-card p.card-desc {
+        margin: 0 0 20px;
+        font-size: 0.85rem;
+        color: var(--slate-500);
+      }
+      .settings-user-info {
+        display: flex;
+        align-items: center;
+        gap: 14px;
+        margin-bottom: 0;
+      }
+      .settings-user-info .user-avatar-initials {
+        width: 52px;
+        height: 52px;
+        font-size: 1.2rem;
+        flex-shrink: 0;
+      }
+      .settings-user-info img {
+        width: 52px;
+        height: 52px;
+        border-radius: 50%;
+        object-fit: cover;
+      }
+      .settings-user-info .info-text strong {
+        display: block;
+        font-size: 1rem;
+        font-weight: 700;
+      }
+      .settings-user-info .info-text span {
+        font-size: 0.85rem;
+        color: var(--slate-500);
+      }
+      .settings-field {
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+        margin-bottom: 14px;
+      }
+      .settings-field label {
+        font-size: 0.82rem;
+        font-weight: 600;
+        color: var(--slate-600);
+      }
+      .settings-input-group {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        background: var(--input-bg);
+        border: 1.5px solid var(--input-border);
+        border-radius: 10px;
+        padding: 0 14px;
+        transition: border-color 0.2s;
+      }
+      .settings-input-group:focus-within {
+        border-color: var(--primary);
+      }
+      .settings-input-group i {
+        color: var(--slate-400);
+        font-size: 0.9rem;
+      }
+      .settings-input-group input {
+        flex: 1;
+        border: none;
+        background: transparent;
+        padding: 12px 0;
+        font-size: 0.9rem;
+        font-family: inherit;
+        color: var(--text);
+        outline: none;
+      }
+      .settings-input-group input::placeholder { color: var(--slate-400); }
+      .btn-save-settings {
+        background: var(--primary);
+        color: #fff;
+        border: none;
+        border-radius: 10px;
+        padding: 12px 24px;
+        font-size: 0.9rem;
+        font-weight: 700;
+        cursor: pointer;
+        font-family: inherit;
+        transition: background 0.2s;
+      }
+      .btn-save-settings:hover { background: var(--primary-dark); }
+      .btn-delete-account {
+        background: transparent;
+        color: var(--error-color);
+        border: 1.5px solid var(--error-color);
+        border-radius: 10px;
+        padding: 12px 24px;
+        font-size: 0.9rem;
+        font-weight: 700;
+        cursor: pointer;
+        font-family: inherit;
+        transition: background 0.2s, color 0.2s;
+      }
+      .btn-delete-account:hover {
+        background: var(--error-color);
+        color: #fff;
+      }
+      .settings-error {
+        color: var(--error-color);
+        font-size: 0.82rem;
+        font-weight: 600;
+        min-height: 18px;
+        margin: 0 0 8px;
+        display: block;
+      }
+      .settings-success {
+        color: #16a34a;
+        font-size: 0.82rem;
+        font-weight: 600;
+        min-height: 18px;
+        margin: 0 0 8px;
+        display: block;
+      }
+      body.dark-mode .settings-card {
+        background: var(--dark-card-bg, #1c2128);
+        border-color: var(--dark-border, #30363d);
+      }
+      body.dark-mode .settings-input-group {
+        background: var(--dark-input-bg, #0d1117);
+        border-color: var(--dark-border, #30363d);
+      }
+      body.dark-mode .settings-input-group input {
+        color: var(--dark-text, #e6edf3);
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Header -->
+    <header>
+      <div class="header-inner">
+        <div class="header-left">
+          <a href="../index.html" class="logo">
+            <img src="../assets/icon-w.png" alt="SkillSwap" class="nav-logo-icon" />
+          </a>
+          <nav class="main-nav" id="main-nav">
+            <a href="../index.html">Home</a>
+            <a href="explore.html">Explore</a>
+            <a href="dashboard.html">Dashboard</a>
+          </nav>
+        </div>
+        <div class="header-right">
+          <button class="theme-toggle" aria-label="Toggle dark mode">
+            <span class="material-symbols-outlined icon-dark" aria-hidden="true">dark_mode</span>
+            <span class="material-symbols-outlined icon-light" aria-hidden="true">light_mode</span>
+          </button>
+          <a href="edit-profile.html" class="user-nav-profile" aria-label="Edit your profile">
+            <span id="user-display-name">My Account</span>
+            <div id="nav-avatar" class="user-avatar-initials">?</div>
+          </a>
+          <button class="burger-menu" id="burger-menu">
+            <img src="../assets/menu-burger.png" alt="Menu" class="burger-icon" />
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <div class="dashboard-container">
+      <!-- Sidebar -->
+      <aside class="dashboard-sidebar">
+        <div class="profile-card">
+          <div id="settings-avatar" class="user-avatar-initials large">?</div>
+          <h3 id="settings-name">Loading...</h3>
+          <p id="settings-email" style="font-size:0.82rem;color:var(--slate-500);margin:0"></p>
+          <a href="edit-profile.html" class="btn-edit-profile" style="margin-top:12px">Edit Profile</a>
+        </div>
+
+        <div class="sidebar-nav">
+          <a href="dashboard.html">
+            <span class="material-symbols-outlined" aria-hidden="true">dashboard</span>
+            Overview
+          </a>
+          <a href="dashboard.html">
+            <span class="material-symbols-outlined" aria-hidden="true">mail</span>
+            Requests
+          </a>
+          <a href="suggested-matches.html">
+            <span class="material-symbols-outlined" aria-hidden="true">auto_awesome</span>
+            Suggested Matches
+          </a>
+          <a href="exchange-history.html">
+            <span class="material-symbols-outlined" aria-hidden="true">history</span>
+            Exchange History
+          </a>
+          <a href="settings.html" class="active">
+            <span class="material-symbols-outlined" aria-hidden="true">settings</span>
+            Settings
+          </a>
+          <a href="#" id="settings-logout-btn">
+            <span class="material-symbols-outlined" aria-hidden="true">logout</span>
+            Log Out
+          </a>
+        </div>
+      </aside>
+
+      <!-- Main Content -->
+      <main class="dashboard-content">
+
+        <!-- Change Password -->
+        <section>
+          <div class="dashboard-section-header">
+            <h2 class="dashboard-section-title">Settings</h2>
+          </div>
+
+          <div class="settings-card">
+            <h3>Change Password</h3>
+            <p class="card-desc">Update your account password below.</p>
+
+            <form id="settings-password-form" novalidate>
+              <div class="settings-field">
+                <label for="current-password">Current password</label>
+                <div class="settings-input-group">
+                  <i class="fas fa-lock" aria-hidden="true"></i>
+                  <input type="password" id="current-password" placeholder="Current password" autocomplete="current-password" />
+                  <button type="button" class="password-toggle" aria-label="Show password" tabindex="-1">
+                    <i class="fas fa-eye" aria-hidden="true"></i>
+                  </button>
+                </div>
+              </div>
+
+              <div class="settings-field">
+                <label for="new-password">New password</label>
+                <div class="settings-input-group">
+                  <i class="fas fa-lock" aria-hidden="true"></i>
+                  <input type="password" id="new-password" placeholder="New password (min 8 characters)" autocomplete="new-password" />
+                  <button type="button" class="password-toggle" aria-label="Show password" tabindex="-1">
+                    <i class="fas fa-eye" aria-hidden="true"></i>
+                  </button>
+                </div>
+              </div>
+
+              <div class="settings-field">
+                <label for="confirm-password">Confirm new password</label>
+                <div class="settings-input-group">
+                  <i class="fas fa-lock" aria-hidden="true"></i>
+                  <input type="password" id="confirm-password" placeholder="Confirm new password" autocomplete="new-password" />
+                  <button type="button" class="password-toggle" aria-label="Show password" tabindex="-1">
+                    <i class="fas fa-eye" aria-hidden="true"></i>
+                  </button>
+                </div>
+              </div>
+
+              <span class="settings-error" id="settings-error" aria-live="polite"></span>
+              <span class="settings-success" id="settings-success" aria-live="polite"></span>
+
+              <button type="submit" class="btn-save-settings">Update Password</button>
+            </form>
+          </div>
+
+          <!-- Danger Zone -->
+          <div class="settings-card">
+            <h3>Danger Zone</h3>
+            <p class="card-desc">Permanently delete your account and all associated data. This cannot be undone.</p>
+            <button class="btn-delete-account" id="delete-account-btn">Delete My Account</button>
+          </div>
+        </section>
+
+      </main>
+    </div>
+
+    <script src="../js/auth.js"></script>
+    <script src="../js/script.js"></script>
+  </body>
+</html>

@@ -200,6 +200,12 @@ header.nav-hidden {
   height: 20px !important;
 }
 
+/* Mobile-only auth items — hidden on desktop, shown inside burger menu */
+.mobile-nav-divider,
+.mobile-nav-auth-link {
+  display: none;
+}
+
 /* ── Navbar profile chip (index.html, logged-in) ── */
 .nav-profile-chip {
   display: flex;
@@ -208,9 +214,12 @@ header.nav-hidden {
   cursor: pointer;
   text-decoration: none;
   color: inherit;
+  background: none;
+  border: none;
   border-radius: 50px;
   padding: 4px 10px 4px 4px;
   transition: background-color 0.2s ease;
+  font-family: inherit;
 }
 
 .nav-profile-chip:hover {
@@ -240,10 +249,6 @@ header.nav-hidden {
   display: none;
 }
 
-@media (max-width: 640px) {
-  .nav-profile-chip { display: none; }
-}
-
 body.dark-mode .nav-profile-avatar {
   background-color: #0097c7;
 }
@@ -254,6 +259,93 @@ body.dark-mode .nav-profile-name {
 
 body.dark-mode .nav-profile-chip:hover {
   background-color: rgba(255, 255, 255, 0.06);
+}
+
+/* ── Profile dropdown (index.html navbar) ── */
+.nav-profile-dropdown {
+  position: relative;
+  display: inline-flex;
+}
+
+.nav-profile-chip {
+  /* existing styles kept, cursor set to pointer */
+}
+
+.nav-dropdown-menu {
+  position: absolute;
+  top: calc(100% + 8px);
+  right: 0;
+  min-width: 172px;
+  background: var(--white);
+  border: 1px solid var(--primary-10);
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0,0,8,0.12);
+  padding: 6px 0;
+  z-index: 9999;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-6px);
+  transition: opacity 0.18s ease, transform 0.18s ease, visibility 0.18s;
+}
+
+.nav-profile-dropdown.open .nav-dropdown-menu {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.nav-dropdown-menu a,
+.nav-dropdown-menu button {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  padding: 10px 16px;
+  text-decoration: none;
+  color: var(--text);
+  font-size: 14px;
+  font-weight: 500;
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.15s ease;
+  text-align: left;
+}
+
+.nav-dropdown-menu a:hover,
+.nav-dropdown-menu button:hover {
+  background-color: rgba(0, 98, 128, 0.07);
+}
+
+.nav-dropdown-menu .material-symbols-outlined {
+  font-size: 18px;
+  color: var(--primary);
+}
+
+.nav-dropdown-divider {
+  height: 1px;
+  background-color: var(--primary-10);
+  margin: 4px 0;
+}
+
+body.dark-mode .nav-dropdown-menu {
+  background: #1c2128;
+  border-color: rgba(255,255,255,0.08);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.4);
+}
+
+body.dark-mode .nav-dropdown-menu a,
+body.dark-mode .nav-dropdown-menu button {
+  color: #e6edf3;
+}
+
+body.dark-mode .nav-dropdown-menu a:hover,
+body.dark-mode .nav-dropdown-menu button:hover {
+  background-color: rgba(255,255,255,0.06);
+}
+
+body.dark-mode .nav-dropdown-divider {
+  background-color: rgba(255,255,255,0.08);
 }
 
 @media (max-width: 767px) {
@@ -316,6 +408,42 @@ body.dark-mode .nav-profile-chip:hover {
     visibility: visible;
     transform: translateY(0);
     pointer-events: auto;
+  }
+
+  .nav-profile-dropdown {
+    display: none;
+  }
+
+  /* Mobile nav — auth items injected for logged-in users */
+  .mobile-nav-divider {
+    width: calc(100% - 40px);
+    height: 1px;
+    background-color: var(--primary-10);
+    margin: 4px 20px;
+  }
+
+  .mobile-nav-auth-link {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .mobile-nav-auth-link .material-symbols-outlined {
+    font-size: 18px;
+    color: var(--primary);
+  }
+
+  .mobile-nav-logout {
+    color: #c0392b !important;
+  }
+
+  .mobile-nav-logout .material-symbols-outlined {
+    color: #c0392b;
+  }
+
+  .mobile-nav-join {
+    color: var(--primary) !important;
+    font-weight: 700;
   }
 
   /* header padding tighter on small screens */
@@ -1302,6 +1430,117 @@ footer {
   border-top: 1px solid var(--primary-10);
 }
 
+/* ── Account-required modal ── */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10000;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+  padding: 16px;
+}
+
+.modal-overlay.open {
+  opacity: 1;
+}
+
+.modal-card {
+  background: var(--white);
+  border-radius: 16px;
+  padding: 32px 28px 24px;
+  max-width: 380px;
+  width: 100%;
+  text-align: center;
+  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.18);
+  transform: translateY(12px);
+  transition: transform 0.2s ease;
+}
+
+.modal-overlay.open .modal-card {
+  transform: translateY(0);
+}
+
+.modal-icon {
+  font-size: 36px;
+  margin: 0 0 12px;
+}
+
+.modal-title {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--text);
+  margin: 0 0 8px;
+}
+
+.modal-body {
+  font-size: 14px;
+  color: var(--slate-600);
+  line-height: 1.6;
+  margin: 0 0 24px;
+}
+
+.modal-actions {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+}
+
+.modal-btn {
+  flex: 1;
+  padding: 10px 16px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  border: none;
+  transition: background-color 0.15s ease;
+}
+
+.modal-btn-secondary {
+  background: var(--primary-10);
+  color: var(--primary);
+}
+
+.modal-btn-secondary:hover {
+  background: rgba(0, 98, 128, 0.15);
+}
+
+.modal-btn-primary {
+  background: var(--primary);
+  color: #fff;
+}
+
+.modal-btn-primary:hover {
+  background: var(--primary-dark, #005070);
+}
+
+body.dark-mode .modal-card {
+  background: #1c2128;
+  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.5);
+}
+
+body.dark-mode .modal-title {
+  color: #e6edf3;
+}
+
+body.dark-mode .modal-body {
+  color: #8b949e;
+}
+
+body.dark-mode .modal-btn-secondary {
+  background: rgba(255, 255, 255, 0.08);
+  color: #3db8e5;
+}
+
+body.dark-mode .modal-btn-secondary:hover {
+  background: rgba(255, 255, 255, 0.12);
+}
+
+/* ── Footer ── */
 .footer-inner {
   max-width: 1280px;
   margin-inline: auto;
@@ -1550,6 +1789,18 @@ body.dark-mode .main-nav a {
 body.dark-mode .main-nav a:hover,
 body.dark-mode .main-nav a.active {
   color: #3db8e5;
+}
+
+body.dark-mode .mobile-nav-divider {
+  background-color: rgba(255, 255, 255, 0.08);
+}
+
+body.dark-mode .mobile-nav-logout {
+  color: #ff6b6b !important;
+}
+
+body.dark-mode .mobile-nav-logout .material-symbols-outlined {
+  color: #ff6b6b;
 }
 
 body.dark-mode .search-box {
