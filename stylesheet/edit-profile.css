@@ -1,0 +1,101 @@
+/* =============================================================
+   edit-profile.css
+   Extends auth.css + create-profile.css — edit-specific styles
+   ============================================================= */
+
+/* ── Topbar: back button on left, toggle on right ────────────── */
+.edit-topbar {
+  justify-content: space-between;
+}
+
+.edit-back-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: var(--primary);
+  text-decoration: none;
+  transition: color 0.2s ease, gap 0.2s ease;
+}
+
+.edit-back-btn .material-symbols-outlined {
+  font-size: 20px;
+  transition: transform 0.2s ease;
+}
+
+.edit-back-btn:hover {
+  color: var(--primary-dark);
+  gap: 10px;
+}
+
+.edit-back-btn:hover .material-symbols-outlined {
+  transform: translateX(-3px);
+}
+
+/* ── Action row: Cancel + Save side by side ──────────────────── */
+.edit-action-row {
+  display: flex;
+  gap: 12px;
+  margin-top: 8px;
+}
+
+.btn-cancel-edit {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 14px;
+  border: 2px solid var(--slate-200);
+  border-radius: 50px;
+  font-family: 'Manrope', sans-serif;
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--slate-600);
+  text-decoration: none;
+  transition: border-color 0.25s ease, color 0.25s ease, background-color 0.2s ease;
+}
+
+.btn-cancel-edit:hover {
+  border-color: var(--slate-400);
+  color: var(--text);
+  background: rgba(0, 0, 0, 0.03);
+}
+
+.btn-save-edit {
+  flex: 2;
+  margin-top: 0;
+}
+
+/* ── Dark mode ───────────────────────────────────────────────── */
+body.dark-mode .edit-back-btn {
+  color: var(--accent);
+}
+
+body.dark-mode .edit-back-btn:hover {
+  color: #7dd3f8;
+}
+
+body.dark-mode .btn-cancel-edit {
+  border-color: #30363d;
+  color: #8b949e;
+}
+
+body.dark-mode .btn-cancel-edit:hover {
+  border-color: #484f58;
+  color: #e6edf3;
+  background: rgba(255, 255, 255, 0.04);
+}
+
+/* ── Responsive ─────────────────────────────────────────────── */
+@media (max-width: 480px) {
+  .edit-action-row {
+    flex-direction: column-reverse;
+  }
+
+  .btn-cancel-edit,
+  .btn-save-edit {
+    flex: unset;
+    width: 100%;
+  }
+}

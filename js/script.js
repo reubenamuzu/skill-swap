@@ -15,6 +15,7 @@ const PAGES = {
   dashboard:     'dashboard.html',
   login:         'login.html',
   createProfile: 'create-profile.html',
+  editProfile:   'edit-profile.html',
   explore:       'explore.html',
 };
 
@@ -178,8 +179,10 @@ function initIndexHeader() {
     ? `<img src="${user.photoUrl}" alt="${user.name || 'Profile'}" class="nav-profile-avatar nav-profile-photo">`
     : `<div class="nav-profile-avatar">${initials}</div>`;
 
-  const chip = document.createElement('div');
+  const chip = document.createElement('a');
+  chip.href = PAGES.editProfile;
   chip.className = 'nav-profile-chip';
+  chip.setAttribute('aria-label', 'Edit your profile');
   chip.innerHTML = `${avatarHTML}<span class="nav-profile-name">${user.name || 'Profile'}</span>`;
   joinBtn.replaceWith(chip);
 }
@@ -306,6 +309,20 @@ function initCreateProfile() {
   });
 }
 
+function preloadTags(wrapperId, tagsArray, values) {
+  if (!values || !values.length) return;
+  const wrapper = document.getElementById(wrapperId);
+  if (!wrapper) return;
+  const input = wrapper.querySelector('.tag-input');
+  values.forEach(value => {
+    tagsArray.push(value);
+    const tag = document.createElement('div');
+    tag.className = 'tag';
+    tag.innerHTML = `${value} <span class="material-symbols-outlined" data-tag="${value}">close</span>`;
+    wrapper.insertBefore(tag, input);
+  });
+}
+
 function initTagInput(wrapperId, tagsArray) {
   const wrapper = document.getElementById(wrapperId);
   if (!wrapper) return;
@@ -331,6 +348,78 @@ function initTagInput(wrapperId, tagsArray) {
     const idx = tagsArray.indexOf(closeBtn.dataset.tag);
     if (idx > -1) tagsArray.splice(idx, 1);
     closeBtn.closest('.tag').remove();
+  });
+}
+
+function initEditProfile() {
+  const form = document.getElementById('edit-profile-form');
+  if (!form) return;
+
+  if (!getCurrentUser()) { window.location.href = PAGES.login; return; }
+
+  const user = getCurrentUser();
+
+  // Pre-populate text fields
+  document.getElementById('edit-name').value   = user.name   || '';
+  document.getElementById('edit-school').value = user.school || '';
+  document.getElementById('edit-degree').value = user.degree || '';
+
+  // Photo preview — show existing photo if set
+  let pendingPhotoUrl    = user.photoUrl || null;
+  const photoInput       = document.getElementById('edit-photo-input');
+  const chooseBtn        = document.getElementById('edit-btn-choose-photo');
+  const photoPreview     = document.getElementById('edit-photo-preview');
+
+  if (user.photoUrl) {
+    photoPreview.innerHTML = `<img src="${user.photoUrl}" alt="Profile photo">`;
+  }
+
+  if (chooseBtn && photoInput) {
+    chooseBtn.addEventListener('click', () => photoInput.click());
+    photoInput.addEventListener('change', e => {
+      handleImageUpload(e.target.files[0], url => {
+        pendingPhotoUrl = url;
+        photoPreview.innerHTML = `<img src="${url}" alt="Preview">`;
+      });
+      photoInput.value = '';
+    });
+  }
+
+  // Tag inputs pre-loaded with saved skills
+  const teachTags = [];
+  const learnTags = [];
+  initTagInput('edit-teach-wrapper', teachTags);
+  initTagInput('edit-learn-wrapper', learnTags);
+  preloadTags('edit-teach-wrapper', teachTags, user.skillsToTeach || []);
+  preloadTags('edit-learn-wrapper', learnTags, user.skillsToLearn || []);
+
+  form.addEventListener('submit', e => {
+    e.preventDefault();
+    const errorEl = document.getElementById('edit-profile-error');
+    errorEl.textContent = '';
+
+    const name   = document.getElementById('edit-name').value.trim();
+    const school = document.getElementById('edit-school').value.trim();
+    const degree = document.getElementById('edit-degree').value.trim();
+
+    if (!name)                { errorEl.textContent = 'Please enter your name.';                     return; }
+    if (!school)              { errorEl.textContent = 'Please enter your school or university.';     return; }
+    if (!degree)              { errorEl.textContent = 'Please enter your degree or program.';        return; }
+    if (!teachTags.length)    { errorEl.textContent = 'Add at least one skill you can teach.';       return; }
+
+    const users  = getUsers();
+    const userId = localStorage.getItem(SS_CURRENT_USER_KEY);
+    const idx    = users.findIndex(u => u.id === userId);
+    if (idx === -1) { window.location.href = PAGES.login; return; }
+
+    Object.assign(users[idx], {
+      name, school, degree,
+      skillsToTeach: teachTags.slice(),
+      skillsToLearn: learnTags.slice(),
+      photoUrl: pendingPhotoUrl,
+    });
+    saveUsers(users);
+    window.location.href = PAGES.dashboard;
   });
 }
 
@@ -414,6 +503,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initCreateProfile();
   initSearchToggle();
   initDashboard();
+  initEditProfile();
   initPasswordToggle('login-password');
   initPasswordToggle('signup-password');
 });
