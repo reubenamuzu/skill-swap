@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+  <defs>
+    <linearGradient id="grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#006280"/>
+      <stop offset="100%" stop-color="#3db8e5"/>
+    </linearGradient>
+  </defs>
+  <!-- First S (behind, brighter) -->
+  <text x="6" y="23" font-family="Georgia, serif" font-size="24"
+        font-weight="bold" font-style="italic" fill="#00c4e8">S</text>
+  <!-- Second S overlapping for monogram feel -->
+  <text x="15" y="23" font-family="Georgia, serif" font-size="24"
+        font-weight="bold" font-style="italic" fill="#006280">S</text>
+</svg>
