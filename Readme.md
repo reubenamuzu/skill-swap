@@ -9,12 +9,17 @@ A peer-to-peer skill-exchange platform where users trade expertise with each oth
 | Page | File | Description |
 | --- | --- | --- |
 | Home | `index.html` | Landing page with hero, how-it-works, featured skills, testimonials, FAQ |
-| Explore | `explore.html` | Browse and search skills with filtering, sorting, and pagination |
-| Dashboard | `dashboard.html` | User profile, skills, incoming requests, and upcoming sessions |
-| Login | `login.html` | Sign in to an existing account |
-| Sign Up | `signup.html` | Create a new account |
-| Create Profile | `create-profile.html` | Complete profile after sign-up (school, degree, skills, photo) |
-| Request Skill | `request-skill.html` | Send a swap proposal to an instructor |
+| Explore | `pages/explore.html` | Browse and search skills with filtering, sorting, and pagination |
+| Dashboard | `pages/dashboard.html` | User profile, skills, incoming requests, and swap stats |
+| Suggested Matches | `pages/suggested-matches.html` | AI-style peer matches based on complementary skills |
+| Exchange History | `pages/exchange-history.html` | Record of past skill swaps |
+| Settings | `pages/settings.html` | Change password and account preferences |
+| Login | `pages/login.html` | Sign in to an existing account |
+| Sign Up | `pages/signup.html` | Create a new account |
+| Create Profile | `pages/create-profile.html` | Complete profile after sign-up (school, degree, skills, photo) |
+| Edit Profile | `pages/edit-profile.html` | Update name, photo, school, degree, and skills |
+| Request Skill | `pages/request-skill.html` | Send a swap proposal to an instructor |
+| Reset Password | `pages/forgot-password.html` | Reset account password |
 
 ---
 
@@ -26,8 +31,9 @@ A peer-to-peer skill-exchange platform where users trade expertise with each oth
 - Email format and uniqueness validation
 - Login with session persistence via `localStorage`
 - Auth guards redirect unauthenticated users to login
-- Profile completion step after sign-up
-- Logout clears session
+- Profile completion step enforced after sign-up — users cannot skip to the dashboard
+- Logout clears session from all nav entry points
+- Password visibility toggle on all password fields
 
 ### User Profile
 
@@ -35,6 +41,7 @@ A peer-to-peer skill-exchange platform where users trade expertise with each oth
 - School/university and degree fields
 - Tag-based skill management (skills to teach and skills to learn)
 - Avatar with initials fallback when no photo is set
+- Full profile editing after creation
 
 ### Skill Discovery (Explore Page)
 
@@ -44,22 +51,36 @@ A peer-to-peer skill-exchange platform where users trade expertise with each oth
 - Sort by: Best Rated, Most Reviews, Newest
 - Paginated grid (8 per page desktop, 6 mobile) with ellipsis navigation
 - "More Details" modal with full skill and instructor info
+- Profile photo and dropdown in the explore navbar for logged-in users
 
 ### Dashboard
 
 - Dynamic display of user's skills to teach and skills to learn
-- Incoming swap requests with accept/decline actions
-- Upcoming sessions with status (Confirmed / Pending) and join call button
-- Sidebar navigation with notification badge
+- Incoming swap requests with accept / decline actions
+- Swap completion count
+- Sidebar navigation with links to all inner pages
+
+### Suggested Matches
+
+- Matches peers whose skills to learn overlap with your skills to teach (and vice versa)
+- Match score percentage based on skill overlap
+- Dedicated full page replacing the old in-dashboard section
+
+### Navigation & Access Control
+
+- Desktop navbar profile chip with dropdown: Edit Profile + Logout
+- Mobile burger menu dynamically injects Edit Profile + Logout (logged in) or Join Now (logged out)
+- Dashboard link intercepted for guests — modal prompts account creation before navigating
+- Profile photo hidden in navbar when burger menu is active (< 768px)
 
 ### UI & Responsiveness
 
 - Fully responsive across mobile, tablet, and desktop
 - Dark / light theme toggle with `localStorage` persistence — no flash on reload
-- Animated burger menu (slide-down + fade) on mobile, narrows to 240px right-aligned dropdown
+- Animated burger menu (slide-down + fade) on mobile, 240px right-aligned dropdown
 - Expandable search bar in the explore header on mobile/tablet
-- Sticky header with hide-on-scroll behaviour on desktop
-- Smooth CSS transitions throughout
+- Sticky header with hide-on-scroll behaviour
+- Smooth CSS transitions and modal animations throughout
 
 ---
 
@@ -80,29 +101,37 @@ A peer-to-peer skill-exchange platform where users trade expertise with each oth
 
 ```text
 SkillSwap-capstone-project/
-├── index.html
-├── explore.html
-├── dashboard.html
-├── login.html
-├── signup.html
-├── create-profile.html
-├── request-skill.html
+├── index.html                  # Landing page (root)
+├── README.md
+│
+├── pages/
+│   ├── login.html
+│   ├── signup.html
+│   ├── create-profile.html
+│   ├── edit-profile.html
+│   ├── dashboard.html
+│   ├── suggested-matches.html
+│   ├── exchange-history.html
+│   ├── settings.html
+│   ├── explore.html
+│   ├── request-skill.html
+│   └── forgot-password.html
 │
 ├── js/
 │   ├── auth.js          # Auth helpers: get/save users, session, initials
+│   ├── script.js        # Dark mode, burger menu, nav guards, all page inits
 │   └── explore.js       # Skill data, filtering, sorting, pagination, modal
 │
 ├── stylesheet/
-│   ├── style.css        # Global styles, header, nav, dark mode, responsive
-│   ├── auth.css         # Login & signup page layouts
-│   ├── explore.css      # Skill grid, cards, modal, filters, pagination
-│   ├── dashboard.css    # Sidebar, profile card, request & session cards
+│   ├── style.css           # Global styles, header, nav, dark mode, modal, responsive
+│   ├── auth.css            # Login, signup, forgot-password layouts
+│   ├── explore.css         # Skill grid, cards, modal, filters, pagination
+│   ├── dashboard.css       # Sidebar, profile card, request cards, nav dropdown
 │   ├── create-profile.css  # Profile form, photo upload, tag inputs
-│   └── request-skill.css   # Proposal form, skill info card
+│   ├── edit-profile.css    # Edit profile form overrides and back-button bar
+│   └── request-skill.css   # Proposal form and skill info card
 │
-├── script.js            # Dark mode, burger menu, FAQ, auth forms, dashboard
-│
-└── assets/              # Images: logo, skill thumbnails, UI icons
+└── assets/                  # Images: logo, skill thumbnails, UI icons
 ```
 
 ---
@@ -151,13 +180,15 @@ Or use a local dev server (e.g. VS Code Live Server extension) for the best expe
 ```text
 Guest → Sign Up → Create Profile → Dashboard
                                        |
+                              Suggested Matches
+                                       |
                               Explore Skills
                                        |
-                              Request a Skill
+                              Request a Skill Swap
                                        |
                          Incoming Requests (Dashboard)
                                        |
-                          Accept → Upcoming Sessions
+                          Accept → Exchange History
 ```
 
 ---
@@ -176,6 +207,6 @@ Guest → Sign Up → Create Profile → Dashboard
 
 | Breakpoint | Behaviour |
 | --- | --- |
-| `>= 1024px` | Desktop — full nav visible, inline search bar, sidebar layout |
+| `>= 1024px` | Desktop — full nav, profile dropdown, inline search bar, sidebar layout |
 | `768px – 1023px` | Tablet — burger menu, expandable search icon, sidebar row layout |
-| `< 768px` | Mobile — burger menu, stacked layout, collapsible nav dropdown |
+| `< 768px` | Mobile — burger menu, stacked layout, profile chip hidden, auth items in nav |
