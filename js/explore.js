@@ -6,9 +6,9 @@ const SKILLS_DATA = [
     category: 'Design',
     rating: 4.9,
     reviews: 87,
-    instructor: 'Sarah Jenkins',
-    instructorAvatar: 'https://lh3.googleusercontent.com/aida-public/AB6AXuBMQEraWLyTowWwGLsAPSQYRDVZ3zNkd3uHLVMswaNTE-Tw6hzatUkNjl06qoA9spxRx5pLOgwHB9rmjhq0dU3yUVVt_k4t7o_epLcqaijq8AGi13pEQPoKzvsLJlBXDWxB4LTDvJ4U-lsnSMJvsWGRvbg2No9-sg9n_GwdEwgBR89mHXNtS6BkIXrMvlipsTsOfYIaml2wqxss5z8tk6iWIhhX9kv8agMT9UCasWG-cl5q1k5nopu4FOWhGa8IVwMDfZ6WrmMyDOM',
-    image: '/assets/ui_ux_design.png',
+    instructor: 'Joseph Azumah',
+    instructorAvatar: '/assets/boy1.jpeg',
+    image: '/assets/ux-pic.jpeg',
     createdAt: '2024-01-15'
   },
   {
@@ -30,8 +30,8 @@ const SKILLS_DATA = [
     category: 'Language',
     rating: 5.0,
     reviews: 63,
-    instructor: 'Elena Rodriguez',
-    instructorAvatar: 'https://lh3.googleusercontent.com/aida-public/AB6AXuCV25Ys-syTomckdeXfKHPavW_Mk7w7c6OJwhx-UtZ09zzrKEtTtyGStfylkiv_kKEkHlRLnUDWF_TkdCY5piWwq_kXeG-R5ubYAxR8yEx1N1EGyjFnllOL9_UTAR39Uo9iQssdRkvnILs_vkIF-o5iCJyj8sxqORhYddS6CoBa7nZC5fnTAofTPLBSfHeRDhoqr3dk7CgmIgkLDzyC66yN72f1Zu6L6ZSHPPsr5tT0PnZMRly-JBBacNf35e5iqnA1ym1hnAksCLY',
+    instructor: 'Kafui Etornam',
+    instructorAvatar: '/assets/girl1.jpeg',
     image: '/assets/spanish_conversation.png',
     createdAt: '2024-02-03'
   },
@@ -42,8 +42,8 @@ const SKILLS_DATA = [
     category: 'Marketing',
     rating: 4.5,
     reviews: 52,
-    instructor: 'Marcus Sterling',
-    instructorAvatar: 'https://lh3.googleusercontent.com/aida-public/AB6AXuBMQEraWLyTowWwGLsAPSQYRDVZ3zNkd3uHLVMswaNTE-Tw6hzatUkNjl06qoA9spxRx5pLOgwHB9rmjhq0dU3yUVVt_k4t7o_epLcqaijq8AGi13pEQPoKzvsLJlBXDWxB4LTDvJ4U-lsnSMJvsWGRvbg2No9-sg9n_GwdEwgBR89mHXNtS6BkIXrMvlipsTsOfYIaml2wqxss5z8tk6iWIhhX9kv8agMT9UCasWG-cl5q1k5nopu4FOWhGa8IVwMDfZ6WrmMyDOM',
+    instructor: 'Marcus Johnson',
+    instructorAvatar: '/assets/boy3.jpeg',
     image: '/assets/digital_marketing.png',
     createdAt: '2024-02-10'
   },
@@ -54,9 +54,9 @@ const SKILLS_DATA = [
     category: 'Data Science',
     rating: 4.7,
     reviews: 98,
-    instructor: 'Julianna Moss',
+    instructor: 'Jonathan Sosu',
     instructorAvatar: 'https://lh3.googleusercontent.com/aida-public/AB6AXuDtZQr8NeDcj0vzMrW4JKPUvQzuNO3d5-aPPM4nrkTeMmPrEMxy8js4f5pfUZZ_VFJunUQfr2YafzMWMXTNdjSCXj0OqxilF74GUlLxCFClkyA8jFHrdUZ-sdIBF4oVW0L-U8Dpm0AXX0AfDKo-Kn4r5HZL_BMTRe5S9DIxf0UogZKDn9hitS0MbEhWYO1VK-AMKTGTVi14Y0uidIikjpGXURb07YRVjHFyTkOP9cq1TTWOikj5KlZzi7DJsCA1DzpzH2fhMJyFLzk',
-    image: '/assets/data_science.png',
+    image: '/assets/prog-r.jpg',
     createdAt: '2024-02-18'
   },
   {
@@ -66,9 +66,9 @@ const SKILLS_DATA = [
     category: 'Photography',
     rating: 4.9,
     reviews: 71,
-    instructor: 'Oliver Twist',
+    instructor: 'Linda Okoe',
     instructorAvatar: 'https://lh3.googleusercontent.com/aida-public/AB6AXuCV25Ys-syTomckdeXfKHPavW_Mk7w7c6OJwhx-UtZ09zzrKEtTtyGStfylkiv_kKEkHlRLnUDWF_TkdCY5piWwq_kXeG-R5ubYAxR8yEx1N1EGyjFnllOL9_UTAR39Uo9iQssdRkvnILs_vkIF-o5iCJyj8sxqORhYddS6CoBa7nZC5fnTAofTPLBSfHeRDhoqr3dk7CgmIgkLDzyC66yN72f1Zu6L6ZSHPPsr5tT0PnZMRly-JBBacNf35e5iqnA1ym1hnAksCLY',
-    image: '/assets/photography_lens.png',
+    image: '/assets/man-photography.jpg',
     createdAt: '2024-03-01'
   },
   {
@@ -78,21 +78,21 @@ const SKILLS_DATA = [
     category: 'Music',
     rating: 4.6,
     reviews: 45,
-    instructor: 'Leo Navarro',
+    instructor: 'Martha Addo',
     instructorAvatar: 'https://lh3.googleusercontent.com/aida-public/AB6AXuBMQEraWLyTowWwGLsAPSQYRDVZ3zNkd3uHLVMswaNTE-Tw6hzatUkNjl06qoA9spxRx5pLOgwHB9rmjhq0dU3yUVVt_k4t7o_epLcqaijq8AGi13pEQPoKzvsLJlBXDWxB4LTDvJ4U-lsnSMJvsWGRvbg2No9-sg9n_GwdEwgBR89mHXNtS6BkIXrMvlipsTsOfYIaml2wqxss5z8tk6iWIhhX9kv8agMT9UCasWG-cl5q1k5nopu4FOWhGa8IVwMDfZ6WrmMyDOM',
-    image: '/assets/ui_ux_design.png',
+    image: '/assets/guitar.jpg',
     createdAt: '2024-03-08'
   },
   {
     id: 8,
-    title: 'Italian Cooking',
+    title: 'Calculus',
     description: 'Master pasta, risotto and classic Italian dishes with authentic recipes.',
-    category: 'Cooking',
+    category: 'Data Science',
     rating: 4.8,
     reviews: 39,
-    instructor: 'Gianna Moretti',
-    instructorAvatar: 'https://lh3.googleusercontent.com/aida-public/AB6AXuCV25Ys-syTomckdeXfKHPavW_Mk7w7c6OJwhx-UtZ09zzrKEtTtyGStfylkiv_kKEkHlRLnUDWF_TkdCY5piWwq_kXeG-R5ubYAxR8yEx1N1EGyjFnllOL9_UTAR39Uo9iQssdRkvnILs_vkIF-o5iCJyj8sxqORhYddS6CoBa7nZC5fnTAofTPLBSfHeRDhoqr3dk7CgmIgkLDzyC66yN72f1Zu6L6ZSHPPsr5tT0PnZMRly-JBBacNf35e5iqnA1ym1hnAksCLY',
-    image: '/assets/spanish_conversation.png',
+    instructor: 'Emma Musah',
+    instructorAvatar: '/assets/boy1.jpeg',
+    image: '/assets/calculus.png',
     createdAt: '2024-03-15'
   },
   {
@@ -102,9 +102,9 @@ const SKILLS_DATA = [
     category: 'Design',
     rating: 4.7,
     reviews: 56,
-    instructor: 'Sarah Jenkins',
-    instructorAvatar: 'https://lh3.googleusercontent.com/aida-public/AB6AXuBMQEraWLyTowWwGLsAPSQYRDVZ3zNkd3uHLVMswaNTE-Tw6hzatUkNjl06qoA9spxRx5pLOgwHB9rmjhq0dU3yUVVt_k4t7o_epLcqaijq8AGi13pEQPoKzvsLJlBXDWxB4LTDvJ4U-lsnSMJvsWGRvbg2No9-sg9n_GwdEwgBR89mHXNtS6BkIXrMvlipsTsOfYIaml2wqxss5z8tk6iWIhhX9kv8agMT9UCasWG-cl5q1k5nopu4FOWhGa8IVwMDfZ6WrmMyDOM',
-    image: '/assets/ui_ux_design.png',
+    instructor: 'Sarah Yamal',
+    instructorAvatar: '/assets/girl2.jpeg',
+    image: '/assets/figma-pro.png',
     createdAt: '2024-03-22'
   },
   {
@@ -114,9 +114,9 @@ const SKILLS_DATA = [
     category: 'Development',
     rating: 4.9,
     reviews: 103,
-    instructor: 'David Chen',
+    instructor: 'David Okoe',
     instructorAvatar: 'https://lh3.googleusercontent.com/aida-public/AB6AXuDtZQr8NeDcj0vzMrW4JKPUvQzuNO3d5-aPPM4nrkTeMmPrEMxy8js4f5pfUZZ_VFJunUQfr2YafzMWMXTNdjSCXj0OqxilF74GUlLxCFClkyA8jFHrdUZ-sdIBF4oVW0L-U8Dpm0AXX0AfDKo-Kn4r5HZL_BMTRe5S9DIxf0UogZKDn9hitS0MbEhWYO1VK-AMKTGTVi14Y0uidIikjpGXURb07YRVjHFyTkOP9cq1TTWOikj5KlZzi7DJsCA1DzpzH2fhMJyFLzk',
-    image: '/assets/python_programming.png',
+    image: '/assets/reacttaining.jpeg',
     createdAt: '2024-04-01'
   },
   {
@@ -126,49 +126,37 @@ const SKILLS_DATA = [
     category: 'Language',
     rating: 4.8,
     reviews: 44,
-    instructor: 'Elena Rodriguez',
+    instructor: 'Rosa Hills',
     instructorAvatar: 'https://lh3.googleusercontent.com/aida-public/AB6AXuCV25Ys-syTomckdeXfKHPavW_Mk7w7c6OJwhx-UtZ09zzrKEtTtyGStfylkiv_kKEkHlRLnUDWF_TkdCY5piWwq_kXeG-R5ubYAxR8yEx1N1EGyjFnllOL9_UTAR39Uo9iQssdRkvnILs_vkIF-o5iCJyj8sxqORhYddS6CoBa7nZC5fnTAofTPLBSfHeRDhoqr3dk7CgmIgkLDzyC66yN72f1Zu6L6ZSHPPsr5tT0PnZMRly-JBBacNf35e5iqnA1ym1hnAksCLY',
-    image: '/assets/spanish_conversation.png',
+    image: '/assets/french-convo.png',
     createdAt: '2024-04-08'
   },
   {
     id: 12,
-    title: 'SEO Fundamentals',
-    description: 'Rank higher on Google with on-page, off-page and technical SEO strategies.',
-    category: 'Marketing',
+    title: 'C++ Fundamentals',
+    description: 'Learn C++ fundamentals.',
+    category: 'Development',
     rating: 4.4,
     reviews: 67,
-    instructor: 'Marcus Sterling',
-    instructorAvatar: 'https://lh3.googleusercontent.com/aida-public/AB6AXuBMQEraWLyTowWwGLsAPSQYRDVZ3zNkd3uHLVMswaNTE-Tw6hzatUkNjl06qoA9spxRx5pLOgwHB9rmjhq0dU3yUVVt_k4t7o_epLcqaijq8AGi13pEQPoKzvsLJlBXDWxB4LTDvJ4U-lsnSMJvsWGRvbg2No9-sg9n_GwdEwgBR89mHXNtS6BkIXrMvlipsTsOfYIaml2wqxss5z8tk6iWIhhX9kv8agMT9UCasWG-cl5q1k5nopu4FOWhGa8IVwMDfZ6WrmMyDOM',
-    image: '/assets/digital_marketing.png',
+    instructor: 'Dominic Yohanny',
+    instructorAvatar: '/assets/boy5.jpeg',
+    image: '/assets/cpp.jpg',
     createdAt: '2024-04-15'
   },
   {
     id: 13,
-    title: 'Data Analysis with Python',
-    description: 'Use pandas, numpy and matplotlib to extract insights from real-world datasets.',
-    category: 'Data Science',
+    title: 'Photoshop Skills',
+    description: 'Best learning tut in photoshop',
+    category: 'Design',
     rating: 4.6,
     reviews: 88,
-    instructor: 'Julianna Moss',
+    instructor: 'Thomas Aziz',
     instructorAvatar: 'https://lh3.googleusercontent.com/aida-public/AB6AXuDtZQr8NeDcj0vzMrW4JKPUvQzuNO3d5-aPPM4nrkTeMmPrEMxy8js4f5pfUZZ_VFJunUQfr2YafzMWMXTNdjSCXj0OqxilF74GUlLxCFClkyA8jFHrdUZ-sdIBF4oVW0L-U8Dpm0AXX0AfDKo-Kn4r5HZL_BMTRe5S9DIxf0UogZKDn9hitS0MbEhWYO1VK-AMKTGTVi14Y0uidIikjpGXURb07YRVjHFyTkOP9cq1TTWOikj5KlZzi7DJsCA1DzpzH2fhMJyFLzk',
-    image: '/assets/data_science.png',
+    image: '/assets/photoshop.jpeg',
     createdAt: '2024-04-22'
   },
   {
     id: 14,
-    title: 'Street Photography',
-    description: 'Tell compelling visual stories by capturing candid moments in urban environments.',
-    category: 'Photography',
-    rating: 4.7,
-    reviews: 33,
-    instructor: 'Oliver Twist',
-    instructorAvatar: 'https://lh3.googleusercontent.com/aida-public/AB6AXuCV25Ys-syTomckdeXfKHPavW_Mk7w7c6OJwhx-UtZ09zzrKEtTtyGStfylkiv_kKEkHlRLnUDWF_TkdCY5piWwq_kXeG-R5ubYAxR8yEx1N1EGyjFnllOL9_UTAR39Uo9iQssdRkvnILs_vkIF-o5iCJyj8sxqORhYddS6CoBa7nZC5fnTAofTPLBSfHeRDhoqr3dk7CgmIgkLDzyC66yN72f1Zu6L6ZSHPPsr5tT0PnZMRly-JBBacNf35e5iqnA1ym1hnAksCLY',
-    image: '/assets/photography_lens.png',
-    createdAt: '2024-05-01'
-  },
-  {
-    id: 15,
     title: 'Music Theory',
     description: 'Understand scales, chords and harmony to write and play music confidently.',
     category: 'Music',
@@ -176,9 +164,22 @@ const SKILLS_DATA = [
     reviews: 29,
     instructor: 'Leo Navarro',
     instructorAvatar: 'https://lh3.googleusercontent.com/aida-public/AB6AXuBMQEraWLyTowWwGLsAPSQYRDVZ3zNkd3uHLVMswaNTE-Tw6hzatUkNjl06qoA9spxRx5pLOgwHB9rmjhq0dU3yUVVt_k4t7o_epLcqaijq8AGi13pEQPoKzvsLJlBXDWxB4LTDvJ4U-lsnSMJvsWGRvbg2No9-sg9n_GwdEwgBR89mHXNtS6BkIXrMvlipsTsOfYIaml2wqxss5z8tk6iWIhhX9kv8agMT9UCasWG-cl5q1k5nopu4FOWhGa8IVwMDfZ6WrmMyDOM',
-    image: '/assets/python_programming.png',
+    image: '/assets/music.jpg',
     createdAt: '2024-05-08'
   },
+  {
+    id: 15,
+    title: 'Microsoft 365 Training',
+    description: 'Learn MS 365.',
+    category: 'Design',
+    rating: 4.7,
+    reviews: 33,
+    instructor: 'Oliver Tuwm',
+    instructorAvatar: 'https://lh3.googleusercontent.com/aida-public/AB6AXuCV25Ys-syTomckdeXfKHPavW_Mk7w7c6OJwhx-UtZ09zzrKEtTtyGStfylkiv_kKEkHlRLnUDWF_TkdCY5piWwq_kXeG-R5ubYAxR8yEx1N1EGyjFnllOL9_UTAR39Uo9iQssdRkvnILs_vkIF-o5iCJyj8sxqORhYddS6CoBa7nZC5fnTAofTPLBSfHeRDhoqr3dk7CgmIgkLDzyC66yN72f1Zu6L6ZSHPPsr5tT0PnZMRly-JBBacNf35e5iqnA1ym1hnAksCLY',
+    image: '/assets/microsoft.jpg',
+    createdAt: '2024-05-01'
+  },
+  
   {
     id: 16,
     title: 'Baking & Pastry',
@@ -188,7 +189,7 @@ const SKILLS_DATA = [
     reviews: 51,
     instructor: 'Gianna Moretti',
     instructorAvatar: 'https://lh3.googleusercontent.com/aida-public/AB6AXuCV25Ys-syTomckdeXfKHPavW_Mk7w7c6OJwhx-UtZ09zzrKEtTtyGStfylkiv_kKEkHlRLnUDWF_TkdCY5piWwq_kXeG-R5ubYAxR8yEx1N1EGyjFnllOL9_UTAR39Uo9iQssdRkvnILs_vkIF-o5iCJyj8sxqORhYddS6CoBa7nZC5fnTAofTPLBSfHeRDhoqr3dk7CgmIgkLDzyC66yN72f1Zu6L6ZSHPPsr5tT0PnZMRly-JBBacNf35e5iqnA1ym1hnAksCLY',
-    image: '/assets/digital_marketing.png',
+    image: '/assets/cookingClass.jpeg',
     createdAt: '2024-05-15'
   }
 ];
