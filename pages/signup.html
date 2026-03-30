@@ -15,8 +15,9 @@
     <!-- ── Top bar with dark mode toggle (not floating) ─────── -->
     <div class="auth-topbar">
       <button class="auth-theme-toggle" aria-label="Toggle dark mode">
-        <i class="fas fa-moon icon-dark"  aria-hidden="true"></i>
-        <i class="fas fa-sun  icon-light" aria-hidden="true"></i>
+        <span class="toggle-thumb"></span>
+        <i class="fas fa-sun  toggle-icon-sun"  aria-hidden="true"></i>
+        <i class="fas fa-moon toggle-icon-moon" aria-hidden="true"></i>
       </button>
     </div>
 
@@ -30,6 +31,7 @@
         </a>
 
         <!-- Heading -->
+        <div class="auth-accent-bar"></div>
         <h1 class="auth-heading">Create account,</h1>
         <p class="auth-subheading">
           Already have an account? <a href="login.html">Sign in</a> here
