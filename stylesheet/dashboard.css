@@ -933,6 +933,7 @@ body.dark-mode #logout-btn:hover {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 20px;
+  align-items: start;
 }
 
 .match-card {
@@ -945,6 +946,8 @@ body.dark-mode #logout-btn:hover {
   gap: 14px;
   box-shadow: 0 2px 8px rgba(0,0,0,0.02);
   transition: box-shadow 0.2s, transform 0.2s;
+  overflow: hidden;
+  min-width: 0;
 }
 
 .match-card:hover {
@@ -1036,6 +1039,8 @@ body.dark-mode #logout-btn:hover {
   display: flex;
   flex-wrap: wrap;
   gap: 5px;
+  overflow: hidden;
+  max-height: 56px;
 }
 
 .match-skills-tags .skill-tag {

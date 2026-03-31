@@ -1173,10 +1173,12 @@ function initExplorePage() {
   initDashboardNavDropdown();
 }
 
-function showAccountRequiredModal(onConfirm) {
+function showAccountRequiredModal(onConfirm, message) {
   // Remove any existing modal
   const existing = document.getElementById('account-required-modal');
   if (existing) existing.remove();
+
+  const bodyText = message || 'You need an account to do this. Would you like to create one?';
 
   const overlay = document.createElement('div');
   overlay.id = 'account-required-modal';
@@ -1185,7 +1187,7 @@ function showAccountRequiredModal(onConfirm) {
     <div class="modal-card" role="dialog" aria-modal="true" aria-labelledby="modal-title">
       <p class="modal-icon" aria-hidden="true">🔒</p>
       <h2 class="modal-title" id="modal-title">Account required</h2>
-      <p class="modal-body">You need an account to access the Dashboard. Would you like to create one?</p>
+      <p class="modal-body">${bodyText}</p>
       <div class="modal-actions">
         <button class="modal-btn modal-btn-secondary" id="modal-no-btn">No, stay here</button>
         <button class="modal-btn modal-btn-primary" id="modal-ok-btn">Create account</button>
@@ -1213,21 +1215,42 @@ function showAccountRequiredModal(onConfirm) {
 function initNavGuards() {
   if (getCurrentUser()) return;
 
-  const mainNav = document.getElementById('main-nav');
-  if (!mainNav) return;
-
   const inPages = window.location.pathname.includes('/pages/');
   const signupHref = inPages ? PAGES.login : 'pages/login.html';
+  const requestMsg = 'You need an account to request a skill swap. Would you like to create one?';
 
-  mainNav.querySelectorAll('a').forEach(link => {
-    const href = link.getAttribute('href') || '';
-    if (href.includes('dashboard.html')) {
-      link.addEventListener('click', e => {
-        e.preventDefault();
-        showAccountRequiredModal(() => { window.location.href = signupHref; });
-      });
-    }
+  // Dashboard nav link guard
+  const mainNav = document.getElementById('main-nav');
+  if (mainNav) {
+    mainNav.querySelectorAll('a').forEach(link => {
+      const href = link.getAttribute('href') || '';
+      if (href.includes('dashboard.html')) {
+        link.addEventListener('click', e => {
+          e.preventDefault();
+          showAccountRequiredModal(() => { window.location.href = signupHref; });
+        });
+      }
+    });
+  }
+
+  // Homepage popular-skills "Request Skill" buttons (.btn-find-mentor)
+  document.querySelectorAll('.btn-find-mentor').forEach(btn => {
+    btn.addEventListener('click', e => {
+      e.preventDefault();
+      showAccountRequiredModal(() => { window.location.href = signupHref; }, requestMsg);
+    });
   });
+
+  // Explore page modal "Request Skill" button (.skill-modal-request / .btn-request)
+  // Use delegation on document since the modal is rendered dynamically
+  document.addEventListener('click', e => {
+    const btn = e.target.closest('.skill-modal-request, .btn-request');
+    if (btn) {
+      e.preventDefault();
+      e.stopImmediatePropagation();
+      showAccountRequiredModal(() => { window.location.href = signupHref; }, requestMsg);
+    }
+  }, true);
 }
 
 // ── Boot ───────────────────────────────────────────────────────────────────────
